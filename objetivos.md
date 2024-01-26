@@ -1,0 +1,2 @@
+[X] - Icon component
+[] - Images
