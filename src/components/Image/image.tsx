@@ -8,12 +8,5 @@ export default function MediaImage({
   styleSheet: { width, height, borderRadius },
 }: MediaImageProps) {
   // StyledMediaImage is a Next Component
-  return (
-    <StyledMediaImage
-      src={src}
-      alt={alt}
-      style={{ width, height, borderRadius }}
-      priority={priority}
-    />
-  );
+  return <StyledMediaImage src={src} alt={alt} style={{ width, height, borderRadius }} priority={priority} />;
 }
