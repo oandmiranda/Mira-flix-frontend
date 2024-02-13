@@ -1,12 +1,17 @@
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import tmdp from '../../../pages/api/tmdb';
-import { useEffect } from 'react';
+import { ListItem } from '@src/types/apiTypes';
+import Movies from '@src/components/Movies/Movies';
 
 export default function HomeScreen() {
+  const [data, setdata] = useState<ListItem[]>([]);
+
   useEffect(() => {
     const showResults = async () => {
       const list = await tmdp.getHomeList();
       console.log(list);
+      setdata(list);
     };
     showResults();
   }, []);
@@ -20,8 +25,9 @@ export default function HomeScreen() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div>teste</div>
-        <div></div>
+        {data.map((item, key) => (
+          <Movies key={key} title={item.title} items={item.items} />
+        ))}
       </main>
     </>
   );

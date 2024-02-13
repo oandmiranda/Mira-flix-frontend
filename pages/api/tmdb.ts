@@ -1,3 +1,5 @@
+import { ListItem } from '@src/types/apiTypes';
+
 const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
 const API_BASE = 'https://api.themoviedb.org/3';
 const language_ptBR = 'language=pt-BR';
@@ -25,7 +27,7 @@ const basicFetch = async (endpoint: string) => {
 };
 
 export default {
-  getHomeList: async () => {
+  getHomeList: async (): Promise<ListItem[]> => {
     return [
       {
         slug: 'originaisNetflix',
