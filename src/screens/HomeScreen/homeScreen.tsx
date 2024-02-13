@@ -1,6 +1,16 @@
 import Head from 'next/head';
+import tmdp from '../../../pages/api/tmdb';
+import { useEffect } from 'react';
 
 export default function HomeScreen() {
+  useEffect(() => {
+    const showResults = async () => {
+      const list = await tmdp.getHomeList();
+      console.log(list);
+    };
+    showResults();
+  }, []);
+
   return (
     <>
       <Head>
@@ -9,6 +19,10 @@ export default function HomeScreen() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main>
+        <div>teste</div>
+        <div></div>
+      </main>
     </>
   );
 }
