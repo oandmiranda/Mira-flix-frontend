@@ -22,8 +22,8 @@ export interface Items {
   total_results?: number;
 }
 
-export interface ListItem {
-  slug?: string;
+export interface IList {
+  id?: string;
   title: string;
   items: Items;
 }

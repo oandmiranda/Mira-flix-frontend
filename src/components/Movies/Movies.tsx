@@ -1,6 +1,7 @@
-import { ListItem } from '@src/types/apiTypes';
+import { IList } from '@src/types/apiTypes';
 
-export default function Movies({ title, items }: ListItem) {
+// This component loops the "results" array and accesses its values
+export default function Movies({ title, items }: IList) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
   return (
     <div>
