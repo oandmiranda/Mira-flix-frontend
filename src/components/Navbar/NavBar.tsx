@@ -1,13 +1,15 @@
 // import NavLink from '../Link/navLink';
+import NavLink from '../Link/navLink';
+import Logo from '../Logo/Logo';
 import { Nav } from './style';
 
 const NavBar: React.FC = () => {
   return (
     <Nav>
-      {/* <NavLink href="/">Home</NavLink>
+      <Logo />
+      <NavLink href="/">Home</NavLink>
       <NavLink href="/">About</NavLink>
-      <NavLink href="/">Contact</NavLink> */}
-      <h2>Hello World</h2>
+      <NavLink href="/">Contact</NavLink>
     </Nav>
   );
 };

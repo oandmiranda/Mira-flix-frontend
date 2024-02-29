@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './themes';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -9,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+  }
+
+  body {
+    background: ${theme.colors.background.main};
+    color: ${theme.colors.text.main};
   }
 `;
 

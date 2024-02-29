@@ -1,22 +1,7 @@
+import NavBar from '@src/components/NavBar/NavBar';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import api_tmdb from '../../../pages/api/tmdb';
-import { IList } from '@src/types/apiTypes';
-import Movies from '@src/components/Movies/Movies';
 
 export default function HomeScreen() {
-  const [apiDatas, setApiDatas] = useState<IList[]>([]);
-
-  useEffect(() => {
-    // arrow function accesses the list of objects
-    const showResults = async () => {
-      const list = await api_tmdb.getHomeList();
-      console.log(list);
-      setApiDatas(list);
-    };
-    showResults();
-  }, []);
-
   return (
     <>
       <Head>
@@ -25,11 +10,10 @@ export default function HomeScreen() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        {apiDatas.map((item) => (
-          <Movies key={item.id} title={item.title} items={item.items} />
-        ))}
-      </main>
+
+      <body>
+        <NavBar />
+      </body>
     </>
   );
 }
