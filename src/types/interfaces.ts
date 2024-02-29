@@ -52,7 +52,7 @@ export interface NavLinkProps extends IStyledLink {
 }
 
 export interface TextProps {
-  tag?: 'p' | 'li' | 'h4' | 'h5';
+  tag?: 'p' | 'li' | 'h1' | 'h4' | 'h5';
   children: React.ReactNode;
   styleSheet?: StyleSheet;
 }
