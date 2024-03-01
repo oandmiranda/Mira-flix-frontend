@@ -1,4 +1,6 @@
-const theme = {
+import { DefaultTheme } from 'styled-components/dist/types';
+
+const theme: DefaultTheme = {
   tipography: {
     font1: {
       fontFamily: '"Grape Nuts", cursive', // imported from the head of the _document.tsx file

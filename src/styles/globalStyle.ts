@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     background: ${theme.colors.background.main};
     color: ${theme.colors.text.main};
   }
+
+  ul {
+    list-style-type: none;
+  }
 `;
 
 export default GlobalStyle;

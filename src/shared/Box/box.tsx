@@ -1,9 +1,12 @@
-import { BoxProps } from '@src/types/interfaces';
 import styled from 'styled-components';
+import { TextProps } from '@src/types/interfaces';
 
-const Component = styled.div``;
+const StyledBox = styled.div``;
 
-export default function Box({ as: tag, styleSheet, children }: BoxProps) {
-  const Tag = Component.withComponent(tag || 'div');
-  return <Tag style={styleSheet}>{children}</Tag>;
+export default function Box({ tag, children, styleSheet }: TextProps) {
+  return (
+    <StyledBox as={tag} style={styleSheet}>
+      {children}
+    </StyledBox>
+  );
 }

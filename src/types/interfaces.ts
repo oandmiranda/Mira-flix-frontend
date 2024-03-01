@@ -14,9 +14,10 @@ export interface StyleSheet {
 }
 
 export interface BoxProps {
+  tag?: 'p' | 'li' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   as?: keyof JSX.IntrinsicElements;
-  styleSheet?: StyleSheet;
   children?: React.ReactNode;
+  styleSheet?: StyleSheet;
 }
 
 export interface IconProps {
@@ -52,7 +53,7 @@ export interface NavLinkProps extends IStyledLink {
 }
 
 export interface TextProps {
-  tag?: 'p' | 'li' | 'h1' | 'h4' | 'h5';
+  tag?: 'p' | 'li' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children: React.ReactNode;
   styleSheet?: StyleSheet;
 }
