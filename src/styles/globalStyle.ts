@@ -7,6 +7,16 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html,
+  body {
+    background: ${({ theme }) => theme.colors.background.main};
+    font-family: ${({ theme }) => theme.tipography.font2.fontFamily};
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+
   a {
     text-decoration: none;
   }
