@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import theme from './themes';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -8,17 +7,18 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  a {
-    text-decoration: none;
-  }
-
+  html,
   body {
-    background: ${theme.colors.background.main};
-    color: ${theme.colors.text.main};
+    background: ${({ theme }) => theme.colors.background.main};
+    font-family: ${({ theme }) => theme.tipography.font2.fontFamily};
   }
-
+  
   ul {
     list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
