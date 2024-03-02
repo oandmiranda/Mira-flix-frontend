@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import NavLink from './navLink';
+import StyledLink from './StyledLink';
 
 describe('NavLink component', () => {
   it('should render a children', () => {
@@ -10,7 +10,7 @@ describe('NavLink component', () => {
       styleSheet: { color: 'black' },
     };
 
-    const { getByText } = render(<NavLink {...props} />);
+    const { getByText } = render(<StyledLink {...props} />);
 
     const linkElement = getByText('children');
     expect(linkElement).toBeInTheDocument();

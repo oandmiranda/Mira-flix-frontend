@@ -38,22 +38,25 @@ export interface MediaImageProps {
   };
 }
 
-export interface IStyledLink {
+// export interface IStyledLink {
+//   children: React.ReactNode;
+//   style?: CSSProperties;
+//   styleSheet?: StyleSheet;
+// }
+
+export interface LinkProps extends ILink {
+  href: string;
   children: React.ReactNode;
   style?: CSSProperties;
-  styleSheet?: {
-    color?: string;
-    fontSize?: string;
-    fontFamily?: string;
-  };
+  styleSheet?: StyleSheet;
 }
 
-export interface NavLinkProps extends IStyledLink {
-  href: string;
+export interface ILink {
+  hasPaddingInline?: string;
 }
 
 export interface TextProps {
-  tag?: 'p' | 'li' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children: React.ReactNode;
   styleSheet?: StyleSheet;
 }
