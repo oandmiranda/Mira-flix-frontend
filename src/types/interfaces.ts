@@ -14,10 +14,18 @@ export interface StyleSheet {
 }
 
 export interface BoxProps {
-  tag?: 'p' | 'li' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  tag?: string;
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
-  styleSheet?: StyleSheet;
+  styleSheet?: {
+    display?: string;
+    justifyContent?: string;
+    alignItems?: string;
+    gap?: string;
+    paddingInline?: string;
+    width?: string;
+    whiteSpace?: string;
+  };
 }
 
 export interface IconProps {
@@ -38,22 +46,23 @@ export interface MediaImageProps {
   };
 }
 
-export interface IStyledLink {
-  children: React.ReactNode;
-  style?: CSSProperties;
-  styleSheet?: {
-    color?: string;
-    fontSize?: string;
-    fontFamily?: string;
-  };
-}
+// export interface IStyledLink {
+//   children: React.ReactNode;
+//   style?: CSSProperties;
+//   styleSheet?: StyleSheet;
 
-export interface NavLinkProps extends IStyledLink {
-  href: string;
+// }
+
+export interface LinkProps {
+  href?: string;
+  children?: React.ReactNode;
+  style?: CSSProperties;
+  styleSheet?: StyleSheet;
+  containsPaddingInline?: string;
 }
 
 export interface TextProps {
-  tag?: 'p' | 'li' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children: React.ReactNode;
   styleSheet?: StyleSheet;
 }

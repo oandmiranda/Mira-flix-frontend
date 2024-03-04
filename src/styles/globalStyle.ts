@@ -10,10 +10,11 @@ const GlobalStyle = createGlobalStyle`
   html,
   body {
     background: ${({ theme }) => theme.colors.background.main};
+    color: ${({ theme }) => theme.colors.text.main};
     font-family: ${({ theme }) => theme.tipography.font2.fontFamily};
   }
   
-  ul {
+  li {
     list-style-type: none;
   }
 

@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
   display: flex;
-  justify-content: space-around;
-  border: 1px solid gold;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid firebrick;
   padding: 20px;
 
   ul {

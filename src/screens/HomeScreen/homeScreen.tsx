@@ -1,6 +1,4 @@
 import NavBar from '@src/components/NavBar/NavBar';
-import Text from '@src/components/Text/Text';
-import theme from '@src/styles/themes';
 import Head from 'next/head';
 
 export default function HomeScreen() {
@@ -13,9 +11,6 @@ export default function HomeScreen() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      <Text tag="p" styleSheet={{ fontFamily: theme.tipography.font1.fontFamily, color: 'white' }}>
-        TextComponents
-      </Text>
     </>
   );
 }
