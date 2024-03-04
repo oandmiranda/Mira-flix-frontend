@@ -14,10 +14,18 @@ export interface StyleSheet {
 }
 
 export interface BoxProps {
-  tag?: 'p' | 'li' | 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  tag?: string;
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
-  styleSheet?: StyleSheet;
+  styleSheet?: {
+    display?: string;
+    justifyContent?: string;
+    alignItems?: string;
+    gap?: string;
+    paddingInline?: string;
+    width?: string;
+    whiteSpace?: string;
+  };
 }
 
 export interface IconProps {
@@ -42,17 +50,15 @@ export interface MediaImageProps {
 //   children: React.ReactNode;
 //   style?: CSSProperties;
 //   styleSheet?: StyleSheet;
+
 // }
 
-export interface LinkProps extends ILink {
-  href: string;
-  children: React.ReactNode;
+export interface LinkProps {
+  href?: string;
+  children?: React.ReactNode;
   style?: CSSProperties;
   styleSheet?: StyleSheet;
-}
-
-export interface ILink {
-  hasPaddingInline?: string;
+  containsPaddingInline?: string;
 }
 
 export interface TextProps {

@@ -1,19 +1,13 @@
 import Link from 'next/link';
-import styled from 'styled-components';
-import { ILink, LinkProps } from '@src/types/interfaces';
-import theme from '@src/styles/themes';
+import { LinkProps } from '@src/types/interfaces';
+import { S_Link } from './style';
 
-export const S_Link = styled.a<ILink>`
-  color: ${(props) => props.style?.color || theme.colors.text.main};
-  padding-inline: ${({ hasPaddingInline }) => hasPaddingInline || '0'};
-`;
-
-export default function StyledLink({ href, children, hasPaddingInline, styleSheet }: LinkProps) {
+export default function StyledLink({ href, children, containsPaddingInline, styleSheet }: LinkProps) {
   return (
     <li>
-      <Link href={href} passHref legacyBehavior>
-        {/* Link is a Next Component */}
-        <S_Link hasPaddingInline={hasPaddingInline} style={styleSheet}>
+      {/* Link is a Next Component */}
+      <Link href={href as string} passHref legacyBehavior>
+        <S_Link containsPaddingInline={containsPaddingInline} style={styleSheet}>
           {children}
         </S_Link>
       </Link>

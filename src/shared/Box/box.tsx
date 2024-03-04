@@ -1,9 +1,7 @@
-import styled from 'styled-components';
-import { TextProps } from '@src/types/interfaces';
+import { BoxProps } from '@src/types/interfaces';
+import { StyledBox } from './style';
 
-const StyledBox = styled.div``;
-
-export default function Box({ tag, children, styleSheet }: TextProps) {
+export default function Box({ tag, children, styleSheet }: BoxProps) {
   return (
     <StyledBox as={tag} style={styleSheet}>
       {children}

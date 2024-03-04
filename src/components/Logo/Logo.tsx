@@ -1,4 +1,4 @@
-import StyledLink from '@src/shared/Link/StyledLink';
+import StyledLink from '@src/shared/Link/styledLink';
 import theme from '@src/styles/themes';
 
 export default function Logo() {
