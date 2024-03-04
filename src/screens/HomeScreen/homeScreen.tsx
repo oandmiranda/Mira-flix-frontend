@@ -1,7 +1,24 @@
-import NavBar from '@src/components/NavBar/NavBar';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import api_tmdb from '../../../pages/api/tmdb';
+import { IList } from '@src/types/apiTypes';
+import Header from '@src/components/Header/header';
 
 export default function HomeScreen() {
+  const [apiDatas, setApiDatas] = useState<IList[]>([]);
+
+  useEffect(() => {
+    const showResults = async () => {
+      const list = await api_tmdb.getHomeList();
+      console.log(list);
+      setApiDatas(list);
+    };
+    showResults();
+  }, []);
+
+  // verificação para garantir que apiDatas[0] tenha sido retornada antes de tentar acessar o seu objeto.
+  const items = apiDatas[0] ? apiDatas[0].items : undefined;
+
   return (
     <>
       <Head>
@@ -10,7 +27,9 @@ export default function HomeScreen() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NavBar />
+
+      {/* o componente Header só será renderizado se "items" estiver definido, o que deve evitar o erro de tentar acessar uma propriedade de undefined. */}
+      {items && <Header items={items} />}
     </>
   );
 }

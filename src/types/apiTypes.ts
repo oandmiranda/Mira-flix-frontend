@@ -24,6 +24,5 @@ export interface Items {
 
 export interface IList {
   id?: string;
-  title: string;
   items: Items;
 }

@@ -1,4 +1,5 @@
 import { StaticImageData } from 'next/image';
+import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
 
 export interface StyleSheet {
@@ -24,6 +25,7 @@ export interface BoxProps {
     gap?: string;
     paddingInline?: string;
     width?: string;
+    height?: string;
     whiteSpace?: string;
   };
 }
@@ -37,7 +39,7 @@ export interface IconProps {
 
 export interface MediaImageProps {
   priority?: boolean;
-  src: StaticImageData;
+  src: string | StaticImageData;
   alt: string;
   styleSheet: {
     width?: string;
@@ -45,13 +47,6 @@ export interface MediaImageProps {
     borderRadius?: string;
   };
 }
-
-// export interface IStyledLink {
-//   children: React.ReactNode;
-//   style?: CSSProperties;
-//   styleSheet?: StyleSheet;
-
-// }
 
 export interface LinkProps {
   href?: string;
@@ -65,4 +60,14 @@ export interface TextProps {
   tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children: React.ReactNode;
   styleSheet?: StyleSheet;
+}
+
+export interface CarrouselProps {
+  className?: string;
+  children: React.ReactNode;
+  navigation?: NavigationOptions | boolean;
+  pagination?: PaginationOptions;
+  loop?: boolean;
+  modules?: SwiperModule[];
+  autoplay?: boolean | AutoplayOptions;
 }
