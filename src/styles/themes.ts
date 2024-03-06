@@ -11,8 +11,10 @@ const theme: DefaultTheme = {
   },
   colors: {
     background: {
-      main: '#1a191f',
-      secondary: '#02b7e3',
+      main: '#0b0c0c',
+      primary: '#151717',
+      secondary: '#1f2222',
+      blue: '#02b7e3',
     },
     text: {
       main: '#e5e5e5',

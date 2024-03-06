@@ -62,7 +62,7 @@ export interface TextProps {
   styleSheet?: StyleSheet;
 }
 
-export interface CarrouselProps {
+export interface CarouselProps {
   className?: string;
   children: React.ReactNode;
   navigation?: NavigationOptions | boolean;
