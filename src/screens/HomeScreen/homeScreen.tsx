@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import api_tmdb from '../../../pages/api/tmdb';
 import { IList } from '@src/types/apiTypes';
 import Header from '@src/components/Header/header';
+import { useMoviesContext } from '@src/context/moviesContext';
 
 export default function HomeScreen() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
+  const movies = useMoviesContext();
 
   useEffect(() => {
     const showResults = async () => {
@@ -30,6 +32,18 @@ export default function HomeScreen() {
 
       {/* o componente Header só será renderizado se "items" estiver definido, o que deve evitar o erro de tentar acessar uma propriedade de undefined. */}
       {items && <Header items={items} />}
+
+      <main>
+        <div>
+          {movies &&
+            movies.map((movie) => (
+              <div key={movie.id}>
+                <h2>{movie.title}</h2>
+                <p>{movie.sinopse}</p>
+              </div>
+            ))}
+        </div>
+      </main>
     </>
   );
 }
