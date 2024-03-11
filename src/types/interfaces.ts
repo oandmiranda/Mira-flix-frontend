@@ -19,6 +19,7 @@ export interface BoxProps {
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
   styleSheet?: {
+    background?: string;
     display?: string;
     justifyContent?: string;
     alignItems?: string;
@@ -41,11 +42,9 @@ export interface MediaImageProps {
   priority?: boolean;
   src: string | StaticImageData;
   alt: string;
-  styleSheet: {
-    width?: string;
-    height?: string;
-    borderRadius?: string;
-  };
+  width?: number;
+  height?: number;
+  sizes: string;
 }
 
 export interface LinkProps {

@@ -4,7 +4,7 @@ import StyledLink from '@src/shared/Link/styledLink';
 import LupaIcon from '../Icons/Lupa/lupa_icon';
 import Logo from '../Logo/Logo';
 import { Nav } from './style';
-import Box from '@src/shared/Box/Box';
+import Box from '@src/shared/Box/box';
 
 const NavBar: React.FC = () => {
   return (
