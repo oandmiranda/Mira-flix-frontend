@@ -26,7 +26,6 @@ declare module 'styled-components' {
     };
     sizes: {
       title: string;
-      sinopse: string;
     };
   }
 }

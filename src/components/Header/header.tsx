@@ -35,9 +35,7 @@ export default function Header() {
                   <Text tag="h1" styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover }}>
                     {movie.title}
                   </Text>
-                  <Text tag="p" styleSheet={{ fontSize: theme.sizes.sinopse }}>
-                    {movie.sinopse}
-                  </Text>
+                  <Text tag="p">{movie.sinopse}</Text>
                 </TextArea>
               </Box>
             </SwiperSlide>

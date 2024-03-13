@@ -25,7 +25,6 @@ const theme: DefaultTheme = {
   },
   sizes: {
     title: '3rem',
-    sinopse: '1.1rem',
   },
 };
 

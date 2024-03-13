@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const TextArea = styled.div`
+  /* border: 1px solid gold; */
   position: absolute;
   display: flex;
   flex-direction: column;
