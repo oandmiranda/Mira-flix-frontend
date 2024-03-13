@@ -4,7 +4,9 @@ import { useMoviesContext } from '@src/context/moviesContext';
 import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
 import Carousel from '@src/components/Carousel/carousel';
-import TextArea from '../TextArea/textArea';
+import { TextArea } from '../TextArea/style';
+import Text from '../Text/text';
+import theme from '@src/styles/themes';
 
 export default function Header() {
   const movies = useMoviesContext();
@@ -17,7 +19,7 @@ export default function Header() {
         navigation={true}
         pagination={{ clickable: true }}
         loop={true}
-        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
       >
         {movies &&
           movies.map((movie) => (
@@ -29,7 +31,14 @@ export default function Header() {
                   alt={movie.title}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', backgroundSize: 'cover' }}
                 />
-                <TextArea />
+                <TextArea>
+                  <Text tag="h1" styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover }}>
+                    {movie.title}
+                  </Text>
+                  <Text tag="p" styleSheet={{ fontSize: theme.sizes.sinopse }}>
+                    {movie.sinopse}
+                  </Text>
+                </TextArea>
               </Box>
             </SwiperSlide>
           ))}

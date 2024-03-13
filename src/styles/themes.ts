@@ -2,11 +2,11 @@ import { DefaultTheme } from 'styled-components/dist/types';
 
 const theme: DefaultTheme = {
   tipography: {
-    font1: {
-      fontFamily: '"Grape Nuts", cursive', // imported from the head of the _document.tsx file
+    default: {
+      fontFamily: '"Montserrat", sans-serif',
     },
     font2: {
-      fontFamily: '"Josefin Sans", sans-serif',
+      fontFamily: '"Grape Nuts", cursive',
     },
   },
   colors: {
@@ -22,6 +22,10 @@ const theme: DefaultTheme = {
       hover: '#fff',
       footer: '#777',
     },
+  },
+  sizes: {
+    title: '3rem',
+    sinopse: '1.1rem',
   },
 };
 

@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-interface Movie {
+export interface Movie {
   id: number;
   title: string;
   sinopse: string;

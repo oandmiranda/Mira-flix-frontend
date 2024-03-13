@@ -12,6 +12,7 @@ export interface StyleSheet {
   fontSize?: string;
   borderRadius?: string;
   cursor?: string;
+  textAlign?: string;
 }
 
 export interface BoxProps {
