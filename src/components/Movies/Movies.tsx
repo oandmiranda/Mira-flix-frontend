@@ -1,4 +1,4 @@
-import Box from '@src/shared/Box/Box';
+import Box from '@src/shared/Box/box';
 import { IList } from '@src/types/apiTypes';
 import Text from '../Text/text';
 

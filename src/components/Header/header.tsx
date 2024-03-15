@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, Autoplay } from 'swiper';
 import { useMoviesContext } from '@src/context/moviesContext';
@@ -7,6 +8,7 @@ import Carousel from '@src/components/Carousel/carousel';
 import { TextArea } from '../TextArea/style';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
+import MovieIcon from '../Icons/Movie/movie_icon';
 
 export default function Header() {
   const movies = useMoviesContext();
@@ -32,10 +34,38 @@ export default function Header() {
                   style={{ width: '100%', height: '100%', objectFit: 'cover', backgroundSize: 'cover' }}
                 />
                 <TextArea>
-                  <Text tag="h1" styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover }}>
-                    {movie.title}
-                  </Text>
-                  <Text tag="p">{movie.sinopse}</Text>
+                  <div>
+                    <Text
+                      tag="h1"
+                      styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover, padding: '10px' }}
+                    >
+                      {movie.title}
+                    </Text>
+
+                    <Text
+                      styleSheet={{
+                        display: 'flex',
+                        padding: '10px',
+                        width: '100%',
+                        wordSpacing: '10px',
+                        fontWeight: '600',
+                      }}
+                    >
+                      {`${movie.releaseData} | ${movie.duration} |`}
+                      <Link href="/" style={{ display: 'flex', wordSpacing: 'normal' }}>
+                        &nbsp;&nbsp;
+                        <MovieIcon fill="#02b7e3" />
+                        &nbsp;&nbsp;{movie.category}
+                      </Link>
+                    </Text>
+
+                    <Text
+                      tag="p"
+                      styleSheet={{ color: theme.colors.text.hover, padding: '10px', lineHeight: '27px' }}
+                    >
+                      {movie.sinopse}
+                    </Text>
+                  </div>
                 </TextArea>
               </Box>
             </SwiperSlide>

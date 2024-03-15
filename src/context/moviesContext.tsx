@@ -6,7 +6,10 @@ export interface Movie {
   sinopse: string;
   srcImage: string;
   coverImage: string;
-  releaseData: string;
+  available: string;
+  releaseData: number;
+  duration: string;
+  category: string;
 }
 
 // declara o contexto
@@ -23,9 +26,12 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         title: 'Aquaman 2: O Reino Perdido',
         sinopse:
           'Um antigo poder é libertado e o herói Aquaman precisa fazer um perigoso acordo com um aliado improvável para proteger Atlântida e o mundo de uma devastação irreversível.',
-        srcImage: '/assets/images/aquaman.jpeg',
+        srcImage: '/assets/images/aquamanCover.jpg',
         coverImage: '/assets/images/aquamanCover.jpg',
-        releaseData: '19/11/2024',
+        available: '19/11/2024',
+        releaseData: 2023,
+        duration: '1h55m',
+        category: 'Ação',
       },
       {
         id: 2,
@@ -34,16 +40,22 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
           'Após dois anos espreitando as ruas como Batman, Bruce Wayne se encontra nas profundezas mais sombrias de Gotham City. Com poucos aliados confiáveis, o vigilante solitário se estabelece como a personificação da vingança para a população.',
         srcImage: '/assets/images/batman.jpeg',
         coverImage: '/assets/images/batmanCover.jpg',
-        releaseData: '01/11/2024',
+        available: '01/11/2024',
+        releaseData: 2022,
+        duration: '2h56m',
+        category: 'Ação',
       },
       {
-        // excluir Call of Duty
         id: 3,
-        title: 'Call of Duty: Black Ops III',
-        sinopse: 'seus componentes com MovieProvider',
-        srcImage: '/assets/images/callOfDuty.jpg',
-        coverImage: '/assets/images/callOfDutyCover.jpg',
-        releaseData: '28/09/2024',
+        title: 'Jogos Mortais',
+        sinopse:
+          'Dois homens acordam acorrentados em um banheiro como prisioneiros de um assassino em série que leva suas vítimas a situações limítrofes em um jogo macabro. Para sobreviver, eles terão de desvendar juntos as peças desse quebra-cabeças doentio.',
+        srcImage: '/assets/images/jogosMortais.jpeg',
+        coverImage: '/assets/images/jogosMortaisCover.jpeg',
+        available: '24/10/2024',
+        releaseData: 2005,
+        duration: '1h43m',
+        category: 'Terror',
       },
       {
         id: 4,
@@ -52,16 +64,22 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
           'Robert Neville é um brilhante cientista e o único sobrevivente de uma epidemia que transformou os humanos em mutantes sedentos por sangue. Andando pela cidade de Nova York, ele procura por outros possíveis sobreviventes e tenta achar a cura da praga usando seu próprio sangue, que é imune.',
         srcImage: '/assets/images/euSouALenda.jpeg',
         coverImage: '/assets/images/euSouALendaCover.jpg',
-        releaseData: '02/11/2024',
+        available: '02/11/2024',
+        releaseData: 2008,
+        duration: '1h41m',
+        category: 'Ação',
       },
       {
         id: 5,
-        title: 'Five Nights At Freddys',
+        title: 'Madame Teia',
         sinopse:
-          'No Freddy Fazbears Pizza, robôs animados fazem a festa das crianças durante o dia. Mas, quando chega a noite, eles se transformam em assassinos psicopatas',
-        srcImage: '/assets/images/fiveNightsAtFreddys.jpg',
-        coverImage: '/assets/images/fiveNightsAtFreddysCover.jpeg',
-        releaseData: '03/01/2025',
+          'Cassandra Webb, uma paramédica em Manhattan, tem habilidades de clarividência. Forçada a confrontar revelações sobre seu passado, ela forja uma relação com três jovens destinadas a futuros poderosos.',
+        srcImage: '/assets/images/madameTeia.jpeg',
+        coverImage: '/assets/images/madameTeiaCover.jpeg',
+        available: '04/12/2024',
+        releaseData: 2024,
+        duration: '1h54m',
+        category: 'Ação',
       },
       {
         id: 6,
@@ -70,7 +88,10 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
           'De volta à infância de Elsa e Anna, as duas garotas descobrem uma história do pai, quando ainda era príncipe de Arendelle. Ele conta às meninas a história de uma visita à floresta dos elementos, onde um acontecimento inesperado teria provocado a separação dos habitantes da cidade com os quatro elementos fundamentais: ar, fogo, terra e água. Esta revelação ajuda Elsa a compreender a origem de seus poderes.',
         srcImage: '/assets/images/frozen.jpg',
         coverImage: '/assets/images/frozenCover.jpg',
-        releaseData: '21/09/2024',
+        available: '21/09/2024',
+        releaseData: 2019,
+        duration: '1h44m',
+        category: 'Em alta',
       },
       {
         id: 7,
@@ -79,7 +100,10 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
           'Batman tem conseguido manter a ordem em Gotham com a ajuda de Jim Gordon e Harvey Dent. No entanto, um jovem e anárquico criminoso, conhecido apenas como Coringa, pretende testar o Cavaleiro das Trevas e mergulhar a cidade em um verdadeiro caos.',
         srcImage: '/assets/images/theDarkKnight.jpg',
         coverImage: '/assets/images/theDarkKnightCover.jpg',
-        releaseData: '10/10/2024',
+        available: '11/10/2024',
+        releaseData: 2008,
+        duration: '2h32m',
+        category: 'Ação',
       },
       {
         id: 8,
@@ -88,7 +112,46 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
           'Dominic Toretto e Letty vivem uma vida pacata ao lado do filho. Mas eles logo são ameaçados pelo passado de Dom: seu irmão desaparecido Jakob, que retorna e está trabalhando ao lado de Cipher. Cabe a Dom reunir a equipe novamente para enfrentá-los.',
         srcImage: '/assets/images/velozesEFuriosos9.jpg',
         coverImage: '/assets/images/velozesEFuriosos9Cover.jpg',
-        releaseData: '04/02/2025',
+        available: '04/01/2025',
+        releaseData: 2021,
+        duration: '2h23m',
+        category: 'Ação',
+      },
+      {
+        id: 9,
+        title: 'Creed 3',
+        sinopse:
+          'Depois de dominar os ringues, Adonis Creed tem prosperado com sua carreira e família. Quando um amigo de infância e ex-prodígio do boxe, Damian, ressurge após uma longa sentença na prisão, o campeão fica ansioso para provar que merece sua chance. O confronto entre ex-amigos é mais do que apenas uma luta. Para acertar as contas, Adonis deve colocar seu futuro em risco para enfrentar Damian, um lutador que não tem nada a perder.',
+        srcImage: '/assets/images/creed3.jpeg',
+        coverImage: '/assets/images/creed3.jpeg',
+        available: '01/12/2024',
+        releaseData: 2023,
+        duration: '1h56m',
+        category: 'Ação',
+      },
+      {
+        id: 10,
+        title: 'Indiana Jones e o Chamado do Destino',
+        sinopse:
+          'O lendário herói arqueólogo está de volta neste aguardado capítulo final da icônica franquia, uma incrível e empolgante aventura cinematográfica.',
+        srcImage: '/assets/images/indianaJones.jpeg',
+        coverImage: '/assets/images/indianaJonesCover.jpg',
+        available: '29/09/2024',
+        releaseData: 2023,
+        duration: '2h22m',
+        category: 'Ação',
+      },
+      {
+        id: 11,
+        title: 'Furiosa: Uma Saga Mad Max',
+        sinopse:
+          'A jovem Furiosa cai nas mãos de uma grande horda de motoqueiros liderada pelo senhor da guerra Dementus. Varrendo Wasteland, eles encontram a Cidadela, presidida pelo Immortan Joe. Enquanto os dois tiranos lutam pelo domínio, Furiosa logo se vê em uma batalha ininterrupta para voltar para casa.',
+        srcImage: '/assets/images/furiosa_umaSagaMadMax.jpeg',
+        coverImage: '/assets/images/furiosa_umaSagaMadMaxCover.jpeg',
+        available: '12/11/2024',
+        releaseData: 2024,
+        duration: '2h25m',
+        category: 'Recomendados para você',
       },
     ];
 

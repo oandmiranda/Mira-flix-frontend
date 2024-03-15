@@ -4,15 +4,19 @@ import { CSSProperties } from 'styled-components';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
-  color?: string;
-  backgroundColor?: string;
-  fontFamily?: string;
+  display?: string;
   width?: string;
   height?: string;
+  padding?: string;
+  color?: string;
+  backgroundColor?: string;
+  fontWeight?: string;
+  fontFamily?: string;
   fontSize?: string;
-  borderRadius?: string;
-  cursor?: string;
   textAlign?: string;
+  lineHeight?: string;
+  wordSpacing?: string;
+  borderRadius?: string;
 }
 
 export interface BoxProps {
