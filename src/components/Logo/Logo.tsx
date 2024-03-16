@@ -6,8 +6,8 @@ export default function Logo() {
     <StyledLink
       href="/"
       styleSheet={{
-        fontFamily: theme.tipography.font2.fontFamily,
-        fontSize: '2rem',
+        fontFamily: theme.tipography.logo.fontFamily,
+        fontSize: '2.3rem',
         color: theme.colors.background.blue,
       }}
     >

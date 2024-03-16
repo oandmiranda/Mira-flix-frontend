@@ -30,6 +30,7 @@ export default function HomeScreen() {
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet"
         ></link>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
       {/* o componente Header só será renderizado se "items" estiver definido, o que deve evitar o erro de tentar acessar uma propriedade de undefined. */}

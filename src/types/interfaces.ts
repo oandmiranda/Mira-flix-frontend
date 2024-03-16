@@ -16,6 +16,7 @@ export interface StyleSheet {
   textAlign?: string;
   lineHeight?: string;
   wordSpacing?: string;
+  border?: string;
   borderRadius?: string;
 }
 
@@ -74,4 +75,12 @@ export interface CarouselProps {
   loop?: boolean;
   modules?: SwiperModule[];
   autoplay?: boolean | AutoplayOptions;
+}
+
+export interface ButtonProps {
+  onClick?: () => void;
+  href?: string;
+  children: React.ReactNode;
+  styleSheet?: StyleSheet;
+  style?: CSSProperties;
 }

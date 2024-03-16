@@ -5,6 +5,9 @@ const theme: DefaultTheme = {
     default: {
       fontFamily: '"Montserrat", sans-serif',
     },
+    logo: {
+      fontFamily: '"Rubik Gemstones", system-ui',
+    },
     font2: {
       fontFamily: '"Grape Nuts", cursive',
     },
@@ -24,7 +27,7 @@ const theme: DefaultTheme = {
     },
   },
   sizes: {
-    title: '3rem',
+    title: '3.2rem',
   },
 };
 

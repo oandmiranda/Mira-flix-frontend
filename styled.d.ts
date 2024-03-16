@@ -6,6 +6,9 @@ declare module 'styled-components' {
       default: {
         fontFamily: string;
       };
+      logo: {
+        fontFamily: string;
+      };
       font2: {
         fontFamily: string;
       };
