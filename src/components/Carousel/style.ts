@@ -13,12 +13,12 @@ export const SwiperPagination = styled.div`
   }
 `;
 
-export const SwiperPaginationBullet = styled.div`
-  background-color: #ffffff;
-  opacity: 0.5;
-  padding: 3px;
-  margin-bottom: 60px;
-`;
+// export const SwiperPaginationBullet = styled.div`
+//   background-color: #ffffff;
+//   opacity: 0.5;
+//   padding: 3px;
+//   margin-bottom: 60px;
+// `;
 
 export const SwiperPaginationBulletActive = styled.div`
   background-color: #fff;

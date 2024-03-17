@@ -12,7 +12,6 @@ import {
   SwiperButtonNext,
   SwiperButtonPrev,
   SwiperPagination,
-  SwiperPaginationBullet,
   SwiperPaginationBulletActive,
   SwiperWrapper,
 } from './style';
@@ -31,7 +30,6 @@ export default function Carousel({ children, loop, autoplay }: CarouselProps) {
       {children}
       <SwiperWrapper />
       <SwiperPagination />
-      <SwiperPaginationBullet />
       <SwiperPaginationBulletActive />
       <SwiperButtonPrev />
       <SwiperButtonNext />

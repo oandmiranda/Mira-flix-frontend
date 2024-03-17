@@ -1,21 +1,24 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '@src/components/Header/header';
+import Movies from '@src/components/Movies/Movies';
+import api_tmdb from '../../../pages/api/tmdb';
+import { IList } from '@src/types/apiTypes';
 
 export default function HomeScreen() {
-  // const [apiDatas, setApiDatas] = useState<IList[]>([]);
-  // const movies = useMoviesContext();
+  const [apiDatas, setApiDatas] = useState<IList[]>([]);
 
-  // useEffect(() => {
-  //   const showResults = async () => {
-  //     const list = await api_tmdb.getHomeList();
-  //     console.log(list);
-  //     setApiDatas(list);
-  //   };
-  //   showResults();
-  // }, []);
+  useEffect(() => {
+    const showResults = async () => {
+      const list = await api_tmdb.getHomeList();
+      console.log(list);
+      setApiDatas(list);
+    };
+    showResults();
+  }, []);
 
   // verificação para garantir que apiDatas[0] tenha sido retornada antes de tentar acessar o seu objeto.
-  // const items = apiDatas[0] ? apiDatas[0].items : undefined;
+  const items = apiDatas[0] ? apiDatas[0].items : undefined;
 
   return (
     <>
@@ -33,9 +36,8 @@ export default function HomeScreen() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      {/* o componente Header só será renderizado se "items" estiver definido, o que deve evitar o erro de tentar acessar uma propriedade de undefined. */}
       <Header />
-      {/* {items && <Header items={items} />} */}
+      {items && <Movies items={items} />}
     </>
   );
 }
