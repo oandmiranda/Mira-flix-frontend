@@ -8,6 +8,8 @@ export interface StyleSheet {
   width?: string;
   height?: string;
   padding?: string;
+  paddingInline?: string;
+  marginBottom?: string;
   color?: string;
   backgroundColor?: string;
   fontWeight?: string;
@@ -17,6 +19,7 @@ export interface StyleSheet {
   lineHeight?: string;
   wordSpacing?: string;
   border?: string;
+  borderBottom?: string;
   borderRadius?: string;
 }
 
@@ -27,6 +30,7 @@ export interface BoxProps {
   styleSheet?: {
     background?: string;
     display?: string;
+    flexWrap?: string;
     justifyContent?: string;
     alignItems?: string;
     gap?: string;
@@ -48,9 +52,9 @@ export interface MediaImageProps {
   priority?: boolean;
   src: string | StaticImageData;
   alt: string;
-  width?: number;
-  height?: number;
-  sizes: string;
+  width: number;
+  height: number;
+  styleSheet?: StyleSheet;
 }
 
 export interface LinkProps {
@@ -68,13 +72,26 @@ export interface TextProps {
 }
 
 export interface CarouselProps {
-  className?: string;
   children: React.ReactNode;
   navigation?: NavigationOptions | boolean;
   pagination?: PaginationOptions;
   loop?: boolean;
   modules?: SwiperModule[];
   autoplay?: boolean | AutoplayOptions;
+  cssMode?: boolean;
+  mousewhreel?: boolean;
+  keyboard?: boolean;
+  effect?: string;
+  grabCursor?: boolean;
+  centeredSlides?: boolean;
+  slidesPerView?: string;
+  coverflowEffect?: {
+    rotate?: number;
+    stretch?: number;
+    depth?: number;
+    modifier?: number;
+    slideShadows?: boolean;
+  };
 }
 
 export interface ButtonProps {
@@ -83,4 +100,8 @@ export interface ButtonProps {
   children: React.ReactNode;
   styleSheet?: StyleSheet;
   style?: CSSProperties;
+}
+
+export interface ContainerProps {
+  children: React.ReactNode;
 }

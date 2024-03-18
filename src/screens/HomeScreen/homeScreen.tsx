@@ -4,6 +4,7 @@ import Header from '@src/components/Header/header';
 import Movies from '@src/components/Movies/Movies';
 import api_tmdb from '../../../pages/api/tmdb';
 import { IList } from '@src/types/apiTypes';
+import Container from '@src/components/Container/container';
 
 export default function HomeScreen() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
@@ -18,7 +19,7 @@ export default function HomeScreen() {
   }, []);
 
   // verificação para garantir que apiDatas[0] tenha sido retornada antes de tentar acessar o seu objeto.
-  const items = apiDatas[0] ? apiDatas[0].items : undefined;
+  // const items = apiDatas[0] ? apiDatas[0].items : undefined;
 
   return (
     <>
@@ -37,7 +38,11 @@ export default function HomeScreen() {
       </Head>
 
       <Header />
-      {items && <Movies items={items} />}
+      {apiDatas.map((item, key) => (
+        <Container key={key}>
+          <Movies title={item.title} items={item.items} />
+        </Container>
+      ))}
     </>
   );
 }
