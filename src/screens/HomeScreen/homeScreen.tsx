@@ -39,7 +39,7 @@ export default function HomeScreen() {
 
       <Header />
       {apiDatas.map((item, key) => (
-        <Container key={key}>
+        <Container key={key} hasDegrade>
           <Movies title={item.title} items={item.items} />
         </Container>
       ))}

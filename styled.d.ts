@@ -21,6 +21,7 @@ declare module 'styled-components' {
         blue: string;
       };
       text: {
+        logo: string;
         main: string;
         navbar: string;
         hover: string;

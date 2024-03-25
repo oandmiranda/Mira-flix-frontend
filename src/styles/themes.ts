@@ -24,6 +24,7 @@ const theme: DefaultTheme = {
       navbar: '#E0E0E2',
       hover: '#fff',
       footer: '#777',
+      logo: '#02b7e3',
     },
   },
   sizes: {

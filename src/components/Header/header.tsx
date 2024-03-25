@@ -3,12 +3,12 @@ import { SwiperSlide } from 'swiper/react';
 import { useMoviesContext } from '@src/context/moviesContext';
 import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
-import Carousel from '@src/components/Carousel/carousel';
 import { TextArea } from '../TextArea/style';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
 import MovieIcon from '../Icons/Movie/movie_icon';
 import Button from '../Button/button';
+import HeaderCarousel from '@src/components/HeaderCarousel/headerCarousel';
 
 export default function Header() {
   const movies = useMoviesContext();
@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
       <NavBar />
-      <Carousel loop={true} autoplay={{ delay: 6000, disableOnInteraction: false }}>
+      <HeaderCarousel loop={true} autoplay={{ delay: 6000, disableOnInteraction: false }}>
         {movies &&
           movies.map((movie) => (
             // SwiperSlide is a Swiper component (lib)
@@ -64,7 +64,10 @@ export default function Header() {
                       }}
                     >
                       {`${movie.releaseData} | ${movie.duration} |`}
-                      <Link href="/" style={{ display: 'flex', wordSpacing: 'normal' }}>
+                      <Link
+                        href="/"
+                        style={{ display: 'flex', wordSpacing: 'normal', color: theme.colors.text.logo }}
+                      >
                         &nbsp;&nbsp;
                         <MovieIcon fill="#02b7e3" />
                         &nbsp;&nbsp;{movie.category}
@@ -82,7 +85,7 @@ export default function Header() {
               </Box>
             </SwiperSlide>
           ))}
-      </Carousel>
+      </HeaderCarousel>
     </Box>
   );
 }

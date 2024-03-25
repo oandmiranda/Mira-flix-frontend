@@ -34,7 +34,9 @@ export interface BoxProps {
     justifyContent?: string;
     alignItems?: string;
     gap?: string;
+    padding?: string;
     paddingInline?: string;
+    marginBottom?: string;
     width?: string;
     height?: string;
     whiteSpace?: string;
@@ -84,7 +86,11 @@ export interface CarouselProps {
   effect?: string;
   grabCursor?: boolean;
   centeredSlides?: boolean;
-  slidesPerView?: string;
+  slidesPerView?: number | 'auto';
+  grid?: {
+    rows: number;
+  };
+  spaceBetween?: number;
   coverflowEffect?: {
     rotate?: number;
     stretch?: number;
@@ -104,4 +110,5 @@ export interface ButtonProps {
 
 export interface ContainerProps {
   children: React.ReactNode;
+  hasDegrade?: boolean;
 }
