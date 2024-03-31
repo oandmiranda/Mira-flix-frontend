@@ -5,6 +5,7 @@ import Movies from '@src/components/Movies/Movies';
 import api_tmdb from '../../../pages/api/tmdb';
 import { IList } from '@src/types/apiTypes';
 import Container from '@src/components/Container/container';
+import Footer from '@src/components/Footer/footer';
 
 export default function HomeScreen() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
@@ -43,6 +44,7 @@ export default function HomeScreen() {
           <Movies title={item.title} items={item.items} />
         </Container>
       ))}
+      <Footer />
     </>
   );
 }
