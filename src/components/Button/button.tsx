@@ -1,15 +1,9 @@
-interface ButtonProps {
-  onClick?: () => void;
-  href?: string;
-  children: React.ReactNode;
-}
+import { ButtonProps } from '@src/types/interfaces';
 
-const Button = ({ onClick, href, children }: ButtonProps) => {
+export default function Button({ onClick, href, children, styleSheet }: ButtonProps) {
   return (
-    <a href={href} onClick={onClick}>
+    <a href={href} onClick={onClick} style={styleSheet}>
       {children}
     </a>
   );
-};
-
-export default Button;
+}

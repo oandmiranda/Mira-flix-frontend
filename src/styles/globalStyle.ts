@@ -11,7 +11,8 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.colors.background.main};
     color: ${({ theme }) => theme.colors.text.main};
-    font-family: ${({ theme }) => theme.tipography.font2.fontFamily};
+    font-family: ${({ theme }) => theme.tipography.default.fontFamily};
+    overflow-x: hidden;
   }
   
   li {
@@ -20,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: silver;
   }
 `;
 

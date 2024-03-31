@@ -3,8 +3,11 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     tipography: {
-      font1: {
-        fontFamily: string; // imported from the head of the _document.tsx file
+      default: {
+        fontFamily: string;
+      };
+      logo: {
+        fontFamily: string;
       };
       font2: {
         fontFamily: string;
@@ -13,7 +16,9 @@ declare module 'styled-components' {
     colors: {
       background: {
         main: string;
+        primary: string;
         secondary: string;
+        blue: string;
       };
       text: {
         main: string;
@@ -21,6 +26,9 @@ declare module 'styled-components' {
         hover: string;
         footer: string;
       };
+    };
+    sizes: {
+      title: string;
     };
   }
 }

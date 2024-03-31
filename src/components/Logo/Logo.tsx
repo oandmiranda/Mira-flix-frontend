@@ -3,7 +3,14 @@ import theme from '@src/styles/themes';
 
 export default function Logo() {
   return (
-    <StyledLink href="/" styleSheet={{ fontFamily: theme.tipography.font1.fontFamily, fontSize: '2rem' }}>
+    <StyledLink
+      href="/"
+      styleSheet={{
+        fontFamily: theme.tipography.logo.fontFamily,
+        fontSize: '2.3rem',
+        color: theme.colors.background.blue,
+      }}
+    >
       LogoFlix
     </StyledLink>
   );
