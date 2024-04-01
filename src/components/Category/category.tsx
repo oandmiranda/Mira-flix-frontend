@@ -12,7 +12,7 @@ export default function Category() {
     <Box
       tag="section"
       styleSheet={{
-        padding: '15px 20px 40px 20px',
+        padding: '15px 20px 60px 20px',
       }}
     >
       <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center', padding: '10px 0 35px 0' }}>

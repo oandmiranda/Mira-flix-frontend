@@ -13,7 +13,7 @@ export const C_Button = styled.button`
   font-size: ${theme.sizes.subtitle};
   font-family: ${theme.tipography.default.fontFamily};
   transition:
-    background-color 0.3s ease-in-out,
+    background-color 0.4s ease-in-out,
     color 0.3s ease-in-out,
     font-weight 0.3s ease-in-out;
 
