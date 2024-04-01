@@ -10,7 +10,7 @@ import theme from '@src/styles/themes';
 export default function Movies({ title, items }: IList) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
   return (
-    <Box tag="div" styleSheet={{ marginBottom: '24px' }}>
+    <Box tag="div" styleSheet={{ marginBottom: '85px' }}>
       <Text
         tag="h1"
         styleSheet={{

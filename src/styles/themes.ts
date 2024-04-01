@@ -29,6 +29,7 @@ const theme: DefaultTheme = {
   },
   sizes: {
     title: '3.2rem',
+    subtitle: '1.1rem',
   },
 };
 
