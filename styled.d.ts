@@ -30,6 +30,7 @@ declare module 'styled-components' {
     };
     sizes: {
       title: string;
+      subtitle: string;
     };
   }
 }
