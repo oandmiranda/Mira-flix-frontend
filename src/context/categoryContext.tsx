@@ -1,14 +1,9 @@
+import { Category } from '@src/types/interfaces';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
 const API_BASE = 'https://api.themoviedb.org/3';
 const language_ptBR = 'language=pt-BR';
-
-interface Category {
-  id: number;
-  name: string;
-  endpoint: string;
-}
 
 // declara o contexto
 const CategoriesContext = createContext<Category[]>([]);
@@ -21,28 +16,38 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
     const mockCategories: Category[] = [
       {
         id: 1,
-        name: 'Ação',
+        title: 'Ação',
+        page: '/action',
         endpoint: `${API_BASE}/discover/movie?with_genres=28?${language_ptBR}&api_key=${API_KEY}`,
+        srcImage: '/assets/images/furiosa_umaSagaMadMaxCover.jpeg',
       },
       {
         id: 2,
-        name: 'Comédia',
+        title: 'Comédia',
+        page: '/comedy',
         endpoint: `${API_BASE}/discover/movie?with_genres=35?${language_ptBR}&api_key=${API_KEY}`,
+        srcImage: '/assets/images/',
       },
       {
         id: 3,
-        name: 'Romance',
+        title: 'Romance',
+        page: '/romance',
         endpoint: `${API_BASE}/discover/movie?with_genres=10749?${language_ptBR}&api_key=${API_KEY}`,
+        srcImage: '/assets/images/furiosa_umaSagaMadMaxCover.jpeg',
       },
       {
         id: 4,
-        name: 'Terror',
+        title: 'Terror',
+        page: '/horror',
         endpoint: `${API_BASE}/discover/movie?with_genres=27?${language_ptBR}&api_key=${API_KEY}`,
+        srcImage: '/assets/images/jogosMortaisCover.jpeg',
       },
       {
         id: 5,
-        name: 'Documentários',
+        title: 'Documentários',
+        page: '/documentary',
         endpoint: `${API_BASE}/discover/movie?with_genres=99?${language_ptBR}&api_key=${API_KEY}`,
+        srcImage: '/assets/images/furiosa_umaSagaMadMaxCover.jpeg',
       },
     ];
 

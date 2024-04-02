@@ -1,5 +1,5 @@
-import Box from '@src/shared/Box/box';
 import Link from 'next/link';
+import Box from '@src/shared/Box/box';
 import { C_Button } from './style';
 import { useCategoriesContext } from '@src/context/categoryContext';
 import Text from '../Text/text';
@@ -22,10 +22,10 @@ export default function Category() {
       </Box>
 
       <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
-        {categories.map((category) => (
-          <Box tag="div" key={category.id} styleSheet={{ display: 'flex', padding: '15px' }}>
-            <Link href={category.endpoint}>
-              <C_Button>{category.name}</C_Button>
+        {categories.map((item) => (
+          <Box tag="div" key={item.id} styleSheet={{ display: 'flex', padding: '15px' }}>
+            <Link href={`category/${item.page}`}>
+              <C_Button>{item.title}</C_Button>
             </Link>
           </Box>
         ))}

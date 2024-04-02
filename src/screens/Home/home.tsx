@@ -8,7 +8,7 @@ import Container from '@src/components/Container/container';
 import Category from '@src/components/Category/category';
 import Footer from '@src/components/Footer/footer';
 
-export default function HomeScreen() {
+export default function Home() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
 
   useEffect(() => {

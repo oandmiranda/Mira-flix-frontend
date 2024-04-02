@@ -112,3 +112,42 @@ export interface ContainerProps {
   children: React.ReactNode;
   hasDegrade?: boolean;
 }
+
+export interface HeaderProps<T> {
+  context: T[];
+  showCarousel?: boolean;
+}
+
+// export interface BaseContext {
+//   id?: number | undefined;
+//   srcImage?: string;
+//   title?: string;
+//   page?: string;
+//   endpoint?: string;
+//   sinopse?: string;
+//   coverImage?: string;
+//   available?: string;
+//   releaseData?: number;
+//   duration?: string;
+//   category?: string;
+// }
+
+export interface Category {
+  id?: number;
+  title?: string;
+  page?: string;
+  endpoint?: string;
+  srcImage?: string;
+}
+
+export interface Movie {
+  id?: number;
+  title?: string;
+  sinopse?: string;
+  srcImage?: string;
+  coverImage?: string;
+  available?: string;
+  releaseData?: number;
+  duration?: string;
+  category?: string;
+}
