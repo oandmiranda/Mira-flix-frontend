@@ -1,7 +1,23 @@
-import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
+import api_tmdb from '../../pages/api/tmdb';
+import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
+import { IList } from '@src/types/apiTypes';
+import Movies from '@src/components/Movies/Movies';
+import Container from '@src/components/Container/container';
 
-export default function ActionCategory() {
+export default function SeriesCategory() {
+  const [series, setSeries] = useState<IList[]>([]);
+
+  useEffect(() => {
+    const showResults = async () => {
+      const list = await api_tmdb.getHomeList();
+      setSeries(list);
+    };
+
+    showResults();
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,7 +33,14 @@ export default function ActionCategory() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-      <HeaderCategory id={4} />
+      <HeaderCategory slug="Terror" />
+      <Container hasDegrade>
+        {series
+          .filter((item) => item.id === 'horror')
+          .map((item) => (
+            <Movies title={item.title} items={item.items} key={item.id} />
+          ))}
+      </Container>
     </>
   );
 }

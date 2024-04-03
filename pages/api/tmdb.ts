@@ -12,7 +12,7 @@ ENDPOINST:
 - comédia
 - terror
 - romance
-- documentários
+- séries
 */
 
 const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
@@ -66,8 +66,8 @@ export default {
         items: await basicFetch(`/discover/movie?with_genres=10749?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'documentary',
-        title: 'Documentário',
+        id: 'series',
+        title: 'Séries',
         items: await basicFetch(`/discover/movie?with_genres=99?${language_ptBR}&api_key=${API_KEY}`),
       },
     ];

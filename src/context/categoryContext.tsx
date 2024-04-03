@@ -1,4 +1,4 @@
-import { Category } from '@src/types/interfaces';
+import { CategoryContext } from '@src/types/interfaces';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
@@ -6,14 +6,14 @@ const API_BASE = 'https://api.themoviedb.org/3';
 const language_ptBR = 'language=pt-BR';
 
 // declara o contexto
-const CategoriesContext = createContext<Category[]>([]);
+const CategoriesContext = createContext<CategoryContext[]>([]);
 
 // declara o que será provido pelo contexto
 export const CategoriesProvider = ({ children }: { children: React.ReactNode }) => {
-  const [category, setCategory] = useState<Category[]>([]);
+  const [category, setCategory] = useState<CategoryContext[]>([]);
 
   useEffect(() => {
-    const mockCategories: Category[] = [
+    const mockCategories: CategoryContext[] = [
       {
         id: 1,
         title: 'Ação',
@@ -26,14 +26,14 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
         title: 'Comédia',
         page: '/comedy',
         endpoint: `${API_BASE}/discover/movie?with_genres=35?${language_ptBR}&api_key=${API_KEY}`,
-        srcImage: '/assets/images/',
+        srcImage: '/assets/images/sexTape.jpg',
       },
       {
         id: 3,
         title: 'Romance',
         page: '/romance',
         endpoint: `${API_BASE}/discover/movie?with_genres=10749?${language_ptBR}&api_key=${API_KEY}`,
-        srcImage: '/assets/images/furiosa_umaSagaMadMaxCover.jpeg',
+        srcImage: '/assets/images/shuddhDesiRomance.jpg',
       },
       {
         id: 4,
@@ -44,10 +44,10 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
       },
       {
         id: 5,
-        title: 'Documentários',
-        page: '/documentary',
+        title: 'Séries',
+        page: '/series',
         endpoint: `${API_BASE}/discover/movie?with_genres=99?${language_ptBR}&api_key=${API_KEY}`,
-        srcImage: '/assets/images/furiosa_umaSagaMadMaxCover.jpeg',
+        srcImage: '/assets/images/aquaman.jpeg',
       },
     ];
 

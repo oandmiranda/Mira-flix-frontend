@@ -132,7 +132,7 @@ export interface HeaderProps<T> {
 //   category?: string;
 // }
 
-export interface Category {
+export interface CategoryContext {
   id?: number;
   title?: string;
   page?: string;
@@ -140,7 +140,7 @@ export interface Category {
   srcImage?: string;
 }
 
-export interface Movie {
+export interface MovieContext {
   id?: number;
   title?: string;
   sinopse?: string;
@@ -150,4 +150,8 @@ export interface Movie {
   releaseData?: number;
   duration?: string;
   category?: string;
+}
+
+export interface CategoryProps {
+  title: string;
 }

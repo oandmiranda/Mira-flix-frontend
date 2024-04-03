@@ -5,12 +5,11 @@ import { TextArea } from '../TextArea/style';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
 import MovieIcon from '../Icons/Movie/movie_icon';
-import Button from '../Button/button';
 import { useCategoriesContext } from '@src/context/categoryContext';
 
-export default function HeaderCategory({ id }: { id: number }) {
+export default function HeaderCategory({ slug }: { slug: string }) {
   const categories = useCategoriesContext();
-  const movie = categories.find((category) => category.id === id);
+  const movie = categories.find((category) => category.title === slug);
   // Verifica se o objeto foi encontrado
   if (!movie) {
     console.log('deu ruim essa porra!');
@@ -20,7 +19,7 @@ export default function HeaderCategory({ id }: { id: number }) {
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
       <NavBar />
-      <Box tag="div" key={movie.id} styleSheet={{ width: '100vw', height: '100vh' }}>
+      <Box tag="div" key={movie.id} styleSheet={{ height: '100vh', width: '100vw' }}>
         <img
           src={movie.srcImage}
           alt={movie.title}
@@ -33,19 +32,6 @@ export default function HeaderCategory({ id }: { id: number }) {
         />
         <TextArea>
           <div>
-            <Button
-              styleSheet={{
-                padding: '7px',
-                border: '1px solid',
-                borderRadius: '20px',
-                backgroundColor: theme.colors.background.blue,
-                color: 'black',
-                fontWeight: 'bold',
-                fontSize: '0.7rem',
-              }}
-            >
-              NOVO
-            </Button>
             <Text
               tag="h1"
               styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover, padding: '10px' }}
