@@ -27,8 +27,8 @@ const NavBar: React.FC = () => {
           <StyledLink href="/emalta" containsPaddingInline="27px">
             Em alta
           </StyledLink>
-          <StyledLink href="/documentarios" containsPaddingInline="27px">
-            Documentários
+          <StyledLink href="/series" containsPaddingInline="27px">
+            Séries
           </StyledLink>
           <StyledLink href="/favoritos" containsPaddingInline="27px">
             Favoritos

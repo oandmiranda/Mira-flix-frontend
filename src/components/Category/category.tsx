@@ -13,7 +13,7 @@ export default function Category({ title }: CategoryProps) {
     <Box
       tag="section"
       styleSheet={{
-        padding: '15px 20px 60px 20px',
+        padding: '0px 20px 60px 20px',
       }}
     >
       <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center', padding: '10px 0 35px 0' }}>
@@ -26,7 +26,7 @@ export default function Category({ title }: CategoryProps) {
         {categories.map((item) => (
           <Box tag="div" key={item.id} styleSheet={{ display: 'flex', padding: '15px' }}>
             <Link href={`/category/${item.title}`}>
-              <C_Button>{item.title}</C_Button>
+              <C_Button>{item.name}</C_Button>
             </Link>
           </Box>
         ))}

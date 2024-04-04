@@ -135,9 +135,10 @@ export interface HeaderProps<T> {
 export interface CategoryContext {
   id?: number;
   title?: string;
-  page?: string;
+  name?: string;
   endpoint?: string;
   srcImage?: string;
+  description?: string;
 }
 
 export interface MovieContext {

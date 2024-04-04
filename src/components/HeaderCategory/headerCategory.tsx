@@ -1,18 +1,15 @@
-import Link from 'next/link';
 import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
 import { TextArea } from '../TextArea/style';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
-import MovieIcon from '../Icons/Movie/movie_icon';
 import { useCategoriesContext } from '@src/context/categoryContext';
 
-export default function HeaderCategory({ slug }: { slug: string }) {
+export default function HeaderCategory({ slug }: { slug: string | string[] | undefined }) {
   const categories = useCategoriesContext();
   const movie = categories.find((category) => category.title === slug);
   // Verifica se o objeto foi encontrado
   if (!movie) {
-    console.log('deu ruim essa porra!');
     return null;
   }
 
@@ -36,7 +33,7 @@ export default function HeaderCategory({ slug }: { slug: string }) {
               tag="h1"
               styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover, padding: '10px' }}
             >
-              {movie.title}
+              {movie.name}
             </Text>
 
             <Text
@@ -44,20 +41,12 @@ export default function HeaderCategory({ slug }: { slug: string }) {
                 display: 'flex',
                 padding: '10px',
                 width: '100%',
-                wordSpacing: '10px',
-                fontWeight: '600',
+                fontWeight: 'normal',
+                wordSpacing: '2px',
+                fontSize: theme.sizes.subtitle,
               }}
             >
-              {`${movie.id} | ${movie.id} |`}
-              <Link href="/" style={{ display: 'flex', wordSpacing: 'normal', color: theme.colors.text.logo }}>
-                &nbsp;&nbsp;
-                <MovieIcon fill="#02b7e3" />
-                &nbsp;&nbsp;{movie.title}
-              </Link>
-            </Text>
-
-            <Text tag="p" styleSheet={{ color: theme.colors.text.hover, padding: '10px', lineHeight: '27px' }}>
-              {movie.title}
+              {movie.description}
             </Text>
           </div>
         </TextArea>

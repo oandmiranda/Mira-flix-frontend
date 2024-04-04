@@ -12,7 +12,7 @@ ENDPOINST:
 - comédia
 - terror
 - romance
-- séries
+- series
 */
 
 const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
@@ -31,43 +31,51 @@ export default {
   getHomeList: async (): Promise<IList[]> => {
     return [
       {
-        id: 'originaisNetflix',
+        id: 1,
         title: 'Originais NetFlix',
+        slug: 'originaisNetflix',
         items: await basicFetch(`/discover/tv?with_network=213&${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'trending',
-        title: 'Recomendados para Você',
+        id: 2,
+        title: 'Recomendados para você',
+        slug: 'trending',
         items: await basicFetch(`/trending/all/week?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'topRated',
-        title: 'Em Alta',
+        id: 3,
+        title: 'Em alta',
+        slug: 'topRated',
         items: await basicFetch(`/movie/top_rated?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'action',
-        title: 'Ação',
+        id: 4,
+        title: 'Filmes de ação e aventura',
+        slug: 'action',
         items: await basicFetch(`/discover/movie?with_genres=28?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'comedy',
-        title: 'Comédia',
+        id: 5,
+        title: 'Filmes de comédia',
+        slug: 'comedy',
         items: await basicFetch(`/discover/movie?with_genres=35?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'horror',
-        title: 'Terror',
+        id: 6,
+        title: 'Filmes de terror',
+        slug: 'horror',
         items: await basicFetch(`/discover/movie?with_genres=27?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'romance',
-        title: 'Romance',
+        id: 7,
+        title: 'Filmes românticos',
+        slug: 'romance',
         items: await basicFetch(`/discover/movie?with_genres=10749?${language_ptBR}&api_key=${API_KEY}`),
       },
       {
-        id: 'series',
-        title: 'Séries',
+        id: 8,
+        title: 'Seriados',
+        slug: 'series',
         items: await basicFetch(`/discover/movie?with_genres=99?${language_ptBR}&api_key=${API_KEY}`),
       },
     ];

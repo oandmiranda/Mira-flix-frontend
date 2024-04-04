@@ -23,7 +23,8 @@ export interface Items {
 }
 
 export interface IList {
-  id?: string;
+  id?: number;
   title?: string;
+  slug?: string;
   items: Items;
 }
