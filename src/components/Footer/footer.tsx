@@ -14,7 +14,7 @@ export default function Footer() {
         styleSheet={{
           display: 'flex',
           justifyContent: 'center',
-          padding: '20px 15px 50px 15px',
+          padding: '20px 25px 50px 25px',
           background: theme.colors.background.secondary,
         }}
       >
