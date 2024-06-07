@@ -42,10 +42,10 @@ export default function Header() {
                         backgroundColor: theme.colors.background.blue,
                         color: 'black',
                         fontWeight: 'bold',
-                        fontSize: '0.7rem',
+                        fontSize: '0.8rem',
                       }}
                     >
-                      NOVO
+                      EM ALTA
                     </Button>
                     <Text
                       tag="h1"
