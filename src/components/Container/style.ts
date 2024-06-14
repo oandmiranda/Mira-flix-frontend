@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.main<ContainerProps>`
   width: 100%;
-  padding: 30px;
   background: ${(props) =>
     props.hasDegrade
       ? `linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%),

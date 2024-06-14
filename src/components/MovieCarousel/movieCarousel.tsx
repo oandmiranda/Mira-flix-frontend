@@ -1,17 +1,39 @@
+// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { register } from 'swiper/element/bundle';
-import 'swiper/css';
-import 'swiper/css/grid';
-import 'swiper/css/pagination';
 import { CarouselProps } from '@src/types/interfaces';
-import styles from './swiper.module.css';
 
-register();
+// Import Swiper styles
+import 'swiper/swiper.min.css';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
+import { Pagination, Navigation, Scrollbar } from 'swiper';
+
+import './styles.module.css';
 
 export default function MovieCarousel({ children }: CarouselProps) {
   return (
-    <Swiper className={styles.swiper} slidesPerView={1} spaceBetween={300}>
-      <SwiperSlide className={styles.swiperSlide}>{children}</SwiperSlide>
-    </Swiper>
+    <>
+      <Swiper
+        slidesPerView={4}
+        spaceBetween={10}
+        navigation
+        // className="my-swiper"
+        modules={[Pagination, Navigation, Scrollbar]}
+      >
+        <SwiperSlide>{children}</SwiperSlide>
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+        <SwiperSlide />
+      </Swiper>
+    </>
   );
 }
