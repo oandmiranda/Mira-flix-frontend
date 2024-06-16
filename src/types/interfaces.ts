@@ -40,6 +40,7 @@ export interface BoxProps {
     width?: string;
     height?: string;
     whiteSpace?: string;
+    paddingLeft?: string;
   };
 }
 
@@ -154,5 +155,9 @@ export interface MovieContext {
 }
 
 export interface CategoryProps {
-  title: string;
+  title?: string;
+}
+
+export interface MovieContainer {
+  hasCarousel?: boolean;
 }

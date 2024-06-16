@@ -6,7 +6,7 @@ import { IList } from '@src/types/apiTypes';
 import Movies from '@src/components/Movies/Movies';
 import Container from '@src/components/Container/container';
 import { useRouter } from 'next/router';
-import Category from '@src/components/Category/category';
+import Category from '@src/components/MenuCategory/menuCategory';
 import Footer from '@src/components/Footer/footer';
 
 export default function FilterCategory() {

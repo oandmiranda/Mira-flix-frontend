@@ -6,7 +6,7 @@ import Text from '../Text/text';
 import theme from '@src/styles/themes';
 import { CategoryProps } from '@src/types/interfaces';
 
-export default function Category({ title }: CategoryProps) {
+export default function MenuCategory({ title }: CategoryProps) {
   const categories = useCategoriesContext();
 
   return (

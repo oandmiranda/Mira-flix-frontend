@@ -26,5 +26,6 @@ export interface IList {
   id?: number;
   title?: string;
   slug?: string;
+  hasCarousel?: boolean;
   items: Items;
 }
