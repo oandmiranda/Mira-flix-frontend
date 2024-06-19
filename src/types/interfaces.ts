@@ -61,6 +61,10 @@ export interface MediaImageProps {
   styleSheet?: StyleSheet;
 }
 
+export interface NavProps {
+  scroll?: boolean;
+}
+
 export interface LinkProps {
   href?: string;
   children?: React.ReactNode;

@@ -5,10 +5,32 @@ import LupaIcon from '../Icons/Lupa/lupa_icon';
 import Logo from '../Logo/Logo';
 import { Nav } from './style';
 import Box from '@src/shared/Box/box';
+import { useEffect, useState } from 'react';
 
-const NavBar: React.FC = () => {
+export default function NavBar() {
+  const [scroll, setScroll] = useState(false); // Estado que controla a cor da navbar
+
+  const changeColor = () => {
+    if (window.scrollY >= 60) {
+      setScroll(true); // Altera a cor da navbar para preta
+    } else {
+      setScroll(false); // Altera a cor da navbar para transparente
+    }
+  };
+
+  useEffect(() => {
+    // Adiciona o listener de evento de scroll quando o componente é montado
+    window.addEventListener('scroll', changeColor);
+
+    // Função de limpeza que remove o listener de evento de scroll quando o componente é desmontado
+    // "return" => Código de limpeza (desmontagem)
+    return () => {
+      window.removeEventListener('scroll', changeColor);
+    };
+  }, []);
+
   return (
-    <Nav>
+    <Nav scroll={scroll}>
       <Box
         tag="div"
         styleSheet={{
@@ -41,6 +63,4 @@ const NavBar: React.FC = () => {
       </Box>
     </Nav>
   );
-};
-
-export default NavBar;
+}
