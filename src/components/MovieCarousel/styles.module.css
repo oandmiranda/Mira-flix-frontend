@@ -1,4 +1,12 @@
-.swiper-button-next, .swiper-button-prev {
-  color: red;
-  background-color: red;
+.swiper {
+  padding: 32px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  
 }

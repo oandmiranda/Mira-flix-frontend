@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
+import { SwiperProps } from 'swiper/react';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
@@ -75,7 +76,8 @@ export interface TextProps {
 }
 
 export interface CarouselProps {
-  children: React.ReactNode;
+  settings?: SwiperProps;
+  children?: React.ReactNode;
   navigation?: NavigationOptions | boolean;
   pagination?: PaginationOptions;
   loop?: boolean;

@@ -7,8 +7,8 @@ import { IList } from '@src/types/apiTypes';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import Footer from '@src/components/Footer/footer';
-import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
 import CategoryName from '@src/components/CategoryName/categoryName';
+import Box from '@src/shared/Box/box';
 
 export default function Home() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
@@ -48,9 +48,15 @@ export default function Home() {
         {apiDatas.map((item) => (
           <>
             <CategoryName title={item.title} key={item.id} />
-            <MovieCarousel>
-              <Movies title={item.title} items={item.items} hasCarousel />
-            </MovieCarousel>
+            <Box
+              tag="div"
+              styleSheet={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Movies title={item.title} items={item.items} />
+            </Box>
           </>
         ))}
       </Container>
