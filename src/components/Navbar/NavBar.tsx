@@ -6,6 +6,7 @@ import Logo from '../Logo/Logo';
 import { Nav } from './style';
 import Box from '@src/shared/Box/box';
 import { useEffect, useState } from 'react';
+import { SearchInput } from './Input/style';
 
 export default function NavBar() {
   const [scroll, setScroll] = useState(false); // Estado que controla a cor da navbar
@@ -58,7 +59,8 @@ export default function NavBar() {
         </ul>
       </Box>
 
-      <Box tag="div">
+      <Box tag="div" styleSheet={{ alignItems: 'center', display: 'flex', gap: '5px' }}>
+        <SearchInput />
         <LupaIcon fill={theme.colors.text.hover} />
       </Box>
     </Nav>
