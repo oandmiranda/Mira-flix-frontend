@@ -11,7 +11,7 @@ export default function Movies({ items, hasCarousel }: IList) {
     <Container hasCarousel={hasCarousel}>
       {items.results &&
         items.results.map((movie, key) => (
-          <Link href={'/'} key={key}>
+          <Link href={`/movie/${movie.id}`} key={key}>
             <MediaImage
               src={`${baseUrlPathImage}${movie.poster_path}`}
               alt={movie.name}

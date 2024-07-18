@@ -5,6 +5,7 @@ export interface Results {
   genre_ids?: number[];
   id?: number;
   name: string;
+  title: string;
   origin_country?: string[];
   original_language?: string;
   original_name?: string;
@@ -23,9 +24,17 @@ export interface Items {
 }
 
 export interface IList {
-  id?: number;
+  id?: number | string | string[];
   title?: string;
   slug?: string;
   hasCarousel?: boolean;
   items: Items;
+}
+
+export interface IMovie {
+  id?: number;
+  title?: string;
+  name?: string;
+  overview?: string;
+  poster_path?: string;
 }

@@ -80,4 +80,8 @@ export default {
       },
     ];
   },
+
+  getMovieDetails: async (id: string | string[]) => {
+    return await basicFetch(`/movie/${id}?api_key=${API_KEY}&${language_ptBR}`);
+  },
 };
