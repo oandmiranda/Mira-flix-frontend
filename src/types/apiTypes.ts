@@ -31,7 +31,7 @@ export interface IList {
   items: Items;
 }
 
-export interface IMovie {
+export interface IMovieDetails {
   id?: number;
   title?: string;
   name?: string;

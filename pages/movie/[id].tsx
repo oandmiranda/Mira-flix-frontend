@@ -7,16 +7,20 @@ import HeaderMovieDetails from '@src/components/HeaderMovieDetails/headerMovieDe
 
 export default function MovieDetails() {
   const router = useRouter();
-  const [movies, setMovies] = useState<IList[]>([]);
+  const [movie, setMovie] = useState<IList[] | null>(null);
 
   useEffect(() => {
-    const showResults = async () => {
-      const list = await api_tmdb.getHomeList();
-      setMovies(list);
+    const fetchMovieDetails = async () => {
+      if (router.query.id) {
+        console.log('ID:', router.query.id);
+        const details = await api_tmdb.getMovieDetails(Number(router.query.id));
+        console.log('Received movie details:', details);
+        setMovie(details);
+      }
     };
 
-    showResults();
-  }, []);
+    fetchMovieDetails();
+  }, [router.query.id]);
 
   return (
     <>
@@ -33,20 +37,7 @@ export default function MovieDetails() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-
-      {movies.map((movie) => (
-        <HeaderMovieDetails key={Number(movie.id)} items={movie.items} id={router.query.id} />
-      ))}
-      {/* <div>
-        <h1>{movie.title}</h1>
-        <MediaImage
-          src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-          alt={movie.title}
-          width={300}
-          height={450}
-        />
-        <p>{movie.overview}</p>
-      </div> */}
+      {movie && <HeaderMovieDetails items={{ results: [movie], id: movie.id }} id={movie.id} />}{' '}
     </>
   );
 }

@@ -81,7 +81,11 @@ export default {
     ];
   },
 
-  getMovieDetails: async (id: string | string[]) => {
-    return await basicFetch(`/movie/${id}?api_key=${API_KEY}&${language_ptBR}`);
+  getMovieDetails: async (id: number) => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=a2d8b9dc14ca301b8afa9fc573b9ed99&language=pt-BR`,
+    );
+    const data = await response.json();
+    return data;
   },
 };
