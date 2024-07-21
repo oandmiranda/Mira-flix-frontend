@@ -81,11 +81,12 @@ export default {
     ];
   },
 
+  // function do a fetch and returns the datas for a single movie with the id parameter
   getMovieDetails: async (id: number) => {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=a2d8b9dc14ca301b8afa9fc573b9ed99&language=pt-BR`,
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=${language_ptBR}`,
     );
-    const data = await response.json();
-    return data;
+    const singleMovieDatas = await response.json();
+    return singleMovieDatas;
   },
 };

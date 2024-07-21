@@ -9,6 +9,7 @@ export default function MovieDetails() {
   const router = useRouter();
   const [movie, setMovie] = useState<IList[] | null>(null);
 
+  // returns data for a single movie
   useEffect(() => {
     const fetchMovieDetails = async () => {
       if (router.query.id) {
@@ -37,7 +38,7 @@ export default function MovieDetails() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-      {movie && <HeaderMovieDetails items={{ results: [movie], id: movie.id }} id={movie.id} />}{' '}
+      {movie && <HeaderMovieDetails items={{ results: [movie], id: movie.id }} id={router.query.id} />}
     </>
   );
 }

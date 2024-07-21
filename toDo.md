@@ -3,6 +3,7 @@
 (X) definir comportamento da Navbar (quando scroll down, background: black )
 (X) desenvolver rota para cada filme
 () estilizar rota dinâmica
+() definir rotas para links no navBar
 () setar comportamento **"hover"** em cada filme
 () definir logo final
 () criar autenticação do usuário
