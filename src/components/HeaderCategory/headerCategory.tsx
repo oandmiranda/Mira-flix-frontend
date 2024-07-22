@@ -1,9 +1,9 @@
 import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
-import { TextArea } from '../TextArea/style';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
 import { useCategoriesContext } from '@src/context/categoryContext';
+import TextArea from '../TextArea/textArea';
 
 export default function HeaderCategory({ slug }: { slug: string | string[] | undefined }) {
   const categories = useCategoriesContext();
@@ -16,6 +16,7 @@ export default function HeaderCategory({ slug }: { slug: string | string[] | und
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
       <NavBar />
+
       <Box tag="div" key={movie.id} styleSheet={{ height: '100vh', width: '100vw' }}>
         <img
           src={movie.srcImage}

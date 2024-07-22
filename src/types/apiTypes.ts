@@ -1,5 +1,6 @@
 export interface Results {
   adult?: boolean;
+  tagline?: string;
   backdrop_path?: string;
   first_air_date?: string;
   genre_ids?: number[];
@@ -14,6 +15,8 @@ export interface Results {
   poster_path?: string;
   vote_average?: number;
   vote_count?: number;
+  runtime?: number;
+  release_date?: number;
 }
 
 export interface Items {

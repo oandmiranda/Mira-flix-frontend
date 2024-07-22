@@ -4,6 +4,7 @@ import api_tmdb from '../../pages/api/tmdb'; // Ajuste o caminho conforme necess
 import Head from 'next/head';
 import { IList } from '@src/types/apiTypes';
 import HeaderMovieDetails from '@src/components/HeaderMovieDetails/headerMovieDetails';
+import Container from '@src/components/Container/container';
 
 export default function MovieDetails() {
   const router = useRouter();
@@ -38,7 +39,12 @@ export default function MovieDetails() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-      {movie && <HeaderMovieDetails items={{ results: [movie], id: movie.id }} id={router.query.id} />}
+
+      {movie && (
+        <Container hasDegrade>
+          <HeaderMovieDetails items={{ results: [movie], id: movie.id }} id={router.query.id} />
+        </Container>
+      )}
     </>
   );
 }

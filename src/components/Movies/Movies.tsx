@@ -1,14 +1,14 @@
 import Link from 'next/link';
 import { IList } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
-import { Container } from './styles';
+import { MoviesContainer } from './styles';
 
 // This component loops the "results" array and accesses its values
 export default function Movies({ items, hasCarousel }: IList) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
   return (
-    <Container hasCarousel={hasCarousel}>
+    <MoviesContainer hasCarousel={hasCarousel}>
       {items.results &&
         items.results.map((movie, key) => (
           <Link href={`/movie/${movie.id}`} key={key}>
@@ -21,6 +21,6 @@ export default function Movies({ items, hasCarousel }: IList) {
             />
           </Link>
         ))}
-    </Container>
+    </MoviesContainer>
   );
 }

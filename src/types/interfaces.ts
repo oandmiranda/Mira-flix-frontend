@@ -2,6 +2,7 @@ import { StaticImageData } from 'next/image';
 import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
 import { SwiperProps } from 'swiper/react';
+import React from 'react';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
@@ -9,8 +10,12 @@ export interface StyleSheet {
   width?: string;
   height?: string;
   padding?: string;
+  paddingRight?: string;
   paddingInline?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
   marginBottom?: string;
+  marginLeft?: string;
   color?: string;
   backgroundColor?: string;
   fontWeight?: string;
@@ -29,19 +34,25 @@ export interface BoxProps {
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
   styleSheet?: {
+    border?: string;
     background?: string;
+    backgroundSize?: string;
     display?: string;
     flexWrap?: string;
+    flexDirection?: string;
     justifyContent?: string;
     alignItems?: string;
     gap?: string;
-    padding?: string;
-    paddingInline?: string;
     marginBottom?: string;
     width?: string;
     height?: string;
     whiteSpace?: string;
+    marginLeft?: string;
+    marginTop?: string;
     paddingLeft?: string;
+    paddingRight?: string;
+    padding?: string;
+    paddingInline?: string;
   };
 }
 
@@ -166,4 +177,8 @@ export interface CategoryProps {
 
 export interface MovieContainer {
   hasCarousel?: boolean;
+}
+
+export interface TextAreaProps {
+  children?: React.ReactNode;
 }
