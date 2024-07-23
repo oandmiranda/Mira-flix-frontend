@@ -38,6 +38,17 @@ export const getTrendingMovies = async (): Promise<IList> => {
   return trendingMovies;
 };
 
+export const getSeries = async (): Promise<IList> => {
+  const series = {
+    id: 8,
+    title: 'Seriados',
+    slug: 'series',
+    items: await basicFetch(`/tv/popular?${language_ptBR}&api_key=${API_KEY}`),
+  };
+
+  return series;
+};
+
 // object containing a function that returns a list of objects and exports by default
 export default {
   getHomeList: async (): Promise<IList[]> => {
@@ -79,12 +90,7 @@ export default {
         slug: 'romance',
         items: await basicFetch(`/discover/movie?with_genres=10749?${language_ptBR}&api_key=${API_KEY}`),
       },
-      {
-        id: 8,
-        title: 'Seriados',
-        slug: 'series',
-        items: await basicFetch(`/discover/movie?with_genres=99?${language_ptBR}&api_key=${API_KEY}`),
-      },
+      await getSeries(),
     ];
   },
 

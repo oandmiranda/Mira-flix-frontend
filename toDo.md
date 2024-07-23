@@ -4,7 +4,10 @@
 (X) desenvolver rota para cada filme
 (X) estilizar rota dinâmica
 (X) refatorar componente Button (excluir atual e usar o C_Button)
-() criar rotas para links no navBar
+(X) criar rotas para links no navBar:
+    (X) 1.trending
+    (X) 2. series
+() refatorar arquivo categoryContext
 () setar comportamento **"hover"** em cada filme
 () menu burger
 () definir logo final

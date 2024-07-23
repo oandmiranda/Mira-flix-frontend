@@ -8,7 +8,7 @@ import Button from '../Button/button';
 
 export default function MenuCategory({ title }: CategoryProps) {
   const categories = useCategoriesContext();
-  const filterCategories = categories.filter((item) => item.id !== 6);
+  const filterCategories = categories.filter((item) => item.id !== 6 && item.id !== 5);
 
   return (
     <Box
