@@ -26,6 +26,18 @@ const basicFetch = async (endpoint: string) => {
   return json;
 };
 
+// page Trending
+export const getTrendingMovies = async (): Promise<IList> => {
+  const trendingMovies = {
+    id: 2,
+    title: 'Recomendados para você',
+    slug: 'trending',
+    items: await basicFetch(`/trending/all/week?${language_ptBR}&api_key=${API_KEY}`),
+  };
+
+  return trendingMovies;
+};
+
 // object containing a function that returns a list of objects and exports by default
 export default {
   getHomeList: async (): Promise<IList[]> => {
@@ -36,12 +48,7 @@ export default {
         slug: 'originaisNetflix',
         items: await basicFetch(`/discover/tv?with_network=213&${language_ptBR}&api_key=${API_KEY}`),
       },
-      {
-        id: 2,
-        title: 'Recomendados para você',
-        slug: 'trending',
-        items: await basicFetch(`/trending/all/week?${language_ptBR}&api_key=${API_KEY}`),
-      },
+      await getTrendingMovies(),
       {
         id: 3,
         title: 'Em alta',
@@ -81,11 +88,9 @@ export default {
     ];
   },
 
-  // function do a fetch and returns the datas for a single movie with the id parameter
+  // function does the fetch and returns the datas for a single movie with the id parameter
   getMovieDetails: async (id: number) => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=${language_ptBR}`,
-    );
+    const response = await fetch(`${API_BASE}/movie/${id}?api_key=${API_KEY}&language=${language_ptBR}`);
     const singleMovieDatas = await response.json();
     return singleMovieDatas;
   },

@@ -4,7 +4,7 @@ import MediaImage from '../Image/MediaImage';
 import { MoviesContainer } from './styles';
 
 // This component loops the "results" array and accesses its values
-export default function Movies({ items, hasCarousel }: IList) {
+export default function Movies({ items, hasCarousel }: { items: IList['items']; hasCarousel?: boolean }) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
   return (

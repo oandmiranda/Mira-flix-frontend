@@ -55,7 +55,7 @@ export default function Home() {
                 justifyContent: 'center',
               }}
             >
-              <Movies title={item.title} items={item.items} />
+              <Movies items={item.items} />
             </Box>
           </>
         ))}

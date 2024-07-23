@@ -25,8 +25,8 @@ export default function NavMenu() {
           <StyledLink href="/" containsPaddingInline="27px">
             Home
           </StyledLink>
-          <StyledLink href="/emalta" containsPaddingInline="27px">
-            Em alta
+          <StyledLink href="/trending" containsPaddingInline="27px">
+            Recomendados pra você
           </StyledLink>
           <StyledLink href="/series" containsPaddingInline="27px">
             Séries

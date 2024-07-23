@@ -8,6 +8,7 @@ import Button from '../Button/button';
 
 export default function MenuCategory({ title }: CategoryProps) {
   const categories = useCategoriesContext();
+  const filterCategories = categories.filter((item) => item.id !== 6);
 
   return (
     <Box
@@ -23,7 +24,7 @@ export default function MenuCategory({ title }: CategoryProps) {
       </Box>
 
       <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
-        {categories.map((item) => (
+        {filterCategories.map((item) => (
           <Box tag="div" key={item.id} styleSheet={{ display: 'flex', padding: '15px' }}>
             <Link href={`/category/${item.title}`}>
               <Button>{item.name}</Button>

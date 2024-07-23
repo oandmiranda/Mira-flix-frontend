@@ -59,6 +59,15 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
         description:
           'Mergulhe em histórias envolventes que se desenrolam ao longo de vários episódios. Acompanhe jornadas épicas e desvende os mistérios que se aprofundam a cada temporada. Prepare-se para horas de entretenimento e suspense em um universo em constante expansão.',
       },
+      {
+        id: 6,
+        title: 'trending',
+        name: 'Recomendados para você',
+        endpoint: '',
+        srcImage: '/assets/images/simpsonsCover.jpg',
+        description:
+          'Descubra uma seleção especial de filmes que combinam com seu estilo e interesses. Escolhemos títulos que acreditamos que você vai adorar baseados nas novidades mais empolgantes. Prepare-se para uma experiência cinematográfica feita sob medida, com histórias envolventes e personagens inesquecíveis.',
+      },
     ];
 
     setCategory(mockCategories);
