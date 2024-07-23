@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { NavProps } from '@src/types/interfaces';
 
-export const Nav = styled.nav<NavProps>`
+export const Menu = styled.nav`
   width: 100%;
   height: 60px;
   display: flex;
@@ -9,9 +8,8 @@ export const Nav = styled.nav<NavProps>`
   align-items: center;
   padding: 35px;
   opacity: 0.9;
-  z-index: 2;
   position: fixed;
-  background: ${(props) => (props.scroll ? 'black' : 'transparent')};
+  background: #000;
   transition: background 0.4s ease-in-out;
 
   ul {

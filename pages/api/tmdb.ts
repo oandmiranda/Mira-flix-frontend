@@ -15,8 +15,8 @@ ENDPOINST:
 - series
 */
 
-const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
-const API_BASE = 'https://api.themoviedb.org/3';
+export const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
+export const API_BASE = 'https://api.themoviedb.org/3';
 const language_ptBR = 'language=pt-BR';
 
 // this function does the fetch and returns a json

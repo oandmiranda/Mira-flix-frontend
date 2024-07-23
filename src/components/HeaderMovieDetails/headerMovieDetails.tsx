@@ -1,11 +1,12 @@
 import { IList } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
-import NavBar from '../Navbar/NavBar';
 import Text from '../Text/text';
 import { ContentArea, GradientArea, HeaderContainer } from './styles';
 import Footer from '../Footer/footer';
 import theme from '@src/styles/themes';
+import Button from '../Button/button';
+import NavMenu from './NavMenu/navMenu';
 
 export default function HeaderMovieDetails({ items, id }: IList) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
@@ -18,14 +19,13 @@ export default function HeaderMovieDetails({ items, id }: IList) {
 
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
-      <NavBar />
-
+      <NavMenu />
       <HeaderContainer backgroundImage={`${baseUrlPathImage}${movie?.backdrop_path}`}>
         {movie && (
           <>
             <GradientArea>
               <ContentArea>
-                <Box>
+                <Box tag="div">
                   <MediaImage
                     src={`${baseUrlPathImage}${movie?.poster_path}`}
                     alt={movie?.name || movie?.title}
@@ -36,9 +36,10 @@ export default function HeaderMovieDetails({ items, id }: IList) {
                 </Box>
 
                 <Box
+                  tag="div"
                   styleSheet={{
-                    marginLeft: '100px',
-                    marginBottom: '80px',
+                    marginLeft: '60px',
+                    marginBottom: '30px',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '10px',
@@ -54,7 +55,13 @@ export default function HeaderMovieDetails({ items, id }: IList) {
 
                   <Box
                     tag="ul"
-                    styleSheet={{ marginTop: '30px', display: 'flex', flexDirection: 'column', gap: '7px' }}
+                    styleSheet={{
+                      marginTop: '30px',
+                      marginBottom: '30px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '7px',
+                    }}
                   >
                     <Text
                       tag="li"
@@ -69,7 +76,7 @@ export default function HeaderMovieDetails({ items, id }: IList) {
                       styleSheet={{ fontSize: theme.sizes.xs }}
                     >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
                   </Box>
-                  <button>Botão assistir</button>
+                  <Button>Assistir</Button>
                 </Box>
               </ContentArea>
             </GradientArea>

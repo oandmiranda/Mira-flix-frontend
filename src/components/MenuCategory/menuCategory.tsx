@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Box from '@src/shared/Box/box';
-import { C_Button } from './style';
 import { useCategoriesContext } from '@src/context/categoryContext';
-import Text from '../Text/text';
-import theme from '@src/styles/themes';
 import { CategoryProps } from '@src/types/interfaces';
+import theme from '@src/styles/themes';
+import Text from '../Text/text';
+import Button from '../Button/button';
 
 export default function MenuCategory({ title }: CategoryProps) {
   const categories = useCategoriesContext();
@@ -26,7 +26,7 @@ export default function MenuCategory({ title }: CategoryProps) {
         {categories.map((item) => (
           <Box tag="div" key={item.id} styleSheet={{ display: 'flex', padding: '15px' }}>
             <Link href={`/category/${item.title}`}>
-              <C_Button>{item.name}</C_Button>
+              <Button>{item.name}</Button>
             </Link>
           </Box>
         ))}

@@ -37,6 +37,7 @@ export default function Header() {
                     <Button
                       styleSheet={{
                         padding: '7px',
+                        width: '80px',
                         border: '1px solid',
                         borderRadius: '20px',
                         backgroundColor: theme.colors.background.blue,
