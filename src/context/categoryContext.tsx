@@ -54,7 +54,7 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
         id: 5,
         title: 'series',
         name: 'Séries',
-        endpoint: '',
+        endpoint: '${API_BASE}/discover/movie?with_genres=99?${language_ptBR}&api_key=${API_KEY}',
         srcImage: '/assets/images/greysAnatomy.jpeg',
         description:
           'Descubra mundos fascinantes e histórias cativantes. De dramas emocionantes a comédias hilárias, cada episódio é uma jornada envolvente repleta de personagens inesquecíveis e tramas surpreendentes. Prepare-se para se apaixonar e maratonar suas novas séries favoritas.',

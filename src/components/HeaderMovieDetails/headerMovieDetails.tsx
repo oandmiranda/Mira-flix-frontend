@@ -17,6 +17,25 @@ export default function HeaderMovieDetails({ items, id }: IList) {
 
   const movie = items?.results?.find((movie) => movie.id == id) ?? null;
 
+  if (!movie?.name || !movie?.title) {
+    return (
+      <Box
+        tag="header"
+        styleSheet={{
+          height: '100vh',
+          width: '100vw',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Text tag="h2" styleSheet={{ color: '#fff' }}>
+          Erro: Parece que a API não retornou os dados esperados :(
+        </Text>
+      </Box>
+    );
+  }
+
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
       <NavMenu />
