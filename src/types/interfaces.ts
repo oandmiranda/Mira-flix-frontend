@@ -27,6 +27,7 @@ export interface StyleSheet {
   border?: string;
   borderBottom?: string;
   borderRadius?: string;
+  boxShadow?: string;
 }
 
 export interface BoxProps {
@@ -182,4 +183,10 @@ export interface MovieContainer {
 
 export interface TextAreaProps {
   children?: React.ReactNode;
+}
+
+export interface APIResponse {
+  success: boolean;
+  status_code: number;
+  status_message: string;
 }

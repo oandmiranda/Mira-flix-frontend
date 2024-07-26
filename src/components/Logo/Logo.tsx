@@ -11,7 +11,7 @@ export default function Logo() {
         color: theme.colors.background.blue,
       }}
     >
-      LogoFlix
+      MiraFlix
     </StyledLink>
   );
 }

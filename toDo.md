@@ -8,16 +8,20 @@
     (X) 1.trending
     (X) 2. series
 (X) refatorar arquivo categoryContext
-
-# 25/07
 (X) setar comportamento **"hover"** em cada filme
 (X) adicionar title e avaliação ao movie em **"hover"**
 (X) melhorar visual dos cards
 
-() mensagem de erro quando a api não retornar os dados do filme na page [id]
-() menu burger
-() definir logo final
+# 26/07
+(X) mensagem de erro quando a api não retornar os dados do filme na page [id] (com base no status_message)
+(X) definir logo final
+
+() desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
+() baixar svg 404
 () criar autenticação do usuário
 () aplicar carousel na Home screen
+() menu burger
+() responsividade
 () realizar melhorias no visual
+() popup que retorne erro quando a api não retornar os dados (ao invés de sair da tela )
 () debugar

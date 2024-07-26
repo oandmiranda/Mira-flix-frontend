@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { IList } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
@@ -7,17 +8,33 @@ import Footer from '../Footer/footer';
 import theme from '@src/styles/themes';
 import Button from '../Button/button';
 import NavMenu from './NavMenu/navMenu';
+import { APIResponse } from '@src/types/interfaces';
 
 export default function HeaderMovieDetails({ items, id }: IList) {
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
+  // função limita "nota de avaliação do filme" (voteAverage) em até 1 caractere
   const formatVoteAverage = (voteAverage: number | undefined) => {
     return voteAverage?.toFixed(1);
   };
 
+  // retorna o filme pelo seu id específico (que vem do router)
   const movie = items?.results?.find((movie) => movie.id == id) ?? null;
 
-  if (!movie?.name || !movie?.title) {
+  // tratamento de erro caso a api não retorne os dados esperados do filme, para posteriormente exibir uma mensagem de erro ao user.
+  useEffect(() => {
+    if (!items.results || items.results.length === 0) {
+      const errorResponse: APIResponse = {
+        success: false,
+        status_code: 34,
+        status_message: 'The resource you requested could not be found.',
+      };
+      setStatusMessage(errorResponse.status_message);
+    }
+  }, [items]);
+
+  if (!movie) {
     return (
       <Box
         tag="header"
@@ -27,10 +44,11 @@ export default function HeaderMovieDetails({ items, id }: IList) {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          padding: '40px',
         }}
       >
         <Text tag="h2" styleSheet={{ color: '#fff' }}>
-          Erro: Parece que a API não retornou os dados esperados :(
+          {statusMessage || 'Ops!!! Parece que a API não retornou os dados esperados :('}
         </Text>
       </Box>
     );
@@ -50,7 +68,7 @@ export default function HeaderMovieDetails({ items, id }: IList) {
                     alt={movie?.name || movie?.title}
                     width={300}
                     height={390}
-                    styleSheet={{ borderRadius: '15px' }}
+                    styleSheet={{ borderRadius: '15px', boxShadow: '2px 3px 10px #02b7e3' }}
                   />
                 </Box>
 
@@ -95,7 +113,7 @@ export default function HeaderMovieDetails({ items, id }: IList) {
                       styleSheet={{ fontSize: theme.sizes.xs }}
                     >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
                   </Box>
-                  <Button>Assistir</Button>
+                  <Button href={'/error'}>Assistir</Button>
                 </Box>
               </ContentArea>
             </GradientArea>

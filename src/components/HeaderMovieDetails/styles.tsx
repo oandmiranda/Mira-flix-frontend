@@ -19,7 +19,7 @@ export const GradientArea = styled.div`
   justify-content: center;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%),
     linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.5) 65%),
-    linear-gradient(to left, #000 1%, rgba(0, 0, 0, 0.6) 100%);
+    linear-gradient(to right, #000 1%, rgba(0, 0, 0, 0.6) 100%);
 `;
 
 export const ContentArea = styled.div`
