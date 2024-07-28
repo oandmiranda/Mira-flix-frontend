@@ -15,8 +15,7 @@
 # 26/07
 (X) mensagem de erro quando a api não retornar os dados do filme na page [id] (com base no status_message)
 (X) definir logo final
-
-() desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
+(X) desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
 () baixar svg 404
 () criar autenticação do usuário
 () aplicar carousel na Home screen

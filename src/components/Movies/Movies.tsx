@@ -9,6 +9,7 @@ import { TooltipContent } from '../Tooltip/style';
 export default function Movies({ items, hasCarousel }: { items: IList['items']; hasCarousel?: boolean }) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
+  // limita o valor "vote_average" para até dois números
   const formatVoteAverage = (voteAverage: number | undefined) => {
     return voteAverage?.toFixed(1);
   };
