@@ -42,11 +42,15 @@ export default function HeaderMovieDetails({ items, id }: IList) {
           height: '100vh',
           width: '100vw',
           display: 'flex',
+          flexDirection: 'column',
+          gap: '12px',
           justifyContent: 'center',
           alignItems: 'center',
           padding: '40px',
         }}
       >
+        <MediaImage src={'/assets/images/erro-404.png'} alt={'página não encontrada'} width={200} height={200} />
+
         <Text tag="h2" styleSheet={{ color: '#fff' }}>
           {statusMessage || 'Ops!!! Parece que a API não retornou os dados esperados :('}
         </Text>
