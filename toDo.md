@@ -17,10 +17,10 @@
 (X) definir logo final
 (X) desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
 (X) baixar svg 404
-() criar autenticação do usuário
-() aplicar carousel na Home screen
 () menu burger
+() aplicar carousel na Home screen
 () responsividade
 () realizar melhorias no visual
+() criar autenticação do usuário
 () popup que retorne erro quando a api não retornar os dados (ao invés de sair da tela )
 () debugar
