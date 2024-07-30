@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IList } from '@src/types/apiTypes';
+import { Results } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
 import Text from '../Text/text';
@@ -10,7 +10,12 @@ import Button from '../Button/button';
 import NavMenu from './NavMenu/navMenu';
 import { APIResponse } from '@src/types/interfaces';
 
-export default function HeaderMovieDetails({ items, id }: IList) {
+interface HeaderMovieDetailsProps {
+  items: { results: Results[]; id: number };
+  id: string;
+}
+
+export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProps) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
@@ -20,7 +25,7 @@ export default function HeaderMovieDetails({ items, id }: IList) {
   };
 
   // retorna o filme pelo seu id específico (que vem do router)
-  const movie = items?.results?.find((movie) => movie.id == id) ?? null;
+  const movie = items.results.find((movie) => movie.id === Number(id)) ?? null;
 
   // tratamento de erro caso a api não retorne os dados esperados do filme, para posteriormente exibir uma mensagem de erro ao user.
   useEffect(() => {
@@ -61,15 +66,15 @@ export default function HeaderMovieDetails({ items, id }: IList) {
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
       <NavMenu />
-      <HeaderContainer backgroundImage={`${baseUrlPathImage}${movie?.backdrop_path}`}>
+      <HeaderContainer backgroundImage={`${baseUrlPathImage}${movie.backdrop_path}`}>
         {movie && (
           <>
             <GradientArea>
               <ContentArea>
                 <Box tag="div">
                   <MediaImage
-                    src={`${baseUrlPathImage}${movie?.poster_path}`}
-                    alt={movie?.name || movie?.title}
+                    src={`${baseUrlPathImage}${movie.poster_path}`}
+                    alt={movie.name || movie.title}
                     width={300}
                     height={390}
                     styleSheet={{ borderRadius: '15px', boxShadow: '2px 3px 10px #02b7e3' }}

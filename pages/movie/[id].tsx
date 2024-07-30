@@ -2,13 +2,13 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import api_tmdb from '../../pages/api/tmdb'; // Ajuste o caminho conforme necessário
 import Head from 'next/head';
-import { IList } from '@src/types/apiTypes';
+import { Results } from '@src/types/apiTypes';
 import HeaderMovieDetails from '@src/components/HeaderMovieDetails/headerMovieDetails';
 import Container from '@src/components/Container/container';
 
 export default function MovieDetails() {
   const router = useRouter();
-  const [movie, setMovie] = useState<IList[] | null>(null);
+  const [movie, setMovie] = useState<Results | null>(null);
 
   // returns data for a single movie
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function MovieDetails() {
 
       {movie && (
         <Container hasDegrade>
-          <HeaderMovieDetails items={{ results: [movie], id: movie.id }} id={router.query.id} />
+          <HeaderMovieDetails items={{ results: [movie], id: movie.id ?? 0 }} id={router.query.id as string} />
         </Container>
       )}
     </>
