@@ -44,7 +44,7 @@ export default function NavMenu() {
           <StyledGiHamburgerMenu size={30} onClick={openMenu} />
           <ul>
             <SearchInput />
-            <LupaIcon fill={theme.colors.text.hover} />
+            <LupaIcon isPositionAbsolute fill={theme.colors.text.logo} />
           </ul>
         </Box>
       </Menu>
