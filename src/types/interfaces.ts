@@ -1,15 +1,22 @@
 import { StaticImageData } from 'next/image';
 import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
+import { SwiperProps } from 'swiper/react';
+import React from 'react';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
   display?: string;
   width?: string;
   height?: string;
+  position?: string;
   padding?: string;
+  paddingRight?: string;
   paddingInline?: string;
+  paddingTop?: string;
+  paddingBottom?: string;
   marginBottom?: string;
+  marginLeft?: string;
   color?: string;
   backgroundColor?: string;
   fontWeight?: string;
@@ -21,6 +28,7 @@ export interface StyleSheet {
   border?: string;
   borderBottom?: string;
   borderRadius?: string;
+  boxShadow?: string;
 }
 
 export interface BoxProps {
@@ -28,18 +36,25 @@ export interface BoxProps {
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
   styleSheet?: {
+    border?: string;
     background?: string;
+    backgroundSize?: string;
     display?: string;
     flexWrap?: string;
+    flexDirection?: string;
     justifyContent?: string;
     alignItems?: string;
     gap?: string;
-    padding?: string;
-    paddingInline?: string;
     marginBottom?: string;
     width?: string;
     height?: string;
     whiteSpace?: string;
+    marginLeft?: string;
+    marginTop?: string;
+    paddingLeft?: string;
+    paddingRight?: string;
+    padding?: string;
+    paddingInline?: string;
   };
 }
 
@@ -48,6 +63,7 @@ export interface IconProps {
   children?: React.ReactNode;
   size?: string;
   fill?: 'inherit' | string; // color
+  isPositionAbsolute?: boolean;
 }
 
 export interface MediaImageProps {
@@ -56,7 +72,12 @@ export interface MediaImageProps {
   alt: string;
   width: number;
   height: number;
+  zoomEffect?: boolean;
   styleSheet?: StyleSheet;
+}
+
+export interface NavProps {
+  scroll?: boolean;
 }
 
 export interface LinkProps {
@@ -74,7 +95,8 @@ export interface TextProps {
 }
 
 export interface CarouselProps {
-  children: React.ReactNode;
+  settings?: SwiperProps;
+  children?: React.ReactNode;
   navigation?: NavigationOptions | boolean;
   pagination?: PaginationOptions;
   loop?: boolean;
@@ -153,6 +175,27 @@ export interface MovieContext {
   category?: string;
 }
 
+export interface BurgerMenuProps {
+  menuIsOpen: boolean;
+  // toggleMenu: () => void;
+  openMenu: () => void;
+  closeMenu: () => void;
+}
+
 export interface CategoryProps {
-  title: string;
+  title?: string;
+}
+
+export interface MovieContainer {
+  hasCarousel?: boolean;
+}
+
+export interface TextAreaProps {
+  children?: React.ReactNode;
+}
+
+export interface APIResponse {
+  success: boolean;
+  status_code: number;
+  status_message: string;
 }

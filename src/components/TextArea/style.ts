@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const TextArea = styled.div`
-  position: absolute;
+export const TextArea_S = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 8%;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;

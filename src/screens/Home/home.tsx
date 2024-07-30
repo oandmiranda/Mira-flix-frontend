@@ -5,8 +5,10 @@ import Movies from '@src/components/Movies/Movies';
 import api_tmdb from '../../../pages/api/tmdb';
 import { IList } from '@src/types/apiTypes';
 import Container from '@src/components/Container/container';
-import Category from '@src/components/Category/category';
+import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import Footer from '@src/components/Footer/footer';
+import CategoryName from '@src/components/CategoryName/categoryName';
+import Box from '@src/shared/Box/box';
 
 export default function Home() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
@@ -41,9 +43,21 @@ export default function Home() {
 
       <Header />
       <Container hasDegrade>
-        <Category title="O que você quer ver hoje?" />
+        <MenuCategory title="O que você quer ver hoje?" />
+
         {apiDatas.map((item) => (
-          <Movies title={item.title} items={item.items} key={item.id} />
+          <>
+            <CategoryName title={item.title} key={item.id} />
+            <Box
+              tag="div"
+              styleSheet={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Movies items={item.items} />
+            </Box>
+          </>
         ))}
       </Container>
       <Footer />

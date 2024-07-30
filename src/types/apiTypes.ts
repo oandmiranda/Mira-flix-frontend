@@ -1,10 +1,12 @@
 export interface Results {
   adult?: boolean;
+  tagline?: string;
   backdrop_path?: string;
   first_air_date?: string;
   genre_ids?: number[];
   id?: number;
   name: string;
+  title: string;
   origin_country?: string[];
   original_language?: string;
   original_name?: string;
@@ -13,6 +15,8 @@ export interface Results {
   poster_path?: string;
   vote_average?: number;
   vote_count?: number;
+  runtime?: number;
+  release_date?: number;
 }
 
 export interface Items {
@@ -23,8 +27,17 @@ export interface Items {
 }
 
 export interface IList {
-  id?: number;
+  id?: number | string | string[];
   title?: string;
   slug?: string;
+  hasCarousel?: boolean;
   items: Items;
+}
+
+export interface IMovieDetails {
+  id?: number;
+  title?: string;
+  name?: string;
+  overview?: string;
+  poster_path?: string;
 }

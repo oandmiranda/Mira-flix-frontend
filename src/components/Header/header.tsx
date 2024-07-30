@@ -3,12 +3,12 @@ import { SwiperSlide } from 'swiper/react';
 import { useMoviesContext } from '@src/context/moviesContext';
 import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
-import { TextArea } from '../TextArea/style';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
 import MovieIcon from '../Icons/Movie/movie_icon';
 import Button from '../Button/button';
 import HeaderCarousel from '@src/components/HeaderCarousel/headerCarousel';
+import TextArea from '../TextArea/textArea';
 
 export default function Header() {
   const movies = useMoviesContext();
@@ -37,15 +37,16 @@ export default function Header() {
                     <Button
                       styleSheet={{
                         padding: '7px',
+                        width: '80px',
                         border: '1px solid',
                         borderRadius: '20px',
                         backgroundColor: theme.colors.background.blue,
                         color: 'black',
                         fontWeight: 'bold',
-                        fontSize: '0.7rem',
+                        fontSize: '0.8rem',
                       }}
                     >
-                      NOVO
+                      EM ALTA
                     </Button>
                     <Text
                       tag="h1"

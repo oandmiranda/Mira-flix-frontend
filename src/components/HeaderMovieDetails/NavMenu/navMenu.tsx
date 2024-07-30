@@ -1,36 +1,21 @@
+// import NavLink from '../Link/navLink';
 import theme from '@src/styles/themes';
 import StyledLink from '@src/shared/Link/styledLink';
-import LupaIcon from '../Icons/Lupa/lupa_icon';
-import Logo from '../Logo/Logo';
-import { Nav, StyledGiHamburgerMenu } from './style';
 import Box from '@src/shared/Box/box';
-import { useEffect, useState } from 'react';
-import { SearchInput } from './Input/style';
+import Logo from '@src/components/Logo/Logo';
+import { SearchInput } from '@src/components/Navbar/Input/style';
+import LupaIcon from '@src/components/Icons/Lupa/lupa_icon';
+import { Menu } from './styles';
+import { StyledGiHamburgerMenu } from '@src/components/Navbar/style';
 import { useBurgerMenuContext } from '@src/context/burgerMenuContext';
-import BurgerMenu from '../BurgerMenu/burgerMenu';
+import BurgerMenu from '@src/components/BurgerMenu/burgerMenu';
 
-export default function NavBar() {
+export default function NavMenu() {
   const { menuIsOpen, openMenu } = useBurgerMenuContext();
-  const [scroll, setScroll] = useState(false);
-
-  const changeColor = () => {
-    if (window.scrollY >= 60) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', changeColor);
-    return () => {
-      window.removeEventListener('scroll', changeColor);
-    };
-  }, []);
 
   return (
     <>
-      <Nav scroll={scroll}>
+      <Menu>
         <Box
           tag="div"
           styleSheet={{
@@ -47,7 +32,7 @@ export default function NavBar() {
               Home
             </StyledLink>
             <StyledLink href="/trending" containsPaddingInline="27px">
-              Recomendados para você
+              Recomendados pra você
             </StyledLink>
             <StyledLink href="/series" containsPaddingInline="27px">
               Séries
@@ -59,11 +44,10 @@ export default function NavBar() {
           <StyledGiHamburgerMenu size={30} onClick={openMenu} />
           <ul>
             <SearchInput />
-            <LupaIcon fill={theme.colors.text.logo} isPositionAbsolute />
+            <LupaIcon isPositionAbsolute fill={theme.colors.text.logo} />
           </ul>
         </Box>
-      </Nav>
-
+      </Menu>
       {menuIsOpen && <BurgerMenu isOpen />}
     </>
   );
