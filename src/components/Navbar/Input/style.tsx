@@ -9,4 +9,8 @@ export const SearchInput = styled.input`
   padding: 13px 7px;
   font-size: 18px;
   opacity: 0.8;
+
+  /* @media (max-width: 1000px) {
+    display: none;
+  } */
 `;

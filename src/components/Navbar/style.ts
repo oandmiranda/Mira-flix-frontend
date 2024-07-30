@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { NavProps } from '@src/types/interfaces';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 export const Nav = styled.nav<NavProps>`
   width: 100%;
@@ -16,5 +17,16 @@ export const Nav = styled.nav<NavProps>`
 
   ul {
     display: flex;
+    gap: 6px;
+
+    @media (max-width: 999px) {
+      display: none;
+    }
+  }
+`;
+
+export const StyledGiHamburgerMenu = styled(GiHamburgerMenu)`
+  @media (min-width: 1000px) {
+    display: none; /* Esconde o ícone em telas maiores que 1000px */
   }
 `;

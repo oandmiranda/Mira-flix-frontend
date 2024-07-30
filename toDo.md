@@ -17,7 +17,9 @@
 (X) definir logo final
 (X) desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
 (X) baixar svg 404
-() menu burger
+() menu burger:
+    () setar animação no componente e no icon 
+
 () aplicar carousel na Home screen
 () responsividade
 () realizar melhorias no visual

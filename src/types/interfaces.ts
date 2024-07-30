@@ -9,6 +9,7 @@ export interface StyleSheet {
   display?: string;
   width?: string;
   height?: string;
+  position?: string;
   padding?: string;
   paddingRight?: string;
   paddingInline?: string;
@@ -171,6 +172,13 @@ export interface MovieContext {
   releaseData?: number;
   duration?: string;
   category?: string;
+}
+
+export interface BurgerMenuProps {
+  menuIsOpen: boolean;
+  // toggleMenu: () => void;
+  openMenu: () => void;
+  closeMenu: () => void;
 }
 
 export interface CategoryProps {
