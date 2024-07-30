@@ -35,27 +35,7 @@ export interface BoxProps {
   tag?: string;
   as?: keyof JSX.IntrinsicElements;
   children?: React.ReactNode;
-  styleSheet?: {
-    border?: string;
-    background?: string;
-    backgroundSize?: string;
-    display?: string;
-    flexWrap?: string;
-    flexDirection?: string;
-    justifyContent?: string;
-    alignItems?: string;
-    gap?: string;
-    marginBottom?: string;
-    width?: string;
-    height?: string;
-    whiteSpace?: string;
-    marginLeft?: string;
-    marginTop?: string;
-    paddingLeft?: string;
-    paddingRight?: string;
-    padding?: string;
-    paddingInline?: string;
-  };
+  styleSheet?: CSSProperties;
 }
 
 export interface IconProps {
@@ -73,7 +53,7 @@ export interface MediaImageProps {
   width: number;
   height: number;
   zoomEffect?: boolean;
-  styleSheet?: StyleSheet;
+  styleSheet?: CSSProperties;
 }
 
 export interface NavProps {
@@ -84,14 +64,14 @@ export interface LinkProps {
   href?: string;
   children?: React.ReactNode;
   style?: CSSProperties;
-  styleSheet?: StyleSheet;
+  styleSheet?: CSSProperties;
   containsPaddingInline?: string;
 }
 
 export interface TextProps {
   tag?: 'p' | 'li' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children: React.ReactNode;
-  styleSheet?: StyleSheet;
+  styleSheet?: CSSProperties;
 }
 
 export interface CarouselProps {
@@ -126,8 +106,7 @@ export interface ButtonProps {
   onClick?: () => void;
   href?: string;
   children: React.ReactNode;
-  styleSheet?: StyleSheet;
-  style?: CSSProperties;
+  styleSheet?: CSSProperties;
 }
 
 export interface ContainerProps {

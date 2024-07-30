@@ -10,7 +10,7 @@ import MenuCategory from '@src/components/MenuCategory/menuCategory';
 
 export default function TrendingPage() {
   // returns data for a single movie
-  const [trendingMovies, setTrendingMovies] = useState<IList[] | null>(null);
+  const [trendingMovies, setTrendingMovies] = useState<IList | null>(null);
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {

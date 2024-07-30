@@ -10,7 +10,7 @@ import MenuCategory from '@src/components/MenuCategory/menuCategory';
 
 export default function SeriesPage() {
   // returns data for a single movie
-  const [series, setSeries] = useState<IList[] | null>(null);
+  const [series, setSeries] = useState<IList | null>(null);
 
   useEffect(() => {
     const fetchSeries = async () => {

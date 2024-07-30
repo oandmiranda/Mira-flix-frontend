@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '@src/components/Header/header';
 import Movies from '@src/components/Movies/Movies';
@@ -45,20 +45,25 @@ export default function Home() {
       <Container hasDegrade>
         <MenuCategory title="O que você quer ver hoje?" />
 
-        {apiDatas.map((item) => (
-          <>
-            <CategoryName title={item.title} key={item.id} />
-            <Box
-              tag="div"
-              styleSheet={{
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            >
-              <Movies items={item.items} />
-            </Box>
-          </>
-        ))}
+        {apiDatas.map((item) => {
+          // Verifique e assegure que item.id seja string ou number
+          const id = typeof item.id === 'string' || typeof item.id === 'number' ? item.id : 'defaultKey';
+
+          return (
+            <React.Fragment key={id}>
+              <CategoryName title={item.title} key={id} />
+              <Box
+                tag="div"
+                styleSheet={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                }}
+              >
+                <Movies items={item.items} />
+              </Box>
+            </React.Fragment>
+          );
+        })}
       </Container>
       <Footer />
     </>
