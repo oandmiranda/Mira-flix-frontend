@@ -18,6 +18,7 @@ export const Nav = styled.nav<NavProps>`
   ul {
     display: flex;
     gap: 6px;
+    position: relative;
 
     @media (max-width: 999px) {
       display: none;

@@ -63,6 +63,7 @@ export interface IconProps {
   children?: React.ReactNode;
   size?: string;
   fill?: 'inherit' | string; // color
+  isPositionAbsolute?: boolean;
 }
 
 export interface MediaImageProps {
