@@ -17,12 +17,18 @@
 (X) definir logo final
 (X) desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
 (X) baixar svg 404
-() menu burger:
-    () setar animação no componente e no icon 
+(X) menu burger:
+    (X) setar animação no componente
 
-() aplicar carousel na Home screen
+(X) deploy
+(X) aplicar carousel na Home screen
 () responsividade
-() realizar melhorias no visual
+() definir capa do header de maneira randomica
+() refatorar navBar/navMenu
+() setar link nos títulos de categoria na Home
+() setar comportamento de busca no input
+() realizar melhorias no visual:
+    () hover nos links
+
 () criar autenticação do usuário
-() popup que retorne erro quando a api não retornar os dados (ao invés de sair da tela )
 () debugar
