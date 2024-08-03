@@ -36,19 +36,23 @@ export default function MovieCarousel({ items }: { items: IList['items'] }) {
       spaceBetween={0}
       className={styles.container}
       breakpoints={{
-        240: {
-          slidesPerView: 1,
-          spaceBetween: 0,
+        99: {
+          slidesPerView: 2,
+          spaceBetween: 100,
         },
-        640: {
+        340: {
+          slidesPerView: 2,
+          spaceBetween: 50,
+        },
+        520: {
           slidesPerView: 2,
           spaceBetween: 20,
         },
-        800: {
+        768: {
           slidesPerView: 3,
-          spaceBetween: 30,
+          spaceBetween: 20,
         },
-        1024: {
+        999: {
           slidesPerView: 4,
           spaceBetween: 20,
         },

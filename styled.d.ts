@@ -29,9 +29,25 @@ declare module 'styled-components' {
       };
     };
     sizes: {
-      title: string;
-      subtitle: string;
-      xs: string;
+      title: {
+        mobileS: string;
+        mobileL: string;
+        tablet: string;
+        laptop: string;
+        desktop: string;
+      };
+      subtitle: {
+        mobileS: string;
+        mobileL: string;
+        tablet: string;
+        laptop: string;
+        desktop: string;
+      };
+      paragraph: {
+        mobileS: string;
+        mobileL: string;
+        default: string;
+      };
     };
   }
 }

@@ -35,6 +35,16 @@ const GlobalStyle = createGlobalStyle`
   color: #fff;
   background-color: #034d60;
   transition: background-color 0.5s ease; 
+
+  @media (max-width: 340px) {
+    width: 25px;
+    height: 25px;
+  }
+
+  @media (max-width: 520px) {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .swiper-button-prev:hover, .swiper-button-next:hover {
@@ -43,6 +53,14 @@ const GlobalStyle = createGlobalStyle`
 
 .swiper-button-prev::after, .swiper-button-next::after {
   font-size: 20px; /* Tamanho da seta */
+
+  @media (max-width: 340px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 10px;
+  }
 }
 
 `;

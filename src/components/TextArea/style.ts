@@ -1,3 +1,4 @@
+import { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
 export const TextArea_S = styled.div`
@@ -15,6 +16,18 @@ export const TextArea_S = styled.div`
     linear-gradient(to right, #000 1%, rgba(0, 0, 0, 0) 100%);
 
   div {
-    width: 45%;
+    width: 47%;
+
+    @media ${device.tablet} {
+      width: 70%;
+    }
+
+    @media ${device.mobileL} {
+      width: 80%;
+    }
+
+    @media ${device.mobileS} {
+      width: 95%;
+    }
   }
 `;

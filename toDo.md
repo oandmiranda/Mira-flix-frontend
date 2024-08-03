@@ -23,6 +23,7 @@
 (X) deploy
 (X) aplicar carousel na Home screen
 () responsividade
+    obs: continuar de "MenuCategory"
 () definir capa do header de maneira randomica
 () refatorar navBar/navMenu
 () setar link nos títulos de categoria na Home
