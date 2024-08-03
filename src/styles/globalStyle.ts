@@ -26,19 +26,19 @@ const GlobalStyle = createGlobalStyle`
 
   /* navigation button from swiper carousel */
 .swiper-button-prev, .swiper-button-next {
-  color: #fff; /* Muda a cor dos botões para branco */
-  background-color: rgba(0, 0, 0, 0.7); /* Adiciona um fundo semi-transparente */
-  border-radius: 50%; /* Faz os botões serem redondos */
-  width: 42px; /* Largura do botão */
-  height: 42px; /* Altura do botão */
+  width: 43px; 
+  height: 43px; 
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.5s ease; /* Adiciona a transição */
+  border-radius: 50%;
+  color: #fff;
+  background-color: #034d60;
+  transition: background-color 0.5s ease; 
 }
 
-.swiper-button-prev:hover {
-  background-color: rgba(0, 0, 0, 1); /* Muda a cor de fundo ao passar o mouse */
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  background-color: #058bac;
 }
 
 .swiper-button-prev::after, .swiper-button-next::after {

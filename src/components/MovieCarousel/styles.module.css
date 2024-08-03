@@ -1,25 +1,8 @@
+/* Está sendo feito o uso de Módulo CSS por falta de suporte do styled-components a lib swiper */
+
 .container {
   width: 100%;
   margin-bottom: 45px;
   margin-right: 15px;
-  padding: 0 30px;
-}
-
-.swiper-button-prev, .swiper-button-next {
-  color: #fff; /* Muda a cor dos botões para branco */
-  background-color: rgba(0, 0, 0, 0.5); /* Adiciona um fundo semi-transparente */
-  border-radius: 50%; /* Faz os botões serem redondos */
-  width: 40px; /* Largura do botão */
-  height: 40px; /* Altura do botão */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-button-prev:hover, .swiper-button-next:hover {
-  background-color: rgba(0, 0, 0, 0.8); /* Muda a cor de fundo ao passar o mouse */
-}
-
-.swiper-button-prev::after, .swiper-button-next::after {
-  font-size: 20px; /* Tamanho da seta */
+  padding: 0 55px;
 }

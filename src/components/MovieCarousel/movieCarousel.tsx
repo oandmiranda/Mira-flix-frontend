@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { register } from 'swiper/element/bundle';
+import { FreeMode, Navigation } from 'swiper';
+import { IList } from '@src/types/apiTypes';
+import Tooltip from '../Tooltip/tooltip';
+import { TooltipContent } from '../Tooltip/style';
+import MediaImage from '../Image/MediaImage';
+import Box from '@src/shared/Box/box';
+import styles from './styles.module.css';
 import 'swiper/css';
 import 'swiper/css/scrollbar';
 import 'swiper/css/autoplay';
@@ -8,12 +15,6 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { FreeMode, Navigation } from 'swiper';
-import { IList } from '@src/types/apiTypes';
-import Tooltip from '../Tooltip/tooltip';
-import { TooltipContent } from '../Tooltip/style';
-import MediaImage from '../Image/MediaImage';
-import styles from './styles.module.css';
 
 register();
 
@@ -26,17 +27,47 @@ export default function MovieCarousel({ items }: { items: IList['items'] }) {
 
   return (
     <Swiper
+      modules={[FreeMode, Navigation]}
+      centeredSlides={false}
       slidesPerView={6}
+      slidesPerGroup={1}
+      speed={900}
       navigation={true}
       spaceBetween={0}
       className={styles.container}
-      modules={[FreeMode, Navigation]}
+      breakpoints={{
+        240: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        800: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        1170: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+        1330: {
+          slidesPerView: 6,
+          spaceBetween: 50,
+        },
+      }}
     >
       {items.results &&
         items.results.map((movie, key) => (
           <SwiperSlide key={key}>
-            <div
-              style={{
+            <Box
+              tag="div"
+              styleSheet={{
                 padding: '20px',
                 display: 'flex',
                 justifyContent: 'center',
@@ -61,7 +92,7 @@ export default function MovieCarousel({ items }: { items: IList['items'] }) {
                   />
                 </Tooltip>
               </Link>
-            </div>
+            </Box>
           </SwiperSlide>
         ))}
     </Swiper>
