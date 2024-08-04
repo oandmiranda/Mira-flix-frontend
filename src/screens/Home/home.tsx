@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '@src/components/Header/header';
-import Movies from '@src/components/Movies/Movies';
 import api_tmdb from '../../../pages/api/tmdb';
 import { IList } from '@src/types/apiTypes';
 import Container from '@src/components/Container/container';
@@ -9,6 +8,7 @@ import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import Footer from '@src/components/Footer/footer';
 import CategoryName from '@src/components/CategoryName/categoryName';
 import Box from '@src/shared/Box/box';
+import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
 
 export default function Home() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
@@ -46,7 +46,7 @@ export default function Home() {
         <MenuCategory title="O que você quer ver hoje?" />
 
         {apiDatas.map((item) => {
-          // Verifique e assegure que item.id seja string ou number
+          // Verifique e assegura que item.id seja string ou number
           const id = typeof item.id === 'string' || typeof item.id === 'number' ? item.id : 'defaultKey';
 
           return (
@@ -59,7 +59,7 @@ export default function Home() {
                   justifyContent: 'center',
                 }}
               >
-                <Movies items={item.items} />
+                <MovieCarousel items={item.items} />
               </Box>
             </React.Fragment>
           );

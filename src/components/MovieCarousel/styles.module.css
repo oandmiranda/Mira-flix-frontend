@@ -1,12 +1,8 @@
-.swiper {
-  padding: 32px;
-}
+/* Está sendo feito o uso de Módulo CSS por falta de suporte do styled-components a lib swiper */
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-
-.swiper-button-prev, .swiper-button-next {
-  
+.container {
+  width: 100%;
+  margin-bottom: 45px;
+  margin-right: 15px;
+  padding: 0 55px;
 }
