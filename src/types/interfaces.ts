@@ -48,8 +48,8 @@ export interface IconProps {
 
 export interface MediaImageProps {
   priority?: boolean;
-  src: string | StaticImageData;
-  alt: string;
+  src: string | StaticImageData | undefined;
+  alt: string | undefined;
   width: number;
   height: number;
   zoomEffect?: boolean;
@@ -177,4 +177,9 @@ export interface APIResponse {
   success: boolean;
   status_code: number;
   status_message: string;
+}
+
+export interface HeaderContainerProps {
+  backgroundImage?: string;
+  backgroundMediaQuerie?: string;
 }

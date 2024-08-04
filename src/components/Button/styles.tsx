@@ -1,8 +1,8 @@
-import theme from '@src/styles/themes';
+import theme, { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
 export const S_Button = styled.button`
-  width: 170px;
+  width: 160px;
   border-left: 1px solid ${theme.colors.background.blue};
   border-top: 2px solid ${theme.colors.background.blue};
   background-color: transparent;
@@ -10,7 +10,7 @@ export const S_Button = styled.button`
   border-radius: 10px;
   color: ${theme.colors.text.navbar};
   cursor: pointer;
-  font-size: ${theme.sizes.subtitle};
+  font-size: ${theme.sizes.paragraph.default};
   font-family: ${theme.tipography.default.fontFamily};
   transition:
     background-color 0.4s ease-in-out,
@@ -21,5 +21,12 @@ export const S_Button = styled.button`
     background-color: ${theme.colors.background.main};
     color: ${theme.colors.text.hover};
     font-weight: 500;
+  }
+
+  @media ${device.mobileS} {
+    width: 120px;
+    padding: 7px;
+    font-size: ${theme.sizes.paragraph.mobileS};
+    flex-basis: 5%; /* Aproximadamente metade do container */
   }
 `;

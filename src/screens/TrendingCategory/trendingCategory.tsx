@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { IList } from '@src/types/apiTypes';
 import Head from 'next/head';
 import { getTrendingMovies } from '../../../pages/api/tmdb';
-import Box from '@src/shared/Box/box';
 import Movies from '@src/components/Movies/Movies';
 import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
@@ -38,20 +37,14 @@ export default function TrendingPage() {
       </Head>
       <HeaderCategory slug={'trending'} />
 
-      {trendingMovies && (
-        <Box
-          tag="div"
-          styleSheet={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <Container hasDegrade>
+      <Container hasDegrade>
+        {trendingMovies && (
+          <>
             <Movies items={trendingMovies.items} />
             <MenuCategory title="Navegue pelas categorias" />
-          </Container>
-        </Box>
-      )}
+          </>
+        )}
+      </Container>
     </>
   );
 }
