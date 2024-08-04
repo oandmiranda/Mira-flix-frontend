@@ -29,6 +29,7 @@ const theme: DefaultTheme = {
   },
   sizes: {
     title: {
+      xs: '1.5rem',
       mobileS: '2rem',
       mobileL: '2.4rem',
       tablet: '2.8rem',
@@ -43,7 +44,7 @@ const theme: DefaultTheme = {
       desktop: '1.9rem',
     },
     paragraph: {
-      mobileS: '0.7rem',
+      mobileS: '0.8rem',
       mobileL: '0.9rem',
       default: '1rem',
     },

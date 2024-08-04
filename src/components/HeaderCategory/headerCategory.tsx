@@ -1,9 +1,8 @@
 import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
-import Text from '../Text/text';
-import theme from '@src/styles/themes';
 import { useCategoriesContext } from '@src/context/categoryContext';
 import TextArea from '../TextArea/textArea';
+import { Sinopse, Title } from '../Header/style';
 
 export default function HeaderCategory({ slug }: { slug: string | string[] | undefined }) {
   const categories = useCategoriesContext();
@@ -30,25 +29,9 @@ export default function HeaderCategory({ slug }: { slug: string | string[] | und
         />
         <TextArea>
           <div>
-            <Text
-              tag="h1"
-              styleSheet={{ fontSize: theme.sizes.title, color: theme.colors.text.hover, padding: '10px' }}
-            >
-              {movie.name}
-            </Text>
+            <Title>{movie.name}</Title>
 
-            <Text
-              styleSheet={{
-                display: 'flex',
-                padding: '10px',
-                width: '100%',
-                fontWeight: 'normal',
-                wordSpacing: '2px',
-                fontSize: theme.sizes.subtitle,
-              }}
-            >
-              {movie.description}
-            </Text>
+            <Sinopse>{movie.description}</Sinopse>
           </div>
         </TextArea>
       </Box>

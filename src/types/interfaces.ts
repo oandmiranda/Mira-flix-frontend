@@ -178,3 +178,8 @@ export interface APIResponse {
   status_code: number;
   status_message: string;
 }
+
+export interface HeaderContainerProps {
+  backgroundImage?: string;
+  backgroundMediaQuerie?: string;
+}

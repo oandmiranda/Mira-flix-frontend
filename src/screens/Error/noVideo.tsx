@@ -1,6 +1,6 @@
-import MediaImage from '@src/components/Image/MediaImage';
 import Text from '@src/components/Text/text';
 import Box from '@src/shared/Box/box';
+import { ErrorImage } from './style';
 
 export default function NoVideo() {
   return (
@@ -13,12 +13,12 @@ export default function NoVideo() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: '12px',
+        gap: '17px',
         padding: '40px',
       }}
     >
-      <MediaImage src={'/assets/images/erro-404.png'} alt={'página não encontrada'} width={200} height={200} />
-      <Text tag="h2" styleSheet={{ color: '#fff' }}>
+      <ErrorImage src={'/assets/images/erro-404.png'} alt={'página não encontrada'} />
+      <Text tag="h3" styleSheet={{ color: '#fff' }}>
         {'Ops!!! A API não retorna os vídeos dos filmes :('}
       </Text>
     </Box>

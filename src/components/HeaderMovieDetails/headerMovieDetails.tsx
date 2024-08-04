@@ -3,12 +3,13 @@ import { Results } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
 import Text from '../Text/text';
-import { ContentArea, GradientArea, HeaderContainer } from './styles';
+import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Tagline } from './styles';
 import Footer from '../Footer/footer';
 import theme from '@src/styles/themes';
 import Button from '../Button/button';
 import NavMenu from './NavMenu/navMenu';
 import { APIResponse } from '@src/types/interfaces';
+import { Title } from './styles';
 
 interface HeaderMovieDetailsProps {
   items: { results: Results[]; id: number };
@@ -66,38 +67,22 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
       <NavMenu />
-      <HeaderContainer backgroundImage={`${baseUrlPathImage}${movie.backdrop_path}`}>
+      <HeaderContainer
+        backgroundImage={`${baseUrlPathImage}${movie.backdrop_path}`}
+        backgroundMediaQuerie={`${baseUrlPathImage}${movie.poster_path}`}
+      >
         {movie && (
           <>
             <GradientArea>
               <ContentArea>
                 <Box tag="div">
-                  <MediaImage
-                    src={`${baseUrlPathImage}${movie.poster_path}`}
-                    alt={movie.name || movie.title}
-                    width={300}
-                    height={390}
-                    styleSheet={{ borderRadius: '15px', boxShadow: '2px 3px 10px #02b7e3' }}
-                  />
+                  <Image src={`${baseUrlPathImage}${movie.poster_path}`} alt={movie.name || movie.title} />
                 </Box>
 
-                <Box
-                  tag="div"
-                  styleSheet={{
-                    marginLeft: '60px',
-                    marginBottom: '30px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '10px',
-                  }}
-                >
-                  <Text tag="h1" styleSheet={{ fontSize: theme.sizes.title }}>
-                    {movie.name || movie.title}
-                  </Text>
-                  <Text tag="h2">{movie.tagline}</Text>
-                  <Text tag="h4" styleSheet={{ fontWeight: 'normal', paddingTop: '30px' }}>
-                    {movie.overview}
-                  </Text>
+                <TextArea>
+                  <Title>{movie.name || movie.title}</Title>
+                  <Tagline>{movie.tagline}</Tagline>
+                  <Overview>{movie.overview}</Overview>
 
                   <Box
                     tag="ul"
@@ -111,19 +96,19 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                   >
                     <Text
                       tag="li"
-                      styleSheet={{ fontSize: theme.sizes.xs }}
+                      styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
                     >{`Lançamento: ${movie.release_date}`}</Text>
                     <Text
                       tag="li"
-                      styleSheet={{ fontSize: theme.sizes.xs }}
+                      styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
                     >{`Duração: ${movie.runtime} minutos`}</Text>
                     <Text
                       tag="li"
-                      styleSheet={{ fontSize: theme.sizes.xs }}
+                      styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
                     >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
                   </Box>
                   <Button href={'/error'}>Assistir</Button>
-                </Box>
+                </TextArea>
               </ContentArea>
             </GradientArea>
           </>
