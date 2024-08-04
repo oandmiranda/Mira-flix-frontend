@@ -1,15 +1,36 @@
-import { MovieContext } from '@src/types/interfaces';
 import { createContext, useContext, useEffect, useState } from 'react';
 
+export interface Movie {
+  id: number;
+  title: string;
+  sinopse: string;
+  srcImage: string;
+  coverImage: string;
+  available: string;
+  releaseData: number;
+  duration: string;
+  category: string;
+}
+
 // declara o contexto
-const MoviesContext = createContext<MovieContext[]>([]);
+const MoviesContext = createContext<Movie[]>([]);
+
+// função embaralha os objetos do array
+const ShuffleArray = (array: Movie[]) => {
+  // sort pode conter uma função de comparação para retornar o array com base nela
+  // Math.random() gera um número aleatório entre 0 e 1
+
+  // Math.random() - 0.5 (lógica principal para gerar ordem randômica)
+  /* se o resultado da comparação entre dois elementos (a, b) for negativo, o primeiro valor é retornado. Se o resultado entre a comparação (c, d) for positivo, seguindo a ordem, "c" deve vir depois de "d". Se o resultado for 0, a ordem se mantém. */
+  return array.sort(() => Math.random() - 0.5);
+};
 
 // declara o que será provido pelo contexto
 export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
-  const [movies, setMovies] = useState<MovieContext[]>([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
-    const mockMovies: MovieContext[] = [
+    const mockMovies: Movie[] = [
       {
         id: 1,
         title: 'The Dark Knight',
@@ -144,7 +165,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
       },
     ];
 
-    setMovies(mockMovies);
+    setMovies(ShuffleArray(mockMovies));
   }, []);
 
   return <MoviesContext.Provider value={movies}>{children}</MoviesContext.Provider>;
