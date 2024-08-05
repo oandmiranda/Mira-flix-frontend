@@ -10,5 +10,6 @@ export const TextCategory = styled.h1`
 
   @media ${device.mobileS} {
     font-size: ${theme.sizes.subtitle.mobileL};
+    margin-bottom: 0;
   }
 `;

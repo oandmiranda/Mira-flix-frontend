@@ -5,6 +5,10 @@ import { device } from '@src/styles/themes';
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
+
+  @media ${device.mobileS}, ${device.mobileL} {
+    height: 80vh;
+  }
 `;
 
 export const Title = styled.h1`
@@ -12,17 +16,16 @@ export const Title = styled.h1`
   color: ${theme.colors.text.hover};
   padding: 10px;
 
-  @media ${device.mobileS} {
-    font-size: ${theme.sizes.subtitle.mobileL};
+  @media ${device.mobileS}, ${device.mobileL}, ${device.tablet} {
+    font-size: ${theme.sizes.subtitle.tablet};
   }
+`;
 
-  @media ${device.mobileL} {
-    font-size: ${theme.sizes.title.mobileL};
-  }
-
-  @media ${device.tablet} {
-    font-size: ${theme.sizes.title.tablet};
-  }
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  /* background-size: cover; */
+  object-fit: cover;
 `;
 
 export const Sinopse = styled.p`
@@ -50,9 +53,9 @@ export const Button = styled.button`
   font-size: 0.8rem;
 
   @media ${device.mobileS} {
-    padding: 4px;
-    width: 55px;
-    font-size: 0.5rem;
+    padding: 5px;
+    width: 60px;
+    font-size: 0.6rem;
   }
 `;
 
