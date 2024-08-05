@@ -4,12 +4,11 @@ import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
 import Text from '../Text/text';
 import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Tagline } from './styles';
-import Footer from '../Footer/footer';
 import theme from '@src/styles/themes';
 import Button from '../Button/button';
-import NavMenu from './NavMenu/navMenu';
 import { APIResponse } from '@src/types/interfaces';
 import { Title } from './styles';
+import NavBar from '../Navbar/NavBar';
 
 interface HeaderMovieDetailsProps {
   items: { results: Results[]; id: number };
@@ -66,7 +65,7 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
 
   return (
     <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
-      <NavMenu />
+      <NavBar />
       <HeaderContainer
         backgroundImage={`${baseUrlPathImage}${movie.backdrop_path}`}
         backgroundMediaQuerie={`${baseUrlPathImage}${movie.poster_path}`}
@@ -114,7 +113,6 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
           </>
         )}
       </HeaderContainer>
-      <Footer />
     </Box>
   );
 }

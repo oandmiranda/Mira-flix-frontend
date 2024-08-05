@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div<HeaderContainerProps>`
   height: 100%;
   background: url(${(props) => props.backgroundImage});
   background-size: cover;
+  overflow: hidden;
 
   @media ${device.mobileS}, ${device.mobileL} {
     background: url(${(props) => props.backgroundMediaQuerie});
