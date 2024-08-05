@@ -43,11 +43,11 @@ export default function NavBar() {
         >
           <Logo />
           <ul>
-            <StyledLink href="/" containsPaddingInline="27px">
-              Home
-            </StyledLink>
             <StyledLink href="/trending" containsPaddingInline="27px">
               Recomendados para você
+            </StyledLink>
+            <StyledLink href="/top_rated" containsPaddingInline="27px">
+              Em alta
             </StyledLink>
             <StyledLink href="/series" containsPaddingInline="27px">
               Séries

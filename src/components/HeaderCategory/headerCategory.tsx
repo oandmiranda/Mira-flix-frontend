@@ -2,7 +2,7 @@ import Box from '@src/shared/Box/box';
 import NavBar from '@src/components/Navbar/NavBar';
 import { useCategoriesContext } from '@src/context/categoryContext';
 import TextArea from '../TextArea/textArea';
-import { Sinopse, Title } from '../Header/style';
+import { Container, Sinopse, Title } from '../Header/style';
 
 export default function HeaderCategory({ slug }: { slug: string | string[] | undefined }) {
   const categories = useCategoriesContext();
@@ -13,7 +13,7 @@ export default function HeaderCategory({ slug }: { slug: string | string[] | und
   }
 
   return (
-    <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
+    <Container>
       <NavBar />
 
       <Box tag="div" key={movie.id} styleSheet={{ height: '100vh', width: '100vw' }}>
@@ -30,11 +30,10 @@ export default function HeaderCategory({ slug }: { slug: string | string[] | und
         <TextArea>
           <div>
             <Title>{movie.name}</Title>
-
             <Sinopse>{movie.description}</Sinopse>
           </div>
         </TextArea>
       </Box>
-    </Box>
+    </Container>
   );
 }
