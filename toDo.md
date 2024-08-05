@@ -25,8 +25,8 @@
 (X) responsividade
 (X) setar exibição randômica dos filmes no header
 (X) refatorar navBar/navMenu
-() setar link nos títulos de categoria na Home
-() definir capa do header de maneira randomica
+(X) setar link nos títulos de categoria na Home
+
 () setar comportamento de busca no input
 () realizar melhorias no visual:
     () hover nos links

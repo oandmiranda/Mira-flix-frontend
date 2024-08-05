@@ -26,16 +26,43 @@ const basicFetch = async (endpoint: string) => {
   return json;
 };
 
-// page Trending
+// originalNetflix page
+export const getOriginaisNetflix = async (): Promise<IList> => {
+  const originaisNetflixMovies = {
+    id: 1,
+    title: 'Originais NetFlix',
+    slug: 'originais_netflix',
+    items: await basicFetch(`/discover/tv?with_network=213&${language_ptBR}&api_key=${API_KEY}`),
+    endpoint: 'originais_netflix',
+  };
+
+  return originaisNetflixMovies;
+};
+
+// Trending page
 export const getTrendingMovies = async (): Promise<IList> => {
   const trendingMovies = {
     id: 2,
     title: 'Recomendados para você',
     slug: 'trending',
     items: await basicFetch(`/trending/all/week?${language_ptBR}&api_key=${API_KEY}`),
+    endpoint: 'trending',
   };
 
   return trendingMovies;
+};
+
+// Em alta page
+export const getEmAltaMovies = async (): Promise<IList> => {
+  const emAltaMovies = {
+    id: 3,
+    title: 'Em alta',
+    slug: 'topRated',
+    items: await basicFetch(`/movie/top_rated?${language_ptBR}&api_key=${API_KEY}`),
+    endpoint: 'top_rated',
+  };
+
+  return emAltaMovies;
 };
 
 export const getSeries = async (): Promise<IList> => {
@@ -44,6 +71,7 @@ export const getSeries = async (): Promise<IList> => {
     title: 'Seriados',
     slug: 'series',
     items: await basicFetch(`/tv/popular?${language_ptBR}&api_key=${API_KEY}`),
+    endpoint: 'series',
   };
 
   return series;
@@ -53,42 +81,38 @@ export const getSeries = async (): Promise<IList> => {
 export default {
   getHomeList: async (): Promise<IList[]> => {
     return [
-      {
-        id: 1,
-        title: 'Originais NetFlix',
-        slug: 'originaisNetflix',
-        items: await basicFetch(`/discover/tv?with_network=213&${language_ptBR}&api_key=${API_KEY}`),
-      },
+      await getOriginaisNetflix(),
+
       await getTrendingMovies(),
-      {
-        id: 3,
-        title: 'Em alta',
-        slug: 'topRated',
-        items: await basicFetch(`/movie/top_rated?${language_ptBR}&api_key=${API_KEY}`),
-      },
+
+      await getEmAltaMovies(),
       {
         id: 4,
         title: 'Filmes de ação e aventura',
         slug: 'action',
         items: await basicFetch(`/discover/movie?with_genres=28?${language_ptBR}&api_key=${API_KEY}`),
+        endpoint: 'category/action',
       },
       {
         id: 5,
         title: 'Filmes de comédia',
         slug: 'comedy',
         items: await basicFetch(`/discover/movie?with_genres=35?${language_ptBR}&api_key=${API_KEY}`),
+        endpoint: 'category/comedy',
       },
       {
         id: 6,
         title: 'Filmes de terror',
         slug: 'horror',
         items: await basicFetch(`/discover/movie?with_genres=27?${language_ptBR}&api_key=${API_KEY}`),
+        endpoint: 'category/horror',
       },
       {
         id: 7,
         title: 'Filmes românticos',
         slug: 'romance',
         items: await basicFetch(`/discover/movie?with_genres=10749?${language_ptBR}&api_key=${API_KEY}`),
+        endpoint: 'category/romance',
       },
       await getSeries(),
     ];

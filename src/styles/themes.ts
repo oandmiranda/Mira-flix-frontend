@@ -29,7 +29,7 @@ const theme: DefaultTheme = {
   },
   sizes: {
     title: {
-      xs: '1.5rem',
+      xs: '1.7rem',
       mobileS: '2rem',
       mobileL: '2.4rem',
       tablet: '2.8rem',

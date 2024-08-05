@@ -7,7 +7,9 @@ import { Container, Label, StyledWrapper } from './style';
 
 export default function MenuCategory({ title }: CategoryProps) {
   const categories = useCategoriesContext();
-  const filterCategories = categories.filter((item) => item.id !== 6 && item.id !== 5);
+  const filterCategories = categories.filter(
+    (item) => item.id !== 1 && item.id !== 2 && item.id !== 3 && item.id !== 8,
+  );
 
   return (
     <Container>

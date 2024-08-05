@@ -16,8 +16,12 @@ export const Title = styled.h1`
   color: ${theme.colors.text.hover};
   padding: 10px;
 
-  @media ${device.mobileS}, ${device.mobileL}, ${device.tablet} {
-    font-size: ${theme.sizes.subtitle.tablet};
+  @media ${device.mobileS}, ${device.mobileL} {
+    font-size: ${theme.sizes.title.xs};
+  }
+
+  @media ${device.tablet} {
+    font-size: ${theme.sizes.title.mobileL};
   }
 `;
 
