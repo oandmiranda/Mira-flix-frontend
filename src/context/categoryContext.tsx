@@ -21,7 +21,7 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
         endpoint: '',
         srcImage: '/assets/images/king.jpeg',
         description:
-          'Prepare-se para explosões épicas e perseguições de tirar o fôlego. Ação garantida do início ao fim em diversos clássicos dos cinemas.',
+          'Explore os filmes mais queridos da Netflix, onde cada história ganha vida com personagens cativantes, tramas emocionantes e momentos inesquecíveis. Desde dramas intensos e comédias românticas até thrillers eletrizantes e aventuras épicas, esses filmes garantem uma experiência cinematográfica envolvente e memorável para todos os gostos.',
       },
       {
         id: 2,
@@ -39,7 +39,7 @@ export const CategoriesProvider = ({ children }: { children: React.ReactNode }) 
         endpoint: '',
         srcImage: '/assets/images/simpsonsCover.jpg',
         description:
-          'Descubra uma seleção especial de filmes que combinam com seu estilo e interesses. Escolhemos títulos que acreditamos que você vai adorar baseados nas novidades mais empolgantes. Prepare-se para uma experiência cinematográfica feita sob medida, com histórias envolventes e personagens inesquecíveis.',
+          'Descubra os filmes em alta que estão gerando buzz ao redor do mundo. De dramas emocionantes a comédias hilárias e thrillers de tirar o fôlego, esses lançamentos recentes estão encantando audiências com suas histórias cativantes e performances memoráveis.',
       },
       {
         id: 4,

@@ -8,14 +8,10 @@ export const LogoLink = styled(Link)`
   color: ${theme.colors.text.logo};
 
   @media ${device.mobileS} {
-    font-size: 1.7rem;
+    font-size: ${theme.sizes.title.xs};
   }
 
-  @media ${device.mobileL} {
-    font-size: 1.9;
-  }
-
-  @media ${device.tablet} {
-    font-size: 2.1;
+  @media ${device.mobileL}, ${device.tablet} {
+    font-size: ${theme.sizes.title.mobileS};
   }
 `;

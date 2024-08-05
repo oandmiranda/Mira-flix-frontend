@@ -5,10 +5,6 @@ import { device } from '@src/styles/themes';
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
-
-  @media ${device.mobileS}, ${device.mobileL} {
-    height: 80vh;
-  }
 `;
 
 export const Title = styled.h1`
