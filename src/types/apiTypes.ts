@@ -32,6 +32,7 @@ export interface IList {
   slug?: string;
   hasCarousel?: boolean;
   items: Items;
+  endpoint?: string;
 }
 
 export interface IMovieDetails {

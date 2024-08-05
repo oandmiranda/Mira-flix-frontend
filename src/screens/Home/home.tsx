@@ -51,7 +51,7 @@ export default function Home() {
 
           return (
             <React.Fragment key={id}>
-              <CategoryName title={item.title} key={id} />
+              <CategoryName href={item.endpoint} title={item.title} key={id} />
               <Box
                 tag="div"
                 styleSheet={{

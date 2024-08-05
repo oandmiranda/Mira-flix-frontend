@@ -163,6 +163,7 @@ export interface BurgerMenuProps {
 
 export interface CategoryProps {
   title?: string;
+  href?: string;
 }
 
 export interface MovieContainer {
