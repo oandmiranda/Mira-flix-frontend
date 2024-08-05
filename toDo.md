@@ -24,7 +24,7 @@
 (X) aplicar carousel na Home screen
 (X) responsividade
 (X) setar exibição randômica dos filmes no header
-() refatorar navBar/navMenu
+(X) refatorar navBar/navMenu
 () setar link nos títulos de categoria na Home
 () definir capa do header de maneira randomica
 () setar comportamento de busca no input
