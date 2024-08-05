@@ -7,13 +7,13 @@ import theme from '@src/styles/themes';
 import MovieIcon from '../Icons/Movie/movie_icon';
 import HeaderCarousel from '@src/components/HeaderCarousel/headerCarousel';
 import TextArea from '../TextArea/textArea';
-import { Container, Sinopse, Title, Button, StyledDatas } from './style';
+import { Container, Image, Sinopse, Title, Button, StyledDatas } from './style';
 
 export default function Header() {
   const movies = useMoviesContext();
 
   return (
-    <Box tag="header" styleSheet={{ height: '100vh', width: '100vw' }}>
+    <Container>
       <NavBar />
       <HeaderCarousel loop={true} autoplay={{ delay: 6000, disableOnInteraction: false }}>
         {movies &&
@@ -21,16 +21,7 @@ export default function Header() {
             // SwiperSlide is a Swiper component (lib)
             <SwiperSlide key={movie.id}>
               <Container>
-                <img
-                  src={movie.srcImage}
-                  alt={movie.title}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    backgroundSize: 'cover',
-                  }}
-                />
+                <Image src={movie.srcImage} alt={movie.title} />
                 <TextArea>
                   <Box tag="div">
                     <Button>EM ALTA</Button>
@@ -55,6 +46,6 @@ export default function Header() {
             </SwiperSlide>
           ))}
       </HeaderCarousel>
-    </Box>
+    </Container>
   );
 }

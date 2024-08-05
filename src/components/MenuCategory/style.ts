@@ -1,6 +1,10 @@
 import theme, { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
+export const Container = styled.section`
+  padding: 0px 20px 60px 20px;
+`;
+
 export const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
