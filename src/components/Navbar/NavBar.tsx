@@ -5,9 +5,9 @@ import Logo from '../Logo/Logo';
 import { Nav, StyledGiHamburgerMenu } from './style';
 import Box from '@src/shared/Box/box';
 import { useEffect, useState } from 'react';
-import { SearchInput } from './Input/style';
 import { useBurgerMenuContext } from '@src/context/burgerMenuContext';
 import BurgerMenu from '../BurgerMenu/burgerMenu';
+import Input from './Input/Input';
 
 export default function NavBar() {
   const { menuIsOpen, openMenu } = useBurgerMenuContext();
@@ -58,7 +58,7 @@ export default function NavBar() {
         <Box tag="div" styleSheet={{ alignItems: 'center', display: 'flex', gap: '5px' }}>
           <StyledGiHamburgerMenu size={30} onClick={openMenu} />
           <ul>
-            <SearchInput />
+            <Input />
             <LupaIcon fill={theme.colors.text.logo} isPositionAbsolute />
           </ul>
         </Box>
