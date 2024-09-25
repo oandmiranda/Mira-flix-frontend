@@ -27,6 +27,7 @@
 (X) refatorar navBar/navMenu
 (X) setar link nos títulos de categoria na Home
 
+() definir rotas protegidas
 () setar comportamento de busca no input
 () realizar melhorias no visual:
     () hover nos links
