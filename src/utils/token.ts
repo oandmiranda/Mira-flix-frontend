@@ -1,5 +1,4 @@
-// Funções para manipular o token (armazenar, remover)
-// token.js será responsável por armazenar e manipular o token no localStorage.
+// token.ts será responsável por armazenar e manipular o token no localStorage.
 
 // Armazenar o token no local storage
 export const setToken = (token) => {

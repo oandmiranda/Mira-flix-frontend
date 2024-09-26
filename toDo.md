@@ -26,8 +26,9 @@
 (X) setar exibição randômica dos filmes no header
 (X) refatorar navBar/navMenu
 (X) setar link nos títulos de categoria na Home
+(X) definir rotas protegidas
 
-() definir rotas protegidas
+() criar e validar página de cadastro
 () setar comportamento de busca no input
 () realizar melhorias no visual:
     () hover nos links
