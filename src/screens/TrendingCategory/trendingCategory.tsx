@@ -6,8 +6,9 @@ import Movies from '@src/components/Movies/Movies';
 import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
+import withAuth from '@src/hook/withAuth';
 
-export default function TrendingPage() {
+function TrendingPage() {
   // returns data for a single movie
   const [trendingMovies, setTrendingMovies] = useState<IList | null>(null);
 
@@ -48,3 +49,5 @@ export default function TrendingPage() {
     </>
   );
 }
+
+export default withAuth(TrendingPage);

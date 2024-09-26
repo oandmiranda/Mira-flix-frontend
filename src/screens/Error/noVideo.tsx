@@ -1,8 +1,9 @@
 import Text from '@src/components/Text/text';
 import Box from '@src/shared/Box/box';
 import { ErrorImage } from './style';
+import withAuth from '@src/hook/withAuth';
 
-export default function NoVideo() {
+function NoVideo() {
   return (
     <Box
       tag="header"
@@ -24,3 +25,5 @@ export default function NoVideo() {
     </Box>
   );
 }
+
+export default withAuth(NoVideo);

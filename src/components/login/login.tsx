@@ -1,21 +1,22 @@
 import { useState } from 'react';
 import { login } from '@src/services/auth';
+import { useRouter } from 'next/router';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const router = useRouter();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError(''); // Limpa os erros
 
     try {
-      const userData = await login(email, password); // Chama a função de login
-      console.log('Login bem-sucedido', userData);
-      // Redirecionar ou fazer outra ação após login bem-sucedido
+      await login(email, password); // Chama a função de login
+      router.push('/home');
     } catch (err) {
-      setError('Credenciais inválidas'); // Mostra erro na tela
+      setError('Credenciais inválidas');
     }
   };
 
