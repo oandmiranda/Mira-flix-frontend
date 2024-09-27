@@ -15,8 +15,8 @@ export default function LoginForm() {
     try {
       await login(email, password); // Chama a função de login
       router.push('/home');
-    } catch (err) {
-      setError('Credenciais inválidas');
+    } catch (error) {
+      setError(error.message);
     }
   };
 

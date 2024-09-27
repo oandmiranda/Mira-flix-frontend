@@ -1,6 +1,3 @@
-// Arquivo responsável pela autenticação (login, logout)
-// auth.js será responsável por fazer as requisições de login e logout.
-// services/auth.js
 import { setToken } from '@src/utils/token';
 
 export const login = async (email, password) => {
@@ -15,14 +12,18 @@ export const login = async (email, password) => {
 
     const data = await response.json();
 
+    // Log para verificar a resposta
+    console.log('Response do login:', response, data);
+
     if (response.ok) {
       setToken(data.token); // Salva o token no localStorage
-      return data; // Retorna os dados do usuário, se necessário
+      return data;
     } else {
+      // Captura e lança o erro com a mensagem do back-end
       throw new Error(data.message || 'Erro no login');
     }
   } catch (error) {
-    console.error('Erro ao fazer login:', error);
-    throw error;
+    console.error('Erro ao fazer login:', error.message); // Loga a mensagem do erro
+    throw error; // Propaga o erro para o componente chamar setError
   }
 };
