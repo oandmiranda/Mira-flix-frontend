@@ -5,7 +5,7 @@ export default function LoginPage() {
   return (
     <>
       <LoginForm />
-      <Button href="/registration">cadastre-se</Button>
+      <Button href="/signup">cadastre-se</Button>
     </>
   );
 }
