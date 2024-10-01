@@ -29,6 +29,7 @@
 (X) definir rotas protegidas
 
 () criar e validar página de cadastro
+() criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
 () realizar melhorias no visual:
     () hover nos links

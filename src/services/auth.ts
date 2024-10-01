@@ -13,11 +13,11 @@ export const login = async (email, password) => {
     const data = await response.json();
 
     // Log para verificar a resposta
-    console.log('Response do login:', response, data);
+    console.log('Response do login:', data);
 
     if (response.ok) {
       setToken(data.token); // Salva o token no localStorage
-      return data;
+      return data; // retorna dados sobre o usuário
     } else {
       // Captura e lança o erro com a mensagem do back-end
       throw new Error(data.message || 'Erro no login');
