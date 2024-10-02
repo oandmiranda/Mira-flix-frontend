@@ -184,3 +184,9 @@ export interface HeaderContainerProps {
   backgroundImage?: string;
   backgroundMediaQuerie?: string;
 }
+
+export interface AuthContextType {
+  token: string | null;
+  login: (newToken: string) => void;
+  logout: () => void;
+}

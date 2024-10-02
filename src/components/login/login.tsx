@@ -20,7 +20,7 @@ export default function LoginForm() {
 
     try {
       const response = await login(data.email, data.password);
-      setSuccessMessage(`Olá ${response.name}`);
+      setSuccessMessage(`Olá ${response.name} 🤩`);
       router.push('/home'); // Redireciona para a página home após login bem-sucedido
     } catch (error) {
       setError(error.message); // Define o erro recebido da resposta

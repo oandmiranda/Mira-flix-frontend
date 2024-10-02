@@ -1,16 +1,17 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import { setToken, getToken, removeToken } from '@src/utils/token'; // Funções para manipular o token
 import { useRouter } from 'next/router'; // Para redirecionar
+import { AuthContextType } from '@src/types/interfaces';
 
 // Cria o contexto
-const AuthContext = createContext(null);
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Hook para usar o contexto
 export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [token, setAuthToken] = useState<string | null>(null);
   const router = useRouter();
 
