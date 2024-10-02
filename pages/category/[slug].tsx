@@ -8,8 +8,9 @@ import Container from '@src/components/Container/container';
 import { useRouter } from 'next/router';
 import Footer from '@src/components/Footer/footer';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
+import withAuth from '@src/hook/withAuth';
 
-export default function FilterCategory() {
+function FilterCategory() {
   const router = useRouter();
   const [movies, setMovies] = useState<IList[]>([]);
 
@@ -51,3 +52,5 @@ export default function FilterCategory() {
     </>
   );
 }
+
+export default withAuth(FilterCategory);

@@ -26,7 +26,10 @@
 (X) setar exibição randômica dos filmes no header
 (X) refatorar navBar/navMenu
 (X) setar link nos títulos de categoria na Home
+(X) definir rotas protegidas
 
+() criar e validar página de cadastro
+() criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
 () realizar melhorias no visual:
     () hover nos links

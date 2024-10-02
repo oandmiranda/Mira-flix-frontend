@@ -6,8 +6,9 @@ import Movies from '@src/components/Movies/Movies';
 import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
+import withAuth from '@src/hook/withAuth';
 
-export default function SeriesPage() {
+function SeriesPage() {
   // returns data for a single movie
   const [series, setSeries] = useState<IList | null>(null);
 
@@ -48,3 +49,5 @@ export default function SeriesPage() {
     </>
   );
 }
+
+export default withAuth(SeriesPage);

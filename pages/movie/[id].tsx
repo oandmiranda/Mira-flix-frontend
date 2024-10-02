@@ -5,8 +5,9 @@ import Head from 'next/head';
 import { Results } from '@src/types/apiTypes';
 import HeaderMovieDetails from '@src/components/HeaderMovieDetails/headerMovieDetails';
 import Container from '@src/components/Container/container';
+import withAuth from '@src/hook/withAuth';
 
-export default function MovieDetails() {
+function MovieDetails() {
   const router = useRouter();
   const [movie, setMovie] = useState<Results | null>(null);
 
@@ -48,3 +49,5 @@ export default function MovieDetails() {
     </>
   );
 }
+
+export default withAuth(MovieDetails);
