@@ -1,7 +1,7 @@
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { login } from '@src/services/auth';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
 
 export default function LoginForm() {
   const {
@@ -19,7 +19,7 @@ export default function LoginForm() {
     setSuccessMessage('');
 
     try {
-      const response = await login(data.email, data.password); // Chama a função de login
+      const response = await login(data.email, data.password);
       setSuccessMessage(`Olá ${response.name}`);
       router.push('/home'); // Redireciona para a página home após login bem-sucedido
     } catch (error) {

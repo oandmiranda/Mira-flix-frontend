@@ -12,9 +12,6 @@ export const login = async (email, password) => {
 
     const data = await response.json();
 
-    // Log para verificar a resposta
-    console.log('Response do login:', data);
-
     if (response.ok) {
       setToken(data.token); // Salva o token no localStorage
       return data; // retorna dados sobre o usuário

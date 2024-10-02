@@ -55,7 +55,7 @@ export default function Signup() {
             required: 'O nome é obrigatório.',
             pattern: {
               value: /^[a-zA-Z\s]+$/,
-              message: 'O nome só pode conter letras e espaços.',
+              message: 'Utilize apenas letras e espaços.',
             },
           })}
           placeholder="Nome"
