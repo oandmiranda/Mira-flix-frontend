@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { login } from '@src/services/auth';
+import Box from '@src/shared/Box/box';
+import { Container } from './style';
+import Input from '../Navbar/Input/Input';
+import Button from '../Button/button';
+import Text from '../Text/text';
 
 export default function LoginForm() {
   const {
@@ -28,37 +33,39 @@ export default function LoginForm() {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <Box tag="div">
+      <Text tag="h2">Login</Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input
-          type="email"
-          {...register('email', {
-            required: 'O email é obrigatório.',
-            pattern: {
-              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-              message: 'Por favor, insira um email válido.',
-            },
-          })}
-          placeholder="Email"
-        />
-        {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
+        <Container>
+          <Input
+            type="email"
+            {...register('email', {
+              required: 'O email é obrigatório.',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: 'Por favor, insira um email válido.',
+              },
+            })}
+            placeholder="Email"
+          />
+          {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
 
-        <input
-          type="password"
-          {...register('password', {
-            required: 'A senha é obrigatória.',
-          })}
-          placeholder="Senha"
-        />
-        {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
+          <Input
+            type="password"
+            {...register('password', {
+              required: 'A senha é obrigatória.',
+            })}
+            placeholder="Senha"
+          />
+          {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
 
-        <button type="submit">Login</button>
+          <Button type="submit">Login</Button>
+        </Container>
       </form>
 
       {/* Exibe mensagens de sucesso ou erro */}
       {successMessage && <p>{successMessage}</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
-    </div>
+    </Box>
   );
 }
