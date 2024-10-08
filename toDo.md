@@ -36,4 +36,5 @@
     () hover nos links
 
 () criar autenticação do usuário
+() refatorar componente Container (fazer componentização correta)
 () debugar

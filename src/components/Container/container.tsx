@@ -1,6 +1,10 @@
 import { ContainerProps } from '@src/types/interfaces';
 import { StyledContainer } from './style';
 
-export default function Container({ children, hasDegrade }: ContainerProps) {
-  return <StyledContainer hasDegrade={hasDegrade}>{children}</StyledContainer>;
+export default function Container({ children, hasDegrade, backgroundImage, styleSheet }: ContainerProps) {
+  return (
+    <StyledContainer style={styleSheet} hasDegrade={hasDegrade} backgroundImage={backgroundImage}>
+      {children}
+    </StyledContainer>
+  );
 }

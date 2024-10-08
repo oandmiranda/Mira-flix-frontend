@@ -34,10 +34,11 @@ export default function LoginForm() {
 
   return (
     <Box tag="div">
-      <Text tag="h2">Login</Text>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Container>
+        <Container> 
+          <Text tag="h3">Entre na sua conta</Text>
           <Input
+            styleSheet={{ marginBottom: '10px', marginTop: '10px' }}
             type="email"
             {...register('email', {
               required: 'O email é obrigatório.',
@@ -51,6 +52,7 @@ export default function LoginForm() {
           {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
 
           <Input
+            styleSheet={{ marginBottom: '10px' }}
             type="password"
             {...register('password', {
               required: 'A senha é obrigatória.',

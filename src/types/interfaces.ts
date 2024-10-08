@@ -110,8 +110,10 @@ export interface ButtonProps {
 }
 
 export interface ContainerProps {
+  styleSheet?: CSSProperties;
   children: React.ReactNode;
   hasDegrade?: boolean;
+  backgroundImage?: string | boolean;
 }
 
 export interface HeaderProps<T> {

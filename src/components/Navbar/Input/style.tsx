@@ -7,6 +7,10 @@ export const SearchInput = styled.input`
   border-radius: 7px;
   color: #fff;
   padding: 15px 28px;
-  font-size: 18px;
+  font-size: 15px;
   opacity: 0.8;
+
+  ::placeholder {
+    color: orange;
+  }
 `;

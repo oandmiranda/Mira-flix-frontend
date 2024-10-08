@@ -1,9 +1,10 @@
 import Head from 'next/head';
-import Box from '@src/shared/Box/box';
 import Button from '@src/components/Button/button';
 import LoginForm from '@src/components/login/login';
-import TextArea from '@src/components/TextArea/textArea';
-import { Container, Sinopse, Title } from '@src/components/Header/style';
+import { Sinopse, Title } from '@src/components/Header/style';
+import Container from '@src/components/Container/container';
+import Box from '@src/shared/Box/box';
+import Text from '@src/components/Text/text';
 // import imageBackground from '../../../public/assets/images/aquaman.jpeg';
 
 export default function LoginPage() {
@@ -23,29 +24,52 @@ export default function LoginPage() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <Box tag="div" styleSheet={{ height: '100vh', width: '100vw', display: 'flex', justifyContent: 'center' }}>
-        <img
-          src={'/assets/images/streaming.jpg'}
-          alt={'image_background'}
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            backgroundSize: 'cover',
+      <Container
+        backgroundImage={'/assets/images/streaming.jpg'}
+        styleSheet={{
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          padding: '20px',
+        }}
+      >
+        <Box tag="div" styleSheet={{ width: '50%' }}>
+          <Title>Filmes, séries, esportes e muito mais</Title>
+          <Sinopse>
+            Assista a Amazon Originais premiados e aproveite entrega grátis e rápida em diversos produtos. Com o
+            plano anual você parcela em até 12x de R$ 13,90/mês sem juros (R$ 166,80 por ano).
+          </Sinopse>
+        </Box>
+
+        <Box
+          tag="div"
+          styleSheet={{
+            background: 'black',
+            width: '310px',
+            height: '350px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: '17px',
           }}
-        />
-        <TextArea>
-          <div>
-            <Title>Filmes, séries, esportes e muito mais</Title>
-            <Sinopse>
-              Assista a Amazon Originais premiados e aproveite entrega grátis e rápida em diversos produtos. Com o
-              plano anual você parcela em até 12x de R$ 13,90/mês sem juros (R$ 166,80 por ano).
-            </Sinopse>
-          </div>
+        >
           <LoginForm />
-          <Button href="/signup">cadastre-se</Button>
-        </TextArea>
-      </Box>
+          <Box
+            styleSheet={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              padding: '10px',
+              gap: '10px',
+            }}
+          >
+            <Text tag="h3">Ainda não tem cadastro?</Text>
+            <Button href="/signup">cadastre-se</Button>
+          </Box>
+        </Box>
+      </Container>
     </>
   );
 }
