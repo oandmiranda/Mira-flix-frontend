@@ -19,6 +19,7 @@ declare module 'styled-components' {
         primary: string;
         secondary: string;
         blue: string;
+        button: string;
       };
       text: {
         logo: string;

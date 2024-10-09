@@ -18,6 +18,7 @@ const theme: DefaultTheme = {
       primary: '#151717',
       secondary: '#1f2222',
       blue: '#02b7e3',
+      button: '#058bac',
     },
     text: {
       main: '#e5e5e5',

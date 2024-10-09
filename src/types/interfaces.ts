@@ -106,6 +106,8 @@ export interface ButtonProps {
   onClick?: () => void;
   href?: string;
   children: React.ReactNode;
+  width?: string;
+  background?: string;
   styleSheet?: CSSProperties;
 }
 

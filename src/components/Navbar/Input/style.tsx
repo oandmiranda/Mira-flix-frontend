@@ -9,8 +9,4 @@ export const SearchInput = styled.input`
   padding: 15px 28px;
   font-size: 15px;
   opacity: 0.8;
-
-  ::placeholder {
-    color: orange;
-  }
 `;

@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Button from '@src/components/Button/button';
-import LoginForm from '@src/components/login/login';
+import LoginForm from '@src/components/Login/login';
 import { Sinopse, Title } from '@src/components/Header/style';
 import Container from '@src/components/Container/container';
 import Box from '@src/shared/Box/box';
 import Text from '@src/components/Text/text';
+import theme from '@src/styles/themes';
 // import imageBackground from '../../../public/assets/images/aquaman.jpeg';
 
 export default function LoginPage() {
@@ -25,7 +26,7 @@ export default function LoginPage() {
       </Head>
 
       <Container
-        backgroundImage={'/assets/images/streaming.jpg'}
+        backgroundImage={'/assets/images/login_cover.jpg'}
         styleSheet={{
           height: '100vh',
           display: 'flex',
@@ -46,13 +47,15 @@ export default function LoginPage() {
           tag="div"
           styleSheet={{
             background: 'black',
-            width: '310px',
-            height: '350px',
+            width: '360px',
+            height: '465px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: '17px',
+            gap: '50px',
+            padding: '30px',
           }}
         >
           <LoginForm />
@@ -61,12 +64,13 @@ export default function LoginPage() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              padding: '10px',
-              gap: '10px',
+              gap: '7px',
             }}
           >
-            <Text tag="h3">Ainda não tem cadastro?</Text>
-            <Button href="/signup">cadastre-se</Button>
+            <Text tag="h5">Ainda não tem cadastro?</Text>
+            <Button href="/signup" width="210px" background={theme.colors.background.button}>
+              cadastre-se
+            </Button>
           </Box>
         </Box>
       </Container>

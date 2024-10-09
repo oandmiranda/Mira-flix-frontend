@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { login } from '@src/services/auth';
-import Box from '@src/shared/Box/box';
 import { Container } from './style';
-import Input from '../Navbar/Input/Input';
+import Box from '@src/shared/Box/box';
 import Button from '../Button/button';
 import Text from '../Text/text';
+import theme from '@src/styles/themes';
 
 export default function LoginForm() {
   const {
@@ -25,7 +25,7 @@ export default function LoginForm() {
 
     try {
       const response = await login(data.email, data.password);
-      setSuccessMessage(`Olá ${response.name} 🤩`);
+      setSuccessMessage(`Bem vindo ${response.name} 🤩`);
       router.push('/home'); // Redireciona para a página home após login bem-sucedido
     } catch (error) {
       setError(error.message); // Define o erro recebido da resposta
@@ -35,10 +35,14 @@ export default function LoginForm() {
   return (
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Container> 
-          <Text tag="h3">Entre na sua conta</Text>
-          <Input
-            styleSheet={{ marginBottom: '10px', marginTop: '10px' }}
+        <Container>
+          <Text tag="h1" styleSheet={{ marginBottom: '10px' }}>
+            Entrar
+          </Text>
+          <Text tag="h4" styleSheet={{ marginBottom: '10px' }}>
+            Digite o endereço de e-mail e a senha da sua conta MiraFlix
+          </Text>
+          <input
             type="email"
             {...register('email', {
               required: 'O email é obrigatório.',
@@ -49,25 +53,39 @@ export default function LoginForm() {
             })}
             placeholder="Email"
           />
-          {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
+          {errors.email && <Text styleSheet={{ color: 'red', padding: '10px 0' }}>{errors.email.message}</Text>}
 
-          <Input
-            styleSheet={{ marginBottom: '10px' }}
+          <input
             type="password"
             {...register('password', {
               required: 'A senha é obrigatória.',
             })}
             placeholder="Senha"
           />
-          {errors.password && <p style={{ color: 'red' }}>{errors.password.message}</p>}
+          {errors.password && (
+            <Text styleSheet={{ color: 'red', padding: '10px 0' }}>{errors.password.message}</Text>
+          )}
 
-          <Button type="submit">Login</Button>
+          <Button type="submit" width="210px" background={theme.colors.background.button}>
+            Login
+          </Button>
+          {successMessage && (
+            <Text
+              styleSheet={{
+                color: theme.colors.background.button,
+                fontSize: '20px',
+                fontWeight: '700',
+                marginTop: '10px',
+              }}
+            >
+              {successMessage}
+            </Text>
+          )}
+          {error && <Text styleSheet={{ color: 'red', padding: '10px 0' }}>{error + '😥'}</Text>}
         </Container>
       </form>
 
       {/* Exibe mensagens de sucesso ou erro */}
-      {successMessage && <p>{successMessage}</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
     </Box>
   );
 }
