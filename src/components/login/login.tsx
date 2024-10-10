@@ -39,7 +39,7 @@ export default function LoginForm() {
           <Text tag="h1" styleSheet={{ marginBottom: '10px' }}>
             Entrar
           </Text>
-          <Text tag="h4" styleSheet={{ marginBottom: '10px' }}>
+          <Text tag="h4" styleSheet={{ marginBottom: '13px' }}>
             Digite o endereço de e-mail e a senha da sua conta MiraFlix
           </Text>
           <input

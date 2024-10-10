@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from '@src/components/Header/header';
 import api_tmdb from '../../../pages/api/tmdb';
+import withAuth from '@src/hook/withAuth';
 import { IList } from '@src/types/apiTypes';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
@@ -10,7 +11,7 @@ import CategoryName from '@src/components/CategoryName/categoryName';
 import Box from '@src/shared/Box/box';
 import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
 
-export default function Home() {
+function Home() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
 
   useEffect(() => {
@@ -69,3 +70,5 @@ export default function Home() {
     </>
   );
 }
+
+export default withAuth(Home);

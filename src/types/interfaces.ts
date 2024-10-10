@@ -115,6 +115,7 @@ export interface ContainerProps {
   styleSheet?: CSSProperties;
   children: React.ReactNode;
   hasDegrade?: boolean;
+  hasBackgroundSizeCover?: boolean;
   backgroundImage?: string | boolean;
 }
 

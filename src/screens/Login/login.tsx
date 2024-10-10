@@ -26,20 +26,21 @@ export default function LoginPage() {
       </Head>
 
       <Container
-        backgroundImage={'/assets/images/login_cover.jpg'}
+        backgroundImage={'/assets/images/login_capa.jpg'}
+        hasBackgroundSizeCover
         styleSheet={{
           height: '100vh',
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'space-around',
           alignItems: 'center',
-          padding: '20px',
+          padding: '60px',
         }}
       >
         <Box tag="div" styleSheet={{ width: '50%' }}>
-          <Title>Filmes, séries, esportes e muito mais</Title>
+          <Title>Filmes, séries, documentários e muito mais</Title>
           <Sinopse>
-            Assista a Amazon Originais premiados e aproveite entrega grátis e rápida em diversos produtos. Com o
-            plano anual você parcela em até 12x de R$ 13,90/mês sem juros (R$ 166,80 por ano).
+            Assista aos originais MiraFlix e explore um mundo de histórias incríveis com acesso ilimitado a filmes,
+            séries e muito mais. Curta seus títulos favoritos ou descubra novas paixões com a liberdade de assistir quando e onde quiser.
           </Sinopse>
         </Box>
 
@@ -48,12 +49,12 @@ export default function LoginPage() {
           styleSheet={{
             background: 'black',
             width: '360px',
-            height: '465px',
+            height: '485px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            borderRadius: '17px',
+            borderRadius: '20px',
             gap: '50px',
             padding: '30px',
           }}

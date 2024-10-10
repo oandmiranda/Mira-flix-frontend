@@ -11,7 +11,7 @@ const withAuth = (WrappedComponent: FC) => {
       const token = getToken();
 
       if (!token) {
-        alert('Sua sessão foi expirada! Faça login novamente.');
+        alert('Acesso não autorizado. Por favor, faça login novamente.');
         router.push('/login');
         return;
       }

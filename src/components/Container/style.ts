@@ -10,4 +10,5 @@ export const StyledContainer = styled.main<ContainerProps>`
     linear-gradient(to left, #000 1%, rgba(0, 0, 0, 0) 100%)`
         : 'none'},
     ${(props) => (props.backgroundImage ? `url(${props.backgroundImage})` : 'none')};
+  background-size: ${(props) => (props.hasBackgroundSizeCover ? 'cover' : 'auto')};
 `;
