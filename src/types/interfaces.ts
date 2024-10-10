@@ -195,3 +195,9 @@ export interface AuthContextType {
   login: (newToken: string) => void;
   logout: () => void;
 }
+
+export interface errorStyleType {
+  color: string;
+  padding: string;
+  fontSize: string;
+}

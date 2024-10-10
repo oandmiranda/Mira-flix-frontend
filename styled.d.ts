@@ -21,6 +21,7 @@ declare module 'styled-components' {
         blue: string;
         button: string;
       };
+      errorStyle: string;
       text: {
         logo: string;
         main: string;

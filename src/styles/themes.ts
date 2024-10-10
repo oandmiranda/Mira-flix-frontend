@@ -20,6 +20,7 @@ const theme: DefaultTheme = {
       blue: '#02b7e3',
       button: '#058bac',
     },
+    errorStyle: '#FF0000',
     text: {
       main: '#e5e5e5',
       navbar: '#E0E0E2',

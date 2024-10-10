@@ -28,8 +28,9 @@
 (X) setar link nos títulos de categoria na Home
 (X) definir rotas protegidas
 (X) criar e validar página de cadastro
+(X) estilizar página de login
+() refatorar estilos na página de cadastro e login
 
-() estilizar página de cadastro/login
 () criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
 () realizar melhorias no visual:

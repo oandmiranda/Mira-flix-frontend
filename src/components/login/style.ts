@@ -11,14 +11,14 @@ export const Container = styled.div`
 
   > input {
     height: 30px;
-    width: 210px;
+    width: 220px;
     background: #000;
     border-radius: 7px;
     color: #fff;
     padding: 10px;
     font-size: 15px;
     opacity: 0.8;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 
     ::placeholder {
       font-size: 10px;
