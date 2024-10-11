@@ -8,10 +8,11 @@ import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
 import Box from '@src/shared/Box/box';
+import Logo from '../Logo/Logo';
 
 const errorStyle: errorStyleType = {
   color: theme.colors.errorStyle,
-  padding: '10px 0px',
+  padding: '5px 0px',
   fontSize: '14px',
 };
 
@@ -61,10 +62,11 @@ export default function SignupForm() {
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container>
-          <Text tag="h1" styleSheet={{ marginBottom: '10px' }}>
+          <Logo cursorDefault />
+          <Text tag="h2" styleSheet={{ marginBottom: '10px', marginTop: '25px' }}>
             Cadastrar
           </Text>
-          <Text tag="h4" styleSheet={{ marginBottom: '13px' }}>
+          <Text tag="p" styleSheet={{ marginBottom: '13px' }}>
             Digite dados válidos
           </Text>
           <input
@@ -116,7 +118,7 @@ export default function SignupForm() {
           />
           {errors.confirmPassword && <Text styleSheet={errorStyle}>{errors.confirmPassword.message}</Text>}
 
-          <Button type="submit" width="210px" background={theme.colors.background.button}>
+          <Button type="submit" width="270px" background={theme.colors.background.button}>
             Cadastrar
           </Button>
           {/* Exibe mensagens de erro ou sucesso */}

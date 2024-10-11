@@ -31,6 +31,7 @@
 (X) estilizar página de login
 () refatorar estilos na página de cadastro e login
 
+() refatorar logo nas telas login e signup
 () criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
 () realizar melhorias no visual:

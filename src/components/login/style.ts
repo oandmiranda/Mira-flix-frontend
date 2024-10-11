@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ width?: string }>`
   max-width: 400px;
   height: auto;
   display: flex;
@@ -10,15 +10,15 @@ export const Container = styled.div`
   text-align: center;
 
   > input {
-    height: 30px;
-    width: 220px;
-    background: #000;
+    height: 37px;
+    width: 270px;
+    background: #111;
     border-radius: 7px;
     color: #fff;
     padding: 10px;
     font-size: 15px;
     opacity: 0.8;
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
     ::placeholder {
       font-size: 10px;
