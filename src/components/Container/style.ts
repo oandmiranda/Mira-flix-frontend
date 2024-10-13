@@ -1,3 +1,4 @@
+import { device } from '@src/styles/themes';
 import { ContainerProps } from '@src/types/interfaces';
 import styled from 'styled-components';
 
@@ -11,4 +12,9 @@ export const StyledContainer = styled.main<ContainerProps>`
         : 'none'},
     ${(props) => (props.backgroundImage ? `url(${props.backgroundImage})` : 'none')};
   background-size: ${(props) => (props.hasBackgroundSizeCover ? 'cover' : 'auto')};
+
+  @media ${device.mobileS}, ${device.mobileL} {
+    display: flex;
+    flex-direction: column;
+  }
 `;

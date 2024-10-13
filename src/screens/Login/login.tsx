@@ -6,6 +6,7 @@ import Container from '@src/components/Container/container';
 import Box from '@src/shared/Box/box';
 import Text from '@src/components/Text/text';
 import theme from '@src/styles/themes';
+import { TextArea } from './style';
 // import imageBackground from '../../../public/assets/images/aquaman.jpeg';
 
 export default function LoginPage() {
@@ -33,17 +34,17 @@ export default function LoginPage() {
           display: 'flex',
           justifyContent: 'space-around',
           alignItems: 'center',
-          padding: '60px',
+          padding: '50px',
         }}
       >
-        <Box tag="div" styleSheet={{ width: '50%' }}>
+        <TextArea>
           <Title>Filmes, séries, documentários e muito mais</Title>
           <Sinopse>
             Assista aos originais MiraFlix e explore um mundo de histórias incríveis com acesso ilimitado a filmes,
             séries e muito mais. Curta seus títulos favoritos ou descubra novas paixões com a liberdade de assistir
             quando e onde quiser.
           </Sinopse>
-        </Box>
+        </TextArea>
 
         <Box
           tag="div"

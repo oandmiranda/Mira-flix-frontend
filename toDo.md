@@ -24,16 +24,16 @@
 (X) refatorar navBar/navMenu
 (X) setar link nos títulos de categoria na Home
 (X) definir rotas protegidas
+(x) autenticação do usuário
 (X) criar e validar página de cadastro
 (X) estilizar página de login
 (X) refatorar estilos na página de cadastro e login
 (x) refatorar logo nas telas login e signup
+(X) responsividade screen login e signup
 
-() criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
+
 () realizar melhorias no visual:
     () hover nos links
-
-() criar autenticação do usuário
 () refatorar componente Container (fazer componentização correta)
 () debugar
