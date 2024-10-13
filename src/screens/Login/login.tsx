@@ -40,22 +40,23 @@ export default function LoginPage() {
           <Title>Filmes, séries, documentários e muito mais</Title>
           <Sinopse>
             Assista aos originais MiraFlix e explore um mundo de histórias incríveis com acesso ilimitado a filmes,
-            séries e muito mais. Curta seus títulos favoritos ou descubra novas paixões com a liberdade de assistir quando e onde quiser.
+            séries e muito mais. Curta seus títulos favoritos ou descubra novas paixões com a liberdade de assistir
+            quando e onde quiser.
           </Sinopse>
         </Box>
 
         <Box
           tag="div"
           styleSheet={{
-            background: 'black',
+            background: 'linear-gradient(135deg,#360a0a, #012d38)',
             width: '360px',
-            height: '485px',
+            height: '520px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: '20px',
-            gap: '50px',
+            gap: '20px',
             padding: '30px',
           }}
         >
@@ -66,10 +67,13 @@ export default function LoginPage() {
               flexDirection: 'column',
               alignItems: 'center',
               gap: '7px',
+              marginTop: '30px',
             }}
           >
-            <Text tag="h5">Ainda não tem cadastro?</Text>
-            <Button href="/signup" width="210px" background={theme.colors.background.button}>
+            <Text tag="p" styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}>
+              É novo por aqui? cadastre-se
+            </Text>
+            <Button href="/signup" width="270px">
               cadastre-se
             </Button>
           </Box>

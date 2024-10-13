@@ -201,3 +201,10 @@ export interface errorStyleType {
   padding: string;
   fontSize: string;
 }
+
+export interface successStyleType {
+  color: string;
+  fontSize: string;
+  fontWeight: string;
+  marginTop: string;
+}

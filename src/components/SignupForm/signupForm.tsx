@@ -3,18 +3,13 @@ import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
 import { Container } from '../Login/style';
-import { errorStyleType } from '@src/types/interfaces';
 import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
 import Box from '@src/shared/Box/box';
 import Logo from '../Logo/Logo';
-
-const errorStyle: errorStyleType = {
-  color: theme.colors.errorStyle,
-  padding: '5px 0px',
-  fontSize: '14px',
-};
+import { errorStyle } from '@src/styles/errorStyle';
+import { successStyle } from '@src/styles/successStyle';
 
 export default function SignupForm() {
   const {
@@ -66,7 +61,7 @@ export default function SignupForm() {
           <Text tag="h2" styleSheet={{ marginBottom: '10px', marginTop: '25px' }}>
             Cadastrar
           </Text>
-          <Text tag="p" styleSheet={{ marginBottom: '13px' }}>
+          <Text tag="p" styleSheet={{ marginBottom: '13px', fontSize: theme.sizes.paragraph.mobileS }}>
             Digite dados válidos
           </Text>
           <input
@@ -101,7 +96,8 @@ export default function SignupForm() {
               required: 'A senha é obrigatória.',
               pattern: {
                 value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/,
-                message: 'A senha deve ter no mínimo 8 caracteres, com letras maiúsculas, números e símbolos.',
+                message:
+                  'A senha deve ter no mínimo 8 caracteres, com pelo menos uma letra maiúscula, números e símbolos.',
               },
             })}
             placeholder="Senha"
@@ -123,7 +119,7 @@ export default function SignupForm() {
           </Button>
           {/* Exibe mensagens de erro ou sucesso */}
           {error && <Text styleSheet={errorStyle}>{error}</Text>}
-          {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+          {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
         </Container>
       </form>
     </Box>

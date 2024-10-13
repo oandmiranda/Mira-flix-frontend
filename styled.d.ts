@@ -14,6 +14,8 @@ declare module 'styled-components' {
       };
     };
     colors: {
+      errorStyle: string;
+      successStyle: string;
       background: {
         main: string;
         primary: string;
@@ -21,7 +23,6 @@ declare module 'styled-components' {
         blue: string;
         button: string;
       };
-      errorStyle: string;
       text: {
         logo: string;
         main: string;

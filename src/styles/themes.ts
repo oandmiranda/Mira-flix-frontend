@@ -13,6 +13,8 @@ const theme: DefaultTheme = {
     },
   },
   colors: {
+    errorStyle: '#FF0000',
+    successStyle: '#28a745',
     background: {
       main: '#0b0c0c',
       primary: '#151717',
@@ -20,7 +22,6 @@ const theme: DefaultTheme = {
       blue: '#02b7e3',
       button: '#058bac',
     },
-    errorStyle: '#FF0000',
     text: {
       main: '#e5e5e5',
       navbar: '#E0E0E2',

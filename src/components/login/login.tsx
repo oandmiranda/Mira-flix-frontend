@@ -7,6 +7,9 @@ import Box from '@src/shared/Box/box';
 import Button from '../Button/button';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
+import Logo from '../Logo/Logo';
+import { errorStyle } from '@src/styles/errorStyle';
+import { successStyle } from '@src/styles/successStyle';
 
 export default function LoginForm() {
   const {
@@ -36,10 +39,12 @@ export default function LoginForm() {
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container>
-          <Text tag="h1" styleSheet={{ marginBottom: '10px' }}>
+          <Logo cursorDefault />
+
+          <Text tag="h2" styleSheet={{ marginBottom: '10px' }}>
             Entrar
           </Text>
-          <Text tag="h4" styleSheet={{ marginBottom: '13px' }}>
+          <Text tag="p" styleSheet={{ marginBottom: '13px', fontSize: theme.sizes.paragraph.mobileS }}>
             Digite o endereço de e-mail e a senha da sua conta MiraFlix
           </Text>
           <input
@@ -53,7 +58,7 @@ export default function LoginForm() {
             })}
             placeholder="Email"
           />
-          {errors.email && <Text styleSheet={{ color: 'red', padding: '10px 0' }}>{errors.email.message}</Text>}
+          {errors.email && <Text styleSheet={errorStyle}>{errors.email.message}</Text>}
 
           <input
             type="password"
@@ -62,26 +67,13 @@ export default function LoginForm() {
             })}
             placeholder="Senha"
           />
-          {errors.password && (
-            <Text styleSheet={{ color: 'red', padding: '10px 0' }}>{errors.password.message}</Text>
-          )}
+          {errors.password && <Text styleSheet={errorStyle}>{errors.password.message}</Text>}
 
-          <Button type="submit" width="210px" background={theme.colors.background.button}>
+          <Button type="submit" width="270px" background={theme.colors.background.button}>
             Login
           </Button>
-          {successMessage && (
-            <Text
-              styleSheet={{
-                color: theme.colors.background.button,
-                fontSize: '20px',
-                fontWeight: '700',
-                marginTop: '10px',
-              }}
-            >
-              {successMessage}
-            </Text>
-          )}
-          {error && <Text styleSheet={{ color: 'red', padding: '10px 0' }}>{error + '😥'}</Text>}
+          {error && <Text styleSheet={errorStyle}>{error + '😥'}</Text>}
+          {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
         </Container>
       </form>
 
