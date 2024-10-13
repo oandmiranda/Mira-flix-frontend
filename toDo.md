@@ -11,15 +11,12 @@
 (X) setar comportamento **"hover"** em cada filme
 (X) adicionar title e avaliação ao movie em **"hover"**
 (X) melhorar visual dos cards
-
-# 26/07
 (X) mensagem de erro quando a api não retornar os dados do filme na page [id] (com base no status_message)
 (X) definir logo final
 (X) desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
 (X) baixar svg 404
 (X) menu burger:
     (X) setar animação no componente
-
 (X) deploy
 (X) aplicar carousel na Home screen
 (X) responsividade
@@ -29,9 +26,10 @@
 (X) definir rotas protegidas
 (X) criar e validar página de cadastro
 (X) estilizar página de login
-() refatorar estilos na página de cadastro e login
+(X) refatorar estilos na página de cadastro e login
 
 () refatorar logo nas telas login e signup
+
 () criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
 () realizar melhorias no visual:

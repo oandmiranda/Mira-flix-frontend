@@ -1,3 +1,4 @@
+import theme, { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
 export const Container = styled.div<{ width?: string }>`
@@ -27,5 +28,19 @@ export const Container = styled.div<{ width?: string }>`
     ::-webkit-input-placeholder {
       font-size: 1px;
     }
+  }
+`;
+
+export const LogoText = styled.p`
+  font-family: ${theme.tipography.logo.fontFamily};
+  font-size: 2.3rem;
+  color: ${theme.colors.text.logo};
+
+  @media ${device.mobileS} {
+    font-size: ${theme.sizes.title.xs};
+  }
+
+  @media ${device.mobileL}, ${device.tablet} {
+    font-size: ${theme.sizes.title.mobileS};
   }
 `;

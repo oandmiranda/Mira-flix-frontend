@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { login } from '@src/services/auth';
-import { Container } from './style';
+import { Container, LogoText } from './style';
 import Box from '@src/shared/Box/box';
 import Button from '../Button/button';
 import Text from '../Text/text';
@@ -39,7 +39,7 @@ export default function LoginForm() {
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container>
-          <Logo cursorDefault />
+          <LogoText>MiraFlix</LogoText>
 
           <Text tag="h2" styleSheet={{ marginBottom: '10px' }}>
             Entrar
