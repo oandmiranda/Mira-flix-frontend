@@ -27,8 +27,7 @@
 (X) criar e validar página de cadastro
 (X) estilizar página de login
 (X) refatorar estilos na página de cadastro e login
-
-() refatorar logo nas telas login e signup
+(x) refatorar logo nas telas login e signup
 
 () criar componente de logOut com o nome do usuário
 () setar comportamento de busca no input
