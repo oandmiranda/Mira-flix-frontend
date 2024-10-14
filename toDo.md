@@ -35,5 +35,7 @@
 
 () realizar melhorias no visual:
     () hover nos links
+() update name on home screen
 () refatorar componente Container (fazer componentização correta)
 () debugar
+() retirar logs do console

@@ -1,8 +1,12 @@
 import theme, { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.section<{ paddingTop?: string }>`
   padding: 0px 20px 60px 20px;
+  padding-top: ${(props) => (props.paddingTop ? props.paddingTop : '0')};
+  padding-right: 20px;
+  padding-bottom: 60px;
+  padding-left: 20px;
 `;
 
 export const StyledWrapper = styled.div`

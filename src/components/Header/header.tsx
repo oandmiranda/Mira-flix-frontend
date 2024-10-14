@@ -9,11 +9,11 @@ import HeaderCarousel from '@src/components/HeaderCarousel/headerCarousel';
 import TextArea from '../TextArea/textArea';
 import { Container, Image, Sinopse, Title, Button, StyledDatas } from './style';
 
-export default function Header() {
+export default function Header({ height }: { height?: string }) {
   const movies = useMoviesContext();
 
   return (
-    <Container>
+    <Container height={height}>
       <NavBar />
       <HeaderCarousel loop={true} autoplay={{ delay: 6000, disableOnInteraction: false }}>
         {movies &&

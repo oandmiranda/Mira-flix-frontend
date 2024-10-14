@@ -168,6 +168,7 @@ export interface BurgerMenuProps {
 
 export interface CategoryProps {
   title?: string;
+  paddingTop?: string;
   href?: string;
 }
 
