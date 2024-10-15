@@ -1,20 +1,23 @@
-import LupaIcon from '@src/components/Icons/Lupa/lupa_icon';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import theme from '@src/styles/themes';
-import { CSSProperties, HTMLInputTypeAttribute, useState } from 'react';
+import LupaIcon from '@src/components/Icons/Lupa/lupa_icon';
 import { SearchInput } from './style';
-import Link from 'next/link';
-
-interface InputProps {
-  placeholder?: string;
-  type?: HTMLInputTypeAttribute | undefined;
-  styleSheet?: CSSProperties;
-}
+import { InputProps } from '@src/types/interfaces';
 
 export default function Input({ placeholder, type, styleSheet }: InputProps) {
-  const [search, SetSearch] = useState('');
+  const [search, setSearch] = useState('');
+  const router = useRouter();
 
   const handleSearch = (event) => {
     event.preventDefault();
+
+    if (search.trim()) {
+      // Verifica se o campo não está vazio
+      // Redireciona para a página de resultados
+      router.push(`/search?query=${encodeURIComponent(search)}`);
+      setSearch('');
+    }
   };
 
   return (
@@ -24,13 +27,11 @@ export default function Input({ placeholder, type, styleSheet }: InputProps) {
         placeholder={placeholder}
         type={type}
         value={search}
-        onChange={(e) => SetSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
       />
-      <Link href={`/search?query=${encodeURIComponent(search)}`} passHref>
-        <button type="submit">
-          <LupaIcon fill={theme.colors.text.logo} isPositionAbsolute />
-        </button>
-      </Link>
+      <button type="submit" style={{ border: 'none' }}>
+        <LupaIcon fill={theme.colors.text.logo} isPositionAbsolute />
+      </button>
     </form>
   );
 }

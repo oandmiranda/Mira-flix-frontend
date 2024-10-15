@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const SearchInput = styled.input`
-  height: 30px;
-  width: 210px;
+  height: 35px;
+  width: 220px;
   background: #000;
   border-radius: 7px;
   color: #fff;

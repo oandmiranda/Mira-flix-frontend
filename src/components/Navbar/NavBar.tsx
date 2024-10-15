@@ -59,7 +59,7 @@ export default function NavBar() {
         <Box tag="div" styleSheet={{ alignItems: 'center', display: 'flex', gap: '5px' }}>
           <StyledGiHamburgerMenu size={30} onClick={openMenu} />
           <ul>
-            <Input placeholder="busque for filmes ou séries" />
+            <Input placeholder="Busque por filmes ou séries" />
           </ul>
         </Box>
       </Nav>

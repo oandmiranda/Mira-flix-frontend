@@ -2,7 +2,7 @@ import { StaticImageData } from 'next/image';
 import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
 import { SwiperProps } from 'swiper/react';
-import React from 'react';
+import React, { HTMLInputTypeAttribute } from 'react';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
@@ -208,4 +208,10 @@ export interface successStyleType {
   fontSize: string;
   fontWeight: string;
   marginTop: string;
+}
+
+export interface InputProps {
+  placeholder?: string;
+  type?: HTMLInputTypeAttribute | undefined;
+  styleSheet?: CSSProperties;
 }

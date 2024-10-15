@@ -3,7 +3,10 @@ import Footer from '@src/components/Footer/footer';
 import Header from '@src/components/Header/header';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
+import Text from '@src/components/Text/text';
 import withAuth from '@src/hook/withAuth';
+import Box from '@src/shared/Box/box';
+import theme from '@src/styles/themes';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { API_KEY } from 'pages/api/tmdb';
@@ -23,11 +26,12 @@ function SearchResults() {
         try {
           const response = await fetch(url);
           const data = await response.json();
-          console.log(data);
           setResults(data);
 
-          if (data.lenght === 0) {
-            setError('Nenhum filme encontrado para a sua busca. Tente novamente com outra palavra-chave.');
+          if (data.results.length === 0) {
+            setError('Nenhum resultado encontrado para a sua busca 😕 Tente novamente com outra palavra-chave.');
+          } else {
+            setError('');
           }
         } catch (error) {
           console.error('Erro na busca:', error);
@@ -56,9 +60,24 @@ function SearchResults() {
       <Header height="87vh" />
       <Container hasDegrade>
         <MovieCarousel items={results} />
-        <MenuCategory title="Procurando uma categoria?" paddingTop="50px" />
+        {error && (
+          <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
+            <Text
+              tag="h4"
+              styleSheet={{
+                position: 'absolute',
+                top: '530px',
+                zIndex: '1',
+                padding: '30px',
+                color: theme.colors.errorStyle,
+              }}
+            >
+              {error}
+            </Text>
+          </Box>
+        )}
+        <MenuCategory title="Procurando uma categoria?" paddingTop="100px" />
       </Container>
-      {error && <p>hdsjf</p>}
       <Footer />
     </>
   );
