@@ -69,7 +69,7 @@ export default function LoginForm() {
           />
           {errors.password && <Text styleSheet={errorStyle}>{errors.password.message}</Text>}
 
-          <Button type="submit" width="270px" background={theme.colors.background.button}>
+          <Button type="submit" width="270px" background={theme.colors.background.button} backgroundHover>
             Login
           </Button>
           {error && <Text styleSheet={errorStyle}>{error + '😥'}</Text>}

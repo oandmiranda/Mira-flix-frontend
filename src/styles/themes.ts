@@ -16,6 +16,7 @@ const theme: DefaultTheme = {
     errorStyle: '#FF0000',
     successStyle: '#28a745',
     background: {
+      gradient: 'linear-gradient(135deg,#360a0a, #012d38)',
       main: '#0b0c0c',
       primary: '#151717',
       secondary: '#1f2222',

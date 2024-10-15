@@ -3,6 +3,7 @@ import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } f
 import { CSSProperties } from 'styled-components';
 import { SwiperProps } from 'swiper/react';
 import React, { HTMLInputTypeAttribute } from 'react';
+import { Results } from './apiTypes';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
@@ -102,12 +103,18 @@ export interface CarouselProps {
   };
 }
 
+export interface HeaderMovieDetailsProps {
+  items: { results: Results[]; id: number };
+  id: string;
+}
+
 export interface ButtonProps {
   onClick?: () => void;
   href?: string;
   children: React.ReactNode;
   width?: string;
   background?: string;
+  backgroundHover?: boolean;
   styleSheet?: CSSProperties;
 }
 

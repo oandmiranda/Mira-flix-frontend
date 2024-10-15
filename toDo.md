@@ -30,12 +30,15 @@
 (X) refatorar estilos na página de cadastro e login
 (x) refatorar logo nas telas login e signup
 (X) responsividade screen login e signup
-
-() setar comportamento de busca no input
+(X) setar comportamento de busca no input
+(X) update name on home screen
 
 () realizar melhorias no visual:
+    () refatorar burgerMenu
     () hover nos links
-() update name on home screen
+    () put popcorn svg to button on [id.tsx]
+    () update hover state on movies (put small stars)
+    
 () refatorar componente Container (fazer componentização correta)
 () debugar
 () retirar logs do console

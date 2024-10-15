@@ -1,3 +1,4 @@
+import theme from '@src/styles/themes';
 import styled, { keyframes } from 'styled-components';
 
 const slideIn = keyframes`
@@ -32,7 +33,7 @@ export const Container = styled.section<{ isOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle, #02b7e3 0%, #0d414e 100%);
+  background: ${theme.colors.background.gradient};
   backdrop-filter: blur(3px);
   animation: ${({ isOpen }) => (isOpen ? slideIn : slideOut)} 0.6s ease forwards;
 

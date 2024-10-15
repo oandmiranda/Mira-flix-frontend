@@ -49,7 +49,7 @@ export default function LoginPage() {
         <Box
           tag="div"
           styleSheet={{
-            background: 'linear-gradient(135deg,#360a0a, #012d38)',
+            background: theme.colors.background.gradient,
             width: '360px',
             height: '520px',
             display: 'flex',

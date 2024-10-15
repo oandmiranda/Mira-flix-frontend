@@ -5,6 +5,7 @@ import { useBurgerMenuContext } from '@src/context/burgerMenuContext';
 import { SearchInput } from '../Navbar/Input/style';
 import Box from '@src/shared/Box/box';
 import Text from '../Text/text';
+import Input from '../Navbar/Input/Input';
 
 export default function BurgerMenu({ isOpen }: { isOpen: boolean }) {
   const { closeMenu } = useBurgerMenuContext();
@@ -23,11 +24,11 @@ export default function BurgerMenu({ isOpen }: { isOpen: boolean }) {
             justifyContent: 'center',
             alignItems: 'center',
             gap: '5px',
-            marginTop: '15px',
+            marginTop: '40px',
           }}
         >
-          <Text tag="h4">Pesquisar</Text>
-          <SearchInput />
+          <Text tag="h4">Buscar</Text>
+          <Input placeholder="Busque por filmes ou séries" />
         </Box>
       </nav>
     </Container>

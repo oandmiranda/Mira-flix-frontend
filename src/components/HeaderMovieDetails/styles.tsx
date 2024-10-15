@@ -35,8 +35,8 @@ export const Image = styled.img`
 `;
 
 export const GradientArea = styled.div`
-  width: 100%; // exponencia o gradiente
-  height: 100%; // exponencia o gradiente
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,6 +50,7 @@ export const GradientArea = styled.div`
       linear-gradient(to right, #000 3%, rgba(0, 0, 0, 0.4) 80%);
   }
 `;
+
 export const Title = styled.h1`
   color: ${theme.colors.text.hover};
   margin-top: 20px;
@@ -78,9 +79,6 @@ export const TextArea = styled.div`
     top: 60px;
     left: 0;
     padding: 20px;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 1.1s ease-in-out;
   }
 
   @media ${device.tablet} {
@@ -88,9 +86,6 @@ export const TextArea = styled.div`
     top: 100px;
     left: 250px;
     width: 58%;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 1.1s ease-in-out;
   }
 
   @media ${device.laptop}, ${device.desktop} {
@@ -98,9 +93,6 @@ export const TextArea = styled.div`
     top: 100px;
     left: 280px;
     width: 65%;
-    opacity: 0;
-    transform: translateY(100%);
-    transition: all 1.1s ease-in-out;
   }
 `;
 
@@ -112,13 +104,6 @@ export const ContentArea = styled.div`
   width: 90%;
   height: 90%;
   margin-top: 30px;
-
-  @media ${device.mobileS}, ${device.mobileL}, ${device.tablet}, ${device.laptop}, ${device.desktop} {
-    &:hover ${TextArea} {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 `;
 
 export const Tagline = styled.h4``;

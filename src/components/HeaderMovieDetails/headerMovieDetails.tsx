@@ -1,19 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Results } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
 import Text from '../Text/text';
 import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Tagline } from './styles';
 import theme from '@src/styles/themes';
 import Button from '../Button/button';
-import { APIResponse } from '@src/types/interfaces';
+import { APIResponse, HeaderMovieDetailsProps } from '@src/types/interfaces';
 import { Title } from './styles';
 import NavBar from '../Navbar/NavBar';
-
-interface HeaderMovieDetailsProps {
-  items: { results: Results[]; id: number };
-  id: string;
-}
 
 export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProps) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
