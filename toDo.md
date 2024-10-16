@@ -34,10 +34,11 @@
 (X) update name on home screen
 
 () realizar melhorias no visual:
-    () refatorar burgerMenu
-    () hover nos links
+    (X) refatorar burgerMenu
+    (X) hover nos links
     () put popcorn svg to button on [id.tsx]
     () update hover state on movies (put small stars)
+    () setar shadow na seta do carroussel
     
 () refatorar componente Container (fazer componentização correta)
 () debugar

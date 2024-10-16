@@ -220,5 +220,12 @@ export interface successStyleType {
 export interface InputProps {
   placeholder?: string;
   type?: HTMLInputTypeAttribute | undefined;
+  width?: string;
+  styleSheet?: CSSProperties;
+}
+
+export interface LogoProps {
+  cursorDefault?: boolean;
+  noLink?: boolean;
   styleSheet?: CSSProperties;
 }

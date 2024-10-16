@@ -37,7 +37,12 @@ export const Container = styled.section<{ isOpen: boolean }>`
   backdrop-filter: blur(3px);
   animation: ${({ isOpen }) => (isOpen ? slideIn : slideOut)} 0.6s ease forwards;
 
-  svg {
+  @media (min-width: 768px) {
+    width: 40%;
+    height: 100%;
+  }
+
+  svg.close-icon {
     position: absolute;
     top: 16px;
     right: 29px;
@@ -52,8 +57,33 @@ export const Container = styled.section<{ isOpen: boolean }>`
     gap: 20px;
   }
 
-  @media (min-width: 768px) {
-    width: 50%;
-    height: 100%;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  }
+
+  a {
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: ${theme.colors.text.hover};
+    }
+  }
+
+  .home {
+    color: ${theme.colors.background.button};
+    transition: color 0.3s ease-in-out;
+    font-weight: 500;
+
+    &:hover {
+      color: ${theme.colors.background.blue};
+    }
+  }
+
+  hr {
+    margin: 10px 0;
+    border-color: ${theme.colors.background.blue};
   }
 `;

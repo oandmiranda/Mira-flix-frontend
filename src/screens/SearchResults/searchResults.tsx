@@ -71,7 +71,7 @@ function SearchResults() {
                 padding: '20px',
                 margin: '0 10px',
                 color: '#ffffffe4',
-                background: theme.colors.errorStyle,
+                background: theme.colors.background.error,
                 borderRadius: '20px',
               }}
             >

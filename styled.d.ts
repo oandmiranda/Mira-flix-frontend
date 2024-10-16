@@ -18,6 +18,7 @@ declare module 'styled-components' {
       successStyle: string;
       background: {
         gradient: string;
+        error: string;
         main: string;
         primary: string;
         secondary: string;

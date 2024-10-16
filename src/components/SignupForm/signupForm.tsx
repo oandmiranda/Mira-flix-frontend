@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
-import { Container, LogoText } from '../Login/style';
+import { Container } from '../Login/style';
 import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
@@ -57,8 +57,8 @@ export default function SignupForm() {
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
         <Container>
-          <LogoText>MiraFlix</LogoText>
-          <Text tag="h2" styleSheet={{ marginBottom: '10px', marginTop: '25px' }}>
+          <Logo noLink />
+          <Text tag="h3" styleSheet={{ marginBottom: '10px', marginTop: '25px' }}>
             Cadastrar
           </Text>
           <Text tag="p" styleSheet={{ marginBottom: '13px', fontSize: theme.sizes.paragraph.mobileS }}>
