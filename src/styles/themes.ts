@@ -13,11 +13,16 @@ const theme: DefaultTheme = {
     },
   },
   colors: {
+    errorStyle: '#FF0000',
+    successStyle: '#28a745',
     background: {
+      gradient: 'linear-gradient(135deg,#360a0a, #012d38)',
+      error: 'linear-gradient(5deg, #ff4d4d, #FF0000)',
       main: '#0b0c0c',
       primary: '#151717',
       secondary: '#1f2222',
       blue: '#02b7e3',
+      button: '#058bac',
     },
     text: {
       main: '#e5e5e5',

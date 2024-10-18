@@ -14,11 +14,16 @@ declare module 'styled-components' {
       };
     };
     colors: {
+      errorStyle: string;
+      successStyle: string;
       background: {
+        gradient: string;
+        error: string;
         main: string;
         primary: string;
         secondary: string;
         blue: string;
+        button: string;
       };
       text: {
         logo: string;

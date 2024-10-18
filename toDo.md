@@ -11,15 +11,12 @@
 (X) setar comportamento **"hover"** em cada filme
 (X) adicionar title e avaliação ao movie em **"hover"**
 (X) melhorar visual dos cards
-
-# 26/07
 (X) mensagem de erro quando a api não retornar os dados do filme na page [id] (com base no status_message)
 (X) definir logo final
 (X) desenvolver rota de "a api não retorna os vídeos" ao clicar no botão assistir
 (X) baixar svg 404
 (X) menu burger:
     (X) setar animação no componente
-
 (X) deploy
 (X) aplicar carousel na Home screen
 (X) responsividade
@@ -27,12 +24,21 @@
 (X) refatorar navBar/navMenu
 (X) setar link nos títulos de categoria na Home
 (X) definir rotas protegidas
-
-() criar e validar página de cadastro
-() criar componente de logOut com o nome do usuário
-() setar comportamento de busca no input
-() realizar melhorias no visual:
-    () hover nos links
-
-() criar autenticação do usuário
+(x) autenticação do usuário
+(X) criar e validar página de cadastro
+(X) estilizar página de login
+(X) refatorar estilos na página de cadastro e login
+(x) refatorar logo nas telas login e signup
+(X) responsividade screen login e signup
+(X) setar comportamento de busca no input
+(X) update name on home screen
+(X) realizar melhorias no visual:
+    (X) refatorar burgerMenu
+    (X) hover nos links
+    (X) put popcorn svg to button on [id.tsx]
+    (X) setar shadow na seta do carroussel
+    (X) setar zoom in/out em image na page [id]
+    
+() refatorar componente Container (fazer componentização correta)
 () debugar
+() retirar logs do console

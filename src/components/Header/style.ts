@@ -2,9 +2,9 @@ import theme from '@src/styles/themes';
 import styled from 'styled-components';
 import { device } from '@src/styles/themes';
 
-export const Container = styled.div`
+export const Container = styled.div<{ height?: string }>`
   width: 100vw;
-  height: 100vh;
+  height: ${(props) => (props.height ? props.height : '100vh')};
 `;
 
 export const Title = styled.h1`

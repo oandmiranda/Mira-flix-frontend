@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import StyledLink from './StyledLink';
+import StyledLink from './styledLink';
 
 describe('NavLink component', () => {
   it('should render a children', () => {

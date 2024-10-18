@@ -11,6 +11,7 @@ const withAuth = (WrappedComponent: FC) => {
       const token = getToken();
 
       if (!token) {
+        alert('Acesso não autorizado. Por favor, faça login novamente.');
         router.push('/login');
         return;
       }

@@ -1,19 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Results } from '@src/types/apiTypes';
 import MediaImage from '../Image/MediaImage';
 import Box from '@src/shared/Box/box';
 import Text from '../Text/text';
 import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Tagline } from './styles';
 import theme from '@src/styles/themes';
 import Button from '../Button/button';
-import { APIResponse } from '@src/types/interfaces';
+import { APIResponse, HeaderMovieDetailsProps } from '@src/types/interfaces';
 import { Title } from './styles';
 import NavBar from '../Navbar/NavBar';
-
-interface HeaderMovieDetailsProps {
-  items: { results: Results[]; id: number };
-  id: string;
-}
+import { GiPopcorn } from 'react-icons/gi';
 
 export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProps) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -106,7 +101,13 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                       styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
                     >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
                   </Box>
-                  <Button href={'/error'}>Assistir</Button>
+
+                  <Button
+                    href={'/error'}
+                    styleSheet={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px' }}
+                  >
+                    Assistir <GiPopcorn size={23} />
+                  </Button>
                 </TextArea>
               </ContentArea>
             </GradientArea>

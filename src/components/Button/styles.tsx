@@ -1,14 +1,18 @@
 import theme, { device } from '@src/styles/themes';
+import { ButtonProps } from '@src/types/interfaces';
 import styled from 'styled-components';
 
-export const S_Button = styled.button`
-  width: 160px;
-  border-left: 1px solid ${theme.colors.background.blue};
-  border-top: 2px solid ${theme.colors.background.blue};
-  background-color: transparent;
-  padding: 10px;
+export const S_Button = styled.button<ButtonProps>`
+  width: ${(props) => (props.width ? props.width : '160px')};
+  border-left: 1px solid ${theme.colors.background.button};
+  border-top: 2px solid ${theme.colors.background.button};
+  border-right: none;
+  border-bottom: none;
   border-radius: 10px;
+  background-color: ${(props) => (props.background ? props.background : 'transparent')};
   color: ${theme.colors.text.navbar};
+  box-shadow: 2px 4px 8px rgba(14, 14, 20, 0.6);
+  padding: 10px;
   cursor: pointer;
   font-size: ${theme.sizes.paragraph.default};
   font-family: ${theme.tipography.default.fontFamily};
@@ -18,7 +22,8 @@ export const S_Button = styled.button`
     font-weight 0.3s ease-in-out;
 
   &:hover {
-    background-color: ${theme.colors.background.main};
+    background-color: ${(props) =>
+      props.backgroundHover ? theme.colors.background.blue : theme.colors.background.button};
     color: ${theme.colors.text.hover};
     font-weight: 500;
   }

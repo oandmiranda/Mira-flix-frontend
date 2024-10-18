@@ -2,7 +2,8 @@ import { StaticImageData } from 'next/image';
 import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
 import { SwiperProps } from 'swiper/react';
-import React from 'react';
+import React, { HTMLInputTypeAttribute } from 'react';
+import { Results } from './apiTypes';
 
 export interface StyleSheet {
   // sending StyleSheet for other interfaces
@@ -102,16 +103,28 @@ export interface CarouselProps {
   };
 }
 
+export interface HeaderMovieDetailsProps {
+  items: { results: Results[]; id: number };
+  id: string;
+}
+
 export interface ButtonProps {
   onClick?: () => void;
   href?: string;
   children: React.ReactNode;
+  width?: string;
+  background?: string;
+  backgroundHover?: boolean;
   styleSheet?: CSSProperties;
+  type?: string;
 }
 
 export interface ContainerProps {
+  styleSheet?: CSSProperties;
   children: React.ReactNode;
   hasDegrade?: boolean;
+  hasBackgroundSizeCover?: boolean;
+  backgroundImage?: string | boolean;
 }
 
 export interface HeaderProps<T> {
@@ -163,6 +176,7 @@ export interface BurgerMenuProps {
 
 export interface CategoryProps {
   title?: string;
+  paddingTop?: string;
   href?: string;
 }
 
@@ -189,4 +203,35 @@ export interface AuthContextType {
   token: string | null;
   login: (newToken: string) => void;
   logout: () => void;
+}
+
+export interface errorStyleType {
+  color: string;
+  padding: string;
+  fontSize: string;
+}
+
+export interface successStyleType {
+  color: string;
+  fontSize: string;
+  fontWeight: string;
+  marginTop: string;
+}
+
+export interface InputProps {
+  placeholder?: string;
+  type?: HTMLInputTypeAttribute | undefined;
+  width?: string;
+  styleSheet?: CSSProperties;
+}
+
+export interface LogoProps {
+  cursorDefault?: boolean;
+  noLink?: boolean;
+  styleSheet?: CSSProperties;
+}
+
+export interface LoginFormData {
+  email: string;
+  password: string;
 }

@@ -1,6 +1,6 @@
 import { setToken } from '@src/utils/token';
 
-export const login = async (email, password) => {
+export const login = async (email: string, password: string) => {
   try {
     const response = await fetch('http://localhost:3001/users/login', {
       method: 'POST',
@@ -19,7 +19,7 @@ export const login = async (email, password) => {
       // Captura e lança o erro com a mensagem do back-end
       throw new Error(data.message || 'Erro no login');
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Erro ao fazer login:', error.message); // Loga a mensagem do erro
     throw error; // Propaga o erro para o componente chamar setError
   }

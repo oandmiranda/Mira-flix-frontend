@@ -1,4 +1,4 @@
-export const register = async (name, email, password) => {
+export const register = async (name: string, email: string, password: string) => {
   try {
     const response = await fetch('http://localhost:3001/users/signup', {
       method: 'POST',
@@ -19,7 +19,7 @@ export const register = async (name, email, password) => {
       // Captura e lança o erro com a mensagem do back-end
       throw new Error(data.message || 'Erro ao cadastrar');
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Erro ao registrar usuário', error.message); // Loga a mensagem do erro
     throw error; // Propaga o erro para o componente chamar setError
   }
