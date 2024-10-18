@@ -1,11 +1,8 @@
-import theme from '@src/styles/themes';
 import StyledLink from '@src/shared/Link/styledLink';
-import LupaIcon from '../Icons/Lupa/lupa_icon';
 import Logo from '../Logo/Logo';
 import { Nav, StyledGiHamburgerMenu } from './style';
 import Box from '@src/shared/Box/box';
 import { useEffect, useState } from 'react';
-import { SearchInput } from './Input/style';
 import { useBurgerMenuContext } from '@src/context/burgerMenuContext';
 import BurgerMenu from '../BurgerMenu/burgerMenu';
 import Input from './Input/Input';

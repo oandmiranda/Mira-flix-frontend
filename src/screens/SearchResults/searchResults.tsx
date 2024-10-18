@@ -11,17 +11,20 @@ import theme from '@src/styles/themes';
 import Head from 'next/head';
 import { API_KEY } from 'pages/api/tmdb';
 import { useEffect, useState } from 'react';
+import { Items } from '@src/types/apiTypes';
 
 function SearchResults() {
   const router = useRouter();
   const { query } = router.query; // Obtem o termo da busca da URL
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<Items>({ results: [] });
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (query) {
       const fetchMovies = async () => {
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`;
+        const searchQuery = typeof query === 'string' ? query : query.toString();
+
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(searchQuery)}`;
 
         try {
           const response = await fetch(url);

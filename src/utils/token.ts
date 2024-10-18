@@ -1,7 +1,7 @@
 // token.ts será responsável por armazenar e manipular o token no localStorage.
 
 // Armazenar o token no local storage
-export const setToken = (token) => {
+export const setToken = (token: string) => {
   localStorage.setItem('token', token);
 };
 
