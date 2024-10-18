@@ -116,6 +116,7 @@ export interface ButtonProps {
   background?: string;
   backgroundHover?: boolean;
   styleSheet?: CSSProperties;
+  type?: string;
 }
 
 export interface ContainerProps {
@@ -228,4 +229,9 @@ export interface LogoProps {
   cursorDefault?: boolean;
   noLink?: boolean;
   styleSheet?: CSSProperties;
+}
+
+export interface LoginFormData {
+  email: string;
+  password: string;
 }

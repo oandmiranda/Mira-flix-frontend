@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { login } from '@src/services/auth';
-import { Container } from './style';
 import Box from '@src/shared/Box/box';
 import Button from '../Button/button';
 import Text from '../Text/text';
@@ -10,19 +9,21 @@ import theme from '@src/styles/themes';
 import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
+import { LoginFormData } from '@src/types/interfaces';
+import { Container } from '@src/components/login/style';
 
 export default function LoginForm() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<LoginFormData>();
   const [successMessage, setSuccessMessage] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
 
   // Função para manipular o envio do formulário
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: LoginFormData) => {
     setError(''); // Limpa os erros anteriores
     setSuccessMessage('');
 
@@ -30,7 +31,7 @@ export default function LoginForm() {
       const response = await login(data.email, data.password);
       setSuccessMessage(`Bem vindo ${response.name} 🤩`);
       router.push('/home'); // Redireciona para a página home após login bem-sucedido
-    } catch (error) {
+    } catch (error: any) {
       setError(error.message); // Define o erro recebido da resposta
     }
   };
@@ -75,8 +76,6 @@ export default function LoginForm() {
           {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
         </Container>
       </form>
-
-      {/* Exibe mensagens de sucesso ou erro */}
     </Box>
   );
 }

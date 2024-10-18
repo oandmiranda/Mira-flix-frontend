@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
-import { Container } from '../Login/style';
+import { Container } from '@src/components/login/style';
 import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
@@ -11,6 +11,13 @@ import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 
+interface SignupFormData {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export default function SignupForm() {
   const {
     register,
@@ -18,13 +25,13 @@ export default function SignupForm() {
     formState: { errors },
     reset,
     watch,
-  } = useForm();
+  } = useForm<SignupFormData>();
   const router = useRouter();
   const [successMessage, setSuccessMessage] = useState('');
   const [error, setError] = useState('');
 
   // Função para manipular o envio do formulário
-  const onSubmit = async (data) => {
+  const onSubmit = async (data: SignupFormData) => {
     setError('');
     setSuccessMessage('');
 
@@ -45,7 +52,7 @@ export default function SignupForm() {
       } else {
         throw new Error(response.message || 'Erro ao tentar cadastrar usuário');
       }
-    } catch (error) {
+    } catch (error: any) {
       setError(error.message || 'Erro ao tentar cadastrar usuário');
     }
   };

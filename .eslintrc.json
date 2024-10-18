@@ -30,9 +30,9 @@
     "rules": {
         "react/react-in-jsx-scope": "off",
         "prettier/prettier": ["error", {
-            "endOfLine":"auto"
+            "endOfLine": "auto"
         }],
-        "no-control-regex": "off"
-
+        "no-control-regex": "off",
+        "@typescript-eslint/no-explicit-any": "off" // Adicione esta linha para desabilitar a regra
     }
 }

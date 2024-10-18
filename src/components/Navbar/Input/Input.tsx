@@ -11,7 +11,7 @@ export default function Input({ placeholder, type, width, styleSheet }: InputPro
   const router = useRouter();
   const { closeMenu } = useBurgerMenuContext();
 
-  const handleSearch = (event) => {
+  const handleSearch = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (search.trim()) {

@@ -4,7 +4,6 @@ import Container from '@src/components/Container/container';
 import SignupForm from '@src/components/SignupForm/signupForm';
 import { Sinopse, Title } from '@src/components/Header/style';
 import { TextArea } from '../Login/style';
-// import imageBackground from '../../../public/assets/images/aquaman.jpeg';
 
 export default function SignupPage() {
   return (
