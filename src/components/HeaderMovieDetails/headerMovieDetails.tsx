@@ -8,6 +8,7 @@ import Button from '../Button/button';
 import { APIResponse, HeaderMovieDetailsProps } from '@src/types/interfaces';
 import { Title } from './styles';
 import NavBar from '../Navbar/NavBar';
+import { GiPopcorn } from 'react-icons/gi';
 
 export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProps) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -100,7 +101,13 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                       styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
                     >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
                   </Box>
-                  <Button href={'/error'}>Assistir</Button>
+
+                  <Button
+                    href={'/error'}
+                    styleSheet={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px' }}
+                  >
+                    Assistir <GiPopcorn size={23} />
+                  </Button>
                 </TextArea>
               </ContentArea>
             </GradientArea>

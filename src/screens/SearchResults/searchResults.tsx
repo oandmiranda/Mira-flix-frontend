@@ -57,7 +57,7 @@ function SearchResults() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <Header height="87vh" />
+      <Header height="82vh" />
       <Container hasDegrade>
         <MovieCarousel items={results} />
         {error && (

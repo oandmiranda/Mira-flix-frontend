@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
   border-radius: 50%;
   color: #fff;
   background-color: #034d60;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
   transition: background-color 0.5s ease; 
 
   @media (max-width: 340px) {

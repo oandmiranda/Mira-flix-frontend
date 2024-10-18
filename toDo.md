@@ -32,13 +32,12 @@
 (X) responsividade screen login e signup
 (X) setar comportamento de busca no input
 (X) update name on home screen
-
-() realizar melhorias no visual:
+(X) realizar melhorias no visual:
     (X) refatorar burgerMenu
     (X) hover nos links
-    () put popcorn svg to button on [id.tsx]
-    () update hover state on movies (put small stars)
-    () setar shadow na seta do carroussel
+    (X) put popcorn svg to button on [id.tsx]
+    (X) setar shadow na seta do carroussel
+    (X) setar zoom in/out em image na page [id]
     
 () refatorar componente Container (fazer componentização correta)
 () debugar

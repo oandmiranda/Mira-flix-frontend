@@ -7,7 +7,7 @@ import { css } from 'styled-components';
 export const StyledMediaImage = styled(Image)<MediaImageProps>`
   transition: transform 0.3s ease-in-out;
   margin-bottom: 10px;
-  opacity: 0.85;
+  opacity: 0.8;
 
   ${({ zoomEffect }) =>
     zoomEffect &&

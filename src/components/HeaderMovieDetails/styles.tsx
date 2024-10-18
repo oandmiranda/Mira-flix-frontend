@@ -23,6 +23,11 @@ export const Image = styled.img`
   border-radius: 15px;
   box-shadow: 2px 3px 10px #02b7e3;
   margin-bottom: 10px;
+  transition: transform 0.4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media ${device.tablet} {
     width: 270px;
