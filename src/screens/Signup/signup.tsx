@@ -30,7 +30,7 @@ export default function SignupPage() {
           display: 'flex',
           justifyContent: 'space-around',
           alignItems: 'center',
-          padding: '60px',
+          padding: '70px',
         }}
       >
         <TextArea>

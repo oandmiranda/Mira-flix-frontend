@@ -34,7 +34,7 @@ export default function LoginPage() {
           display: 'flex',
           justifyContent: 'space-around',
           alignItems: 'center',
-          padding: '50px',
+          padding: '70px',
         }}
       >
         <TextArea>
