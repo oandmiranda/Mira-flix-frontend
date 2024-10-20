@@ -2,7 +2,7 @@ import { setToken } from '@src/utils/token';
 
 export const login = async (email: string, password: string) => {
   try {
-    const response = await fetch('http://localhost:3001/users/login', {
+    const response = await fetch('http://mira-flix-backend-production.up.railway.app/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
