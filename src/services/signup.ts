@@ -1,6 +1,6 @@
 export const register = async (name: string, email: string, password: string) => {
   try {
-    const response = await fetch('http://localhost:3001/users/signup', {
+    const response = await fetch('https://mira-flix-backend.onrender.com/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
