@@ -53,4 +53,4 @@ function FilterCategory() {
   );
 }
 
-export default withAuth(FilterCategory);
+export default FilterCategory;

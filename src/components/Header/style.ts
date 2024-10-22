@@ -38,7 +38,7 @@ export const Sinopse = styled.p`
   }
 
   @media ${device.mobileL} {
-    font-size: ${theme.sizes.paragraph.mobileL};
+    font-size: ${theme.sizes.paragraph.mobileS};
   }
 `;
 

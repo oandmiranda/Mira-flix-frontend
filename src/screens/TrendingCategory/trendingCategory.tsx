@@ -50,4 +50,4 @@ function TrendingPage() {
   );
 }
 
-export default withAuth(TrendingPage);
+export default TrendingPage;

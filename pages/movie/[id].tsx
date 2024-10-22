@@ -50,4 +50,4 @@ function MovieDetails() {
   );
 }
 
-export default withAuth(MovieDetails);
+export default MovieDetails;

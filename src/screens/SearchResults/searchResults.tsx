@@ -89,4 +89,4 @@ function SearchResults() {
   );
 }
 
-export default withAuth(SearchResults);
+export default SearchResults;
