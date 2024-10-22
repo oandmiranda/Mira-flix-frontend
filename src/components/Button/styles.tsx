@@ -29,7 +29,7 @@ export const S_Button = styled.button<ButtonProps>`
   }
 
   @media ${device.mobileS} {
-    width: 120px;
+    width: ${(props) => (props.width ? '240px' : '160px')};
     padding: 7px;
     font-size: ${theme.sizes.paragraph.mobileS};
     flex-basis: 5%; /* Aproximadamente metade do container */
