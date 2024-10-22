@@ -26,4 +26,4 @@ function NoVideo() {
   );
 }
 
-export default NoVideo;
+export default withAuth(NoVideo);

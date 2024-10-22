@@ -50,4 +50,4 @@ function SeriesPage() {
   );
 }
 
-export default SeriesPage;
+export default withAuth(SeriesPage);

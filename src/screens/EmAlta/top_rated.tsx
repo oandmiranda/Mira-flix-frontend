@@ -49,4 +49,4 @@ function OriginaisNetflixPage() {
   );
 }
 
-export default OriginaisNetflixPage;
+export default withAuth(OriginaisNetflixPage);
