@@ -40,6 +40,9 @@
     (X) setar zoom in/out em image na page [id]
     (X) fix padding at the login/signup screen
 
+() corrigir bug na página de categoria no mobileS e mobileL
+
+() refatorar componente Header na página searchResults
 () refatorar componente Container (fazer componentização correta)
 () retirar logs no cliente
 () debugar

@@ -37,7 +37,7 @@ export const Subtitle = styled.p`
 export const FormArea = styled.div`
   background: ${theme.colors.background.gradient};
   width: 360px;
-  height: 500px;
+  height: 535px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -52,7 +52,7 @@ export const FormArea = styled.div`
   }
 
   @media ${device.mobileL} {
-    width: 80%;
+    width: 85%;
     height: auto;
   }
 `;
