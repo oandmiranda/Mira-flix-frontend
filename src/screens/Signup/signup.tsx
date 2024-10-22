@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import Box from '@src/shared/Box/box';
 import Container from '@src/components/Container/container';
 import SignupForm from '@src/components/SignupForm/signupForm';
-import { Sinopse, Title } from '@src/components/Header/style';
-import { TextArea } from '../Login/style';
+import { Title } from '@src/components/Header/style';
+import { FormArea, Subtitle, TextArea } from '../Login/style';
 
 export default function SignupPage() {
   return (
@@ -30,35 +29,22 @@ export default function SignupPage() {
           display: 'flex',
           justifyContent: 'space-around',
           alignItems: 'center',
-          padding: '70px',
+          padding: '5px',
+          overflow: 'hidden',
         }}
       >
         <TextArea>
-          <Title>Filmes, séries, documentários e muito mais</Title>
-          <Sinopse>
+          <Title>Filmes, séries, documentários e muito mais...</Title>
+          <Subtitle>
             Assista aos originais MiraFlix e explore um mundo de histórias incríveis com acesso ilimitado a filmes,
             séries e muito mais. Curta seus títulos favoritos ou descubra novas paixões com a liberdade de assistir
             quando e onde quiser.
-          </Sinopse>
+          </Subtitle>
         </TextArea>
 
-        <Box
-          tag="div"
-          styleSheet={{
-            background: 'linear-gradient(135deg,#360a0a, #012d38)',
-            width: '360px',
-            height: '520px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            borderRadius: '20px',
-            gap: '50px',
-            padding: '30px',
-          }}
-        >
+        <FormArea>
           <SignupForm />
-        </Box>
+        </FormArea>
       </Container>
     </>
   );

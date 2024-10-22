@@ -1,3 +1,4 @@
+import { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
 export const Container = styled.div<{ width?: string }>`
@@ -8,6 +9,10 @@ export const Container = styled.div<{ width?: string }>`
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  @media ${device.mobileL} {
+    height: auto;
+  }
 
   > input {
     height: 37px;
@@ -20,12 +25,8 @@ export const Container = styled.div<{ width?: string }>`
     opacity: 0.8;
     margin-bottom: 7px;
 
-    ::placeholder {
-      font-size: 10px;
-    }
-
-    ::-webkit-input-placeholder {
-      font-size: 1px;
+    @media ${device.mobileS} {
+      width: 240px;
     }
   }
 `;

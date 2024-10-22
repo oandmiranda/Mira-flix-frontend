@@ -38,8 +38,9 @@
     (X) put popcorn svg to button on [id.tsx]
     (X) setar shadow na seta do carroussel
     (X) setar zoom in/out em image na page [id]
-    
-() fix padding at the login/signup screen
+    (X) fix padding at the login/signup screen
+
 () refatorar componente Container (fazer componentização correta)
+() retirar logs no cliente
 () debugar
 () retirar logs do console
