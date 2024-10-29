@@ -39,11 +39,11 @@
     (X) setar shadow na seta do carroussel
     (X) setar zoom in/out em image na page [id]
     (X) fix padding at the login/signup screen
+    (X) refatorar componente Header na página searchResults
+(X) adicionar icone no título da aba
 
-() corrigir bug na página de categoria no mobileS e mobileL
-
-() refatorar componente Header na página searchResults
 () refatorar componente Container (fazer componentização correta)
+
 () retirar logs no cliente
-() debugar
 () retirar logs do console
+() debugar
