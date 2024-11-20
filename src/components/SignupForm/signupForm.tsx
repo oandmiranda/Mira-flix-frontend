@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
-import { Container } from '@src/components/login/style';
+import { Container, Spinner } from '@src/components/login/style';
 import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
@@ -29,11 +29,13 @@ export default function SignupForm() {
   const router = useRouter();
   const [successMessage, setSuccessMessage] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Função para manipular o envio do formulário
   const onSubmit = async (data: SignupFormData) => {
     setError('');
     setSuccessMessage('');
+    setLoading(true);
 
     try {
       // Faz o registro do usuário
@@ -54,6 +56,8 @@ export default function SignupForm() {
       }
     } catch (error: any) {
       setError(error.message || 'Erro ao tentar cadastrar usuário');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -121,10 +125,17 @@ export default function SignupForm() {
           />
           {errors.confirmPassword && <Text styleSheet={errorStyle}>{errors.confirmPassword.message}</Text>}
 
-          <Button type="submit" width="270px" background={theme.colors.background.button} backgroundHover>
-            Cadastrar
+          <Button
+            type="submit"
+            width="270px"
+            background={theme.colors.background.button}
+            disabled={loading}
+            backgroundHover
+          >
+            {loading ? 'Cadastrando' : 'Cadastrar'}
           </Button>
-          {/* Exibe mensagens de erro ou sucesso */}
+
+          {loading && <Spinner />}
           {error && <Text styleSheet={errorStyle}>{error}</Text>}
           {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
         </Container>

@@ -117,6 +117,7 @@ export interface ButtonProps {
   backgroundHover?: boolean;
   styleSheet?: CSSProperties;
   type?: string;
+  disabled?: any;
 }
 
 export interface ContainerProps {

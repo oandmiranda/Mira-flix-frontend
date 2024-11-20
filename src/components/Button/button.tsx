@@ -8,11 +8,18 @@ export default function Button({
   width,
   background,
   backgroundHover,
+  disabled,
   styleSheet,
 }: ButtonProps) {
   return (
     <a href={href} onClick={onClick}>
-      <S_Button width={width} background={background} backgroundHover={backgroundHover} style={styleSheet}>
+      <S_Button
+        width={width}
+        background={background}
+        backgroundHover={backgroundHover}
+        disabled={disabled}
+        style={styleSheet}
+      >
         {children}
       </S_Button>
     </a>
