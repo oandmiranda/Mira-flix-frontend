@@ -10,6 +10,7 @@ export interface Movie {
   releaseData: number;
   duration: string;
   category: string;
+  filmeId: string;
 }
 
 // declara o contexto
@@ -42,6 +43,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2008,
         duration: '2h32m',
         category: 'Ação',
+        filmeId: '/movie/155',
       },
       {
         id: 2,
@@ -54,6 +56,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2023,
         duration: '1h56m',
         category: 'Ação',
+        filmeId: '/movie/677179',
       },
       {
         id: 3,
@@ -66,6 +69,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2023,
         duration: '1h55m',
         category: 'Ação',
+        filmeId: '/movie/297802',
       },
       {
         id: 4,
@@ -78,6 +82,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2023,
         duration: '2h22m',
         category: 'Ação',
+        filmeId: '/movie/335977',
       },
       {
         id: 5,
@@ -90,6 +95,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2024,
         duration: '1h54m',
         category: 'Ação',
+        filmeId: '/movie/634492',
       },
       {
         id: 6,
@@ -102,6 +108,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2019,
         duration: '1h44m',
         category: 'Em alta',
+        filmeId: '/movie/330457',
       },
       {
         id: 7,
@@ -114,6 +121,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2024,
         duration: '2h25m',
         category: 'Recomendados para você',
+        filmeId: '/movie/786892',
       },
       {
         id: 8,
@@ -126,6 +134,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2005,
         duration: '1h43m',
         category: 'Terror',
+        filmeId: '/movie/298250',
       },
       {
         id: 9,
@@ -138,6 +147,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2022,
         duration: '2h56m',
         category: 'Ação',
+        filmeId: '/movie/268',
       },
       {
         id: 10,
@@ -150,6 +160,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2008,
         duration: '1h41m',
         category: 'Ação',
+        filmeId: '/movie/6479',
       },
       {
         id: 11,
@@ -162,6 +173,7 @@ export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
         releaseData: 2021,
         duration: '2h23m',
         category: 'Ação',
+        filmeId: '/movie/385128',
       },
     ];
 

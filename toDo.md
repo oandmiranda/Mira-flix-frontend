@@ -41,9 +41,15 @@
     (X) fix padding at the login/signup screen
     (X) refatorar componente Header na página searchResults
 (X) adicionar icone no título da aba
+(X) corrigir bug no link "action" no menu-burger
+(X) criar botão para cada carousel do header com o link para seu respectivo filme
+
+() show loading to user on login and signup page
 
 () refatorar componente Container (fazer componentização correta)
-
 () retirar logs no cliente
 () retirar logs do console
 () debugar
+-
+-
+() feito!

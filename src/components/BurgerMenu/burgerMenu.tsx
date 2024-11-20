@@ -59,7 +59,7 @@ export default function BurgerMenu({ isOpen }: { isOpen: boolean }) {
 
           <hr />
 
-          <a onClick={() => handleNavigation('category/action')}>
+          <a onClick={() => handleNavigation('/category/action')}>
             <TbPoint size={15} />
             Ação
           </a>

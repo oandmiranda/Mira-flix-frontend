@@ -40,6 +40,11 @@ export default function Header({ height }: { height?: string }) {
                     </StyledDatas>
 
                     <Sinopse>{movie.sinopse}</Sinopse>
+                    <Link href={movie.filmeId}>
+                      <Button cursor="pointer" backgroundTransparent>
+                        Ver mais
+                      </Button>
+                    </Link>
                   </Box>
                 </TextArea>
               </Container>
