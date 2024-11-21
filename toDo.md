@@ -44,8 +44,8 @@
 (X) corrigir bug no link "action" no menu-burger
 (X) criar botão para cada carousel do header com o link para seu respectivo filme
 (X) show loading to user on login and signup page
+(x) fix name "filmeId" to "movieId"
 
-() fix name "filmeId" to "movieId"
 () refatorar componente Container (fazer componentização correta)
 () retirar logs no cliente
 () retirar logs do console
