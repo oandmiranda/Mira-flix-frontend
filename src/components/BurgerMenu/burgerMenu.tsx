@@ -3,6 +3,7 @@ import { IoClose } from 'react-icons/io5';
 import { FaHome } from 'react-icons/fa';
 import { IoIosHeart } from 'react-icons/io';
 import { FaStar } from 'react-icons/fa';
+import { MdOutlineLocalMovies } from 'react-icons/md';
 import { HiComputerDesktop } from 'react-icons/hi2';
 import { TbPoint } from 'react-icons/tb';
 import { Container } from './styles';
@@ -41,19 +42,23 @@ export default function BurgerMenu({ isOpen }: { isOpen: boolean }) {
 
         <Box tag="div" styleSheet={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
           <a onClick={() => handleNavigation('/home')} className="home">
-            <FaHome size={18} />
+            <FaHome size={15} />
             Home
           </a>
+          <a onClick={() => handleNavigation('/originais_netflix')}>
+            <MdOutlineLocalMovies size={15} />
+            Originais Netflix
+          </a>
           <a onClick={() => handleNavigation('/trending')}>
-            <IoIosHeart size={18} />
+            <IoIosHeart size={15} />
             Recomendados para você
           </a>
           <a onClick={() => handleNavigation('/top_rated')}>
-            <FaStar size={18} />
+            <FaStar size={15} />
             Em alta
           </a>
           <a onClick={() => handleNavigation('/series')}>
-            <HiComputerDesktop size={18} />
+            <HiComputerDesktop size={15} />
             Séries
           </a>
 

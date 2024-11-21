@@ -3,6 +3,7 @@ import Container from '@src/components/Container/container';
 import SignupForm from '@src/components/SignupForm/signupForm';
 import { Title } from '@src/components/Header/style';
 import { FormArea, Subtitle, TextArea } from '../Login/style';
+import Button from '@src/components/Button/button';
 
 export default function SignupPage() {
   return (
@@ -44,6 +45,9 @@ export default function SignupPage() {
 
         <FormArea>
           <SignupForm />
+          <a href="/login">
+            <Button>Voltar ao Login</Button>
+          </a>
         </FormArea>
       </Container>
     </>

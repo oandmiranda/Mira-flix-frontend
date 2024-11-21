@@ -7,6 +7,7 @@ import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import withAuth from '@src/hook/withAuth';
+import Footer from '@src/components/Footer/footer';
 
 function TrendingPage() {
   // returns data for a single movie
@@ -39,13 +40,14 @@ function TrendingPage() {
       <HeaderCategory slug={'trending'} />
 
       <Container hasDegrade>
+        <MenuCategory />
         {trendingMovies && (
           <>
             <Movies items={trendingMovies.items} />
-            <MenuCategory title="Navegue pelas categorias" />
           </>
         )}
       </Container>
+      <Footer />
     </>
   );
 }

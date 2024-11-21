@@ -40,7 +40,7 @@ export default function Header({ height }: { height?: string }) {
                     </StyledDatas>
 
                     <Sinopse>{movie.sinopse}</Sinopse>
-                    <Link href={movie.filmeId}>
+                    <Link href={movie.movieId}>
                       <Button cursor="pointer" backgroundTransparent>
                         Ver mais
                       </Button>
