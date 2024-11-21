@@ -41,12 +41,12 @@ function FilterCategory() {
 
       <HeaderCategory slug={router.query.slug} />
       <Container hasDegrade>
+        <MenuCategory />
         {movies
           .filter((item) => item.slug === router.query.slug)
           .map((item) => (
             <Movies items={item.items} key={Number(item.id)} />
           ))}
-        <MenuCategory title="O que você quer assistir hoje?" />
       </Container>
       <Footer />
     </>

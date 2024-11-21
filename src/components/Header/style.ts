@@ -42,15 +42,16 @@ export const Sinopse = styled.p`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ cursor?: string; backgroundTransparent?: boolean }>`
   padding: 7px;
   width: 80px;
   border: 1px solid;
   border-radius: 20px;
-  background: ${theme.colors.background.blue};
+  background: ${(props) => (props.backgroundTransparent ? 'gold' : theme.colors.background.blue)};
   color: #000;
   font-weight: bold;
   font-size: 0.8rem;
+  cursor: ${(props) => props.cursor};
 
   @media ${device.mobileS} {
     padding: 5px;

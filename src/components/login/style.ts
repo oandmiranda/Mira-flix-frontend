@@ -1,5 +1,11 @@
 import { device } from '@src/styles/themes';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+// Animação de rodinha girando
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
 
 export const Container = styled.div<{ width?: string }>`
   max-width: 400px;
@@ -29,4 +35,14 @@ export const Container = styled.div<{ width?: string }>`
       width: 240px;
     }
   }
+`;
+
+export const Spinner = styled.div`
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid ${(props) => props.theme.colors.background.blue};
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: ${spin} 1s linear infinite;
+  margin: 10px auto;
 `;

@@ -13,9 +13,11 @@ export default function MenuCategory({ title, paddingTop }: CategoryProps) {
 
   return (
     <Container paddingTop={paddingTop}>
-      <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center', padding: '10px 0 35px 0' }}>
-        <Label>{title}</Label>
-      </Box>
+      {title && (
+        <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center', padding: '10px 0 35px 0' }}>
+          <Label>{title}</Label>
+        </Box>
+      )}
 
       <StyledWrapper>
         {filterCategories.map((item) => (

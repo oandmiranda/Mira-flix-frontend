@@ -10,7 +10,7 @@ import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { LoginFormData } from '@src/types/interfaces';
-import { Container } from '@src/components/login/style';
+import { Container, Spinner } from '@src/components/login/style'; // Adicionado Spinner
 
 export default function LoginForm() {
   const {
@@ -20,19 +20,23 @@ export default function LoginForm() {
   } = useForm<LoginFormData>();
   const [successMessage, setSuccessMessage] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); // Novo estado
   const router = useRouter();
 
   // Função para manipular o envio do formulário
   const onSubmit = async (data: LoginFormData) => {
-    setError(''); // Limpa os erros anteriores
+    setError('');
     setSuccessMessage('');
+    setLoading(true); // Inicia o estado de carregamento
 
     try {
       const response = await login(data.email, data.password);
       setSuccessMessage(`Bem vindo ${response.name} 🤩`);
-      router.push('/home'); // Redireciona para a página home após login bem-sucedido
+      router.push('/home');
     } catch (error: any) {
-      setError(error.message); // Define o erro recebido da resposta
+      setError(error.message);
+    } finally {
+      setLoading(false); // Encerra o carregamento após a requisição
     }
   };
 
@@ -69,9 +73,18 @@ export default function LoginForm() {
           />
           {errors.password && <Text styleSheet={errorStyle}>{errors.password.message}</Text>}
 
-          <Button type="submit" width="270px" background={theme.colors.background.button} backgroundHover>
-            Login
+          <Button
+            type="submit"
+            width="270px"
+            background={theme.colors.background.button}
+            disabled={loading}
+            backgroundHover
+          >
+            {loading ? 'Verificando...' : 'Login'}
           </Button>
+
+          {/* Spinner é exibido quando loading for true */}
+          {loading && <Spinner />}
           {error && <Text styleSheet={errorStyle}>{error + '😥'}</Text>}
           {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
         </Container>
