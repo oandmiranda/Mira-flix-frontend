@@ -62,7 +62,9 @@ function SearchResults() {
 
       <Header height="80vh" />
       <Container hasDegrade>
-        <MovieCarousel items={results} />
+        <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
+          <MovieCarousel items={results} />
+        </Box>
         {error && (
           <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
             <Text

@@ -47,7 +47,19 @@
 (X) show loading to user on login and signup page
 (X) fix name "filmeId" to "movieId"
 (X) adicionar botão "voltar ao Login" na página de signup
- 
+
+# signup screen
+() conteúdo quebra na área de cadastro ao enviar o form
+
+# home
+() criar menu de categorias independente se o usuário scrollar a página ou não
+() ao scrollar para baixo, definir um (scroll to top) para voltar ao todo da página
+() criar um menu para o usuário
+    - alteração/redefinição de senha
+    - dados cadastrais
+
+() o alert de pesquisa não enconstrada deve aparecer debaixo do campo de input e desaparecer após x tempo
+
 () refatorar componente Container (fazer componentização correta)
 () retirar logs no cliente
 () retirar logs do console
