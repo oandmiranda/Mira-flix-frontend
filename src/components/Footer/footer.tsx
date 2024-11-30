@@ -2,12 +2,29 @@ import Box from '@src/shared/Box/box';
 import Logo from '../Logo/Logo';
 import Text from '../Text/text';
 import theme from '@src/styles/themes';
-import { Container } from './style';
+import { FaArrowUpLong } from 'react-icons/fa6';
+import { Container, Button } from './style';
 
 export default function Footer() {
+  const scroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <Container>
-      <Box tag="div" styleSheet={{ padding: '15px', display: 'flex', justifyContent: 'center' }}>
+      <Box
+        tag="div"
+        styleSheet={{ padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      >
+        <Button onClick={scroll}>
+          <FaArrowUpLong size={30} />
+        </Button>
+        <Text tag="h3" styleSheet={{ marginBottom: '70px', color: theme.colors.text.main }}>
+          Voltar ao topo
+        </Text>
         <Logo />
       </Box>
       <Box
