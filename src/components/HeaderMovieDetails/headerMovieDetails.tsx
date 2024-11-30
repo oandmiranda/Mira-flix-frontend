@@ -69,7 +69,7 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
           <>
             <GradientArea>
               <ContentArea>
-                <Box tag="div">
+                <Box tag="div" styleSheet={{ position: 'relative' }}>
                   <Image src={`${baseUrlPathImage}${movie.poster_path}`} alt={movie.name || movie.title} />
                 </Box>
 
@@ -85,7 +85,7 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                       marginBottom: '30px',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '7px',
+                      gap: '6px',
                     }}
                   >
                     <Text

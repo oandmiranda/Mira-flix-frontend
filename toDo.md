@@ -49,16 +49,17 @@
 (X) adicionar botão "voltar ao Login" na página de signup
 
 # signup screen
-() conteúdo quebra na área de cadastro ao enviar o form
+(X) conteúdo quebra na área de cadastro ao enviar o form
 
 # home
+(X) ao scrollar para baixo, definir um (scroll to top) para voltar ao todo da página
+(X) refatorar página ID
+
+() o alert de pesquisa não encontrada deve aparecer debaixo do campo de input e desaparecer após x tempo
 () criar menu de categorias independente se o usuário scrollar a página ou não
-() ao scrollar para baixo, definir um (scroll to top) para voltar ao todo da página
 () criar um menu para o usuário
     - alteração/redefinição de senha
     - dados cadastrais
-
-() o alert de pesquisa não enconstrada deve aparecer debaixo do campo de input e desaparecer após x tempo
 
 () refatorar componente Container (fazer componentização correta)
 () retirar logs no cliente
