@@ -22,7 +22,6 @@ export const Image = styled.img`
   height: 370px;
   border-radius: 15px;
   box-shadow: 2px 3px 10px #02b7e3;
-  margin-bottom: 10px;
   transition: transform 0.4s ease-in-out;
 
   &:hover {
@@ -73,38 +72,21 @@ export const Title = styled.h1`
 `;
 
 export const TextArea = styled.div`
-  margin-left: 60px;
-  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: 410px;
+  padding-right: 20px;
 
   @media ${device.mobileS}, ${device.mobileL} {
-    position: absolute;
-    margin: 0 5px;
-    top: 60px;
-    left: 0;
-    padding: 20px;
-  }
-
-  @media ${device.tablet} {
-    position: absolute;
-    top: 100px;
-    left: 250px;
-    width: 58%;
-  }
-
-  @media ${device.laptop}, ${device.desktop} {
-    position: absolute;
-    top: 100px;
-    left: 280px;
-    width: 65%;
+    position: static;
+    justify-content: center;
   }
 `;
 
 export const ContentArea = styled.div`
-  position: relative;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
   width: 90%;
   height: 90%;

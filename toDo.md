@@ -53,8 +53,8 @@
 
 # home
 (X) ao scrollar para baixo, definir um (scroll to top) para voltar ao todo da página
+(X) refatorar página ID
 
-() refatorar página ID
 () o alert de pesquisa não encontrada deve aparecer debaixo do campo de input e desaparecer após x tempo
 () criar menu de categorias independente se o usuário scrollar a página ou não
 () criar um menu para o usuário
