@@ -10,7 +10,6 @@ import withAuth from '@src/hook/withAuth';
 import Footer from '@src/components/Footer/footer';
 
 function OriginaisNetflixPage() {
-  // returns data for a single movie
   const [movies, setMovies] = useState<IList | null>(null);
 
   useEffect(() => {

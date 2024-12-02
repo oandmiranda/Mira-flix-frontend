@@ -17,7 +17,6 @@ function TrendingPage() {
     const fetchTrendingMovies = async () => {
       const trending = await getTrendingMovies();
       setTrendingMovies(trending);
-      console.log(trending);
     };
     fetchTrendingMovies();
   }, []);

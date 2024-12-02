@@ -17,7 +17,6 @@ function SeriesPage() {
     const fetchSeries = async () => {
       const series = await getSeries();
       setSeries(series);
-      console.log(series);
     };
     fetchSeries();
   }, []);
