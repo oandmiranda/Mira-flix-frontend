@@ -15,9 +15,10 @@ import { Items } from '@src/types/apiTypes';
 
 function SearchResults() {
   const router = useRouter();
-  const { query } = router.query; // Obtem o termo da busca da URL
+  const { query } = router.query; // Obtém o termo da busca da URL
   const [results, setResults] = useState<Items>({ results: [] });
   const [error, setError] = useState('');
+  const [errorIsVisible, setErrorIsVisible] = useState(false); // Controle de visibilidade
 
   useEffect(() => {
     if (query) {
@@ -32,7 +33,9 @@ function SearchResults() {
           setResults(data);
 
           if (data.results.length === 0) {
-            setError('Nenhum resultado encontrado para a sua busca 😕 Tente novamente com outra palavra-chave.');
+            setError('Nenhum resultado encontrado 😕');
+            setErrorIsVisible(false); // Garante que está invisível antes de exibir
+            setTimeout(() => setErrorIsVisible(true), 50); // Ativa fade-in com pequeno atraso
           } else {
             setError('');
           }
@@ -44,6 +47,20 @@ function SearchResults() {
       fetchMovies();
     }
   }, [query]);
+
+  // Gerencia o fade-out e a remoção do erro
+  useEffect(() => {
+    if (error) {
+      const fadeTimer = setTimeout(() => setErrorIsVisible(false), 4000); // Inicia o fade-out após 4s
+      const removeTimer = setTimeout(() => setError(''), 5000); // Remove o erro após 5s
+
+      return () => {
+        clearTimeout(fadeTimer);
+        clearTimeout(removeTimer);
+      };
+    }
+  }, [error]);
+
   return (
     <>
       <Head>
@@ -66,25 +83,27 @@ function SearchResults() {
           <MovieCarousel items={results} />
         </Box>
         {error && (
-          <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
-            <Text
-              tag="h4"
-              styleSheet={{
-                position: 'absolute',
-                top: '530px',
-                zIndex: '1',
-                padding: '20px',
-                margin: '0 10px',
-                color: '#ffffffe4',
-                background: theme.colors.background.error,
-                borderRadius: '20px',
-              }}
-            >
-              {error}
-            </Text>
-          </Box>
+          <Text
+            tag="h4"
+            styleSheet={{
+              position: 'absolute',
+              fontSize: theme.sizes.paragraph.mobileS,
+              top: '55px',
+              right: '14px',
+              zIndex: '1',
+              padding: '7px',
+              margin: '0 12px',
+              color: '#ffffffe4',
+              background: theme.colors.background.error,
+              borderRadius: '20px',
+              opacity: errorIsVisible ? 1 : 0, // Define a visibilidade
+              transition: 'opacity 0.5s ease', // Transição suave
+            }}
+          >
+            {error}
+          </Text>
         )}
-        <MenuCategory title="Procurando uma categoria?" paddingTop="65px" />
+        <MenuCategory title="Procurando uma categoria?" paddingTop="120px" />
       </Container>
       <Footer />
     </>
