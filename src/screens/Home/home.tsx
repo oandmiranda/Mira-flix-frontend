@@ -17,7 +17,6 @@ function Home() {
   useEffect(() => {
     const showResults = async () => {
       const list = await api_tmdb.getHomeList();
-      console.log(list);
       setApiDatas(list);
     };
     showResults();

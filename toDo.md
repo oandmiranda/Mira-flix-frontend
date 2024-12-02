@@ -55,15 +55,13 @@
 (X) ao scrollar para baixo, definir um (scroll to top) para voltar ao todo da página
 (X) refatorar página ID
 (X) o alert de pesquisa não encontrada deve aparecer debaixo do campo de input e desaparecer após x tempo
+(X) retirar logs no console
 
-() criar menu de categorias independente se o usuário scrollar a página ou não
+() criar botão com as categorias no navbar
 () criar um menu para o usuário
     - alteração/redefinição de senha
     - dados cadastrais
 
-() refatorar componente Container (fazer componentização correta)
-() retirar logs no cliente
-() retirar logs do console
 () debugar
 -
 -

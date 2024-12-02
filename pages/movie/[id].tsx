@@ -15,9 +15,7 @@ function MovieDetails() {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       if (router.query.id) {
-        console.log('ID:', router.query.id);
         const details = await api_tmdb.getMovieDetails(Number(router.query.id));
-        console.log('Received movie details:', details);
         setMovie(details);
       }
     };
