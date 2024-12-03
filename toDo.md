@@ -57,6 +57,7 @@
 (X) o alert de pesquisa não encontrada deve aparecer debaixo do campo de input e desaparecer após x tempo
 (X) retirar logs no console
 
+() adicionar estrelas em cada movie com base na nota
 () criar botão com as categorias no navbar
 () criar um menu para o usuário
     - alteração/redefinição de senha

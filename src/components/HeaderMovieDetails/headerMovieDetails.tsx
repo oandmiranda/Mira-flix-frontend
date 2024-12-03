@@ -90,15 +90,24 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                   >
                     <Text
                       tag="li"
-                      styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
+                      styleSheet={{
+                        fontSize: theme.sizes.paragraph.mobileS,
+                        color: theme.colors.background.button,
+                      }}
                     >{`Lançamento: ${movie.release_date}`}</Text>
                     <Text
                       tag="li"
-                      styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
+                      styleSheet={{
+                        fontSize: theme.sizes.paragraph.mobileS,
+                        color: theme.colors.background.button,
+                      }}
                     >{`Duração: ${movie.runtime} minutos`}</Text>
                     <Text
                       tag="li"
-                      styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}
+                      styleSheet={{
+                        fontSize: theme.sizes.paragraph.mobileS,
+                        color: theme.colors.background.button,
+                      }}
                     >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
                   </Box>
 
