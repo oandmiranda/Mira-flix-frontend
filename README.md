@@ -15,7 +15,8 @@ Foi uma experiência surpreendente que me introduziu ao back-end e consolidou ai
 
 # 🌟 Destaques
 No front-end:
-- Construção de uma interface dinâmica e responsiva utilizando React, Next.js, TypeScript e Styled-Components.
+- Construção de uma interface dinâmica e responsiva utilizando React, Next.js e Styled-Components.
+- Tipagem robusta com TypeScript.
 - Aplicação assertiva de hooks como useState, useEffect e useContext.
 - Reutilização de código com componentes modulares.
 - Estruturação do projeto com foco em clean code e boas práticas, como linting e organização de pastas.
