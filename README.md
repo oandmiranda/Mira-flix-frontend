@@ -5,11 +5,11 @@ Uma aplicação que simula uma interface de streaming de filmes e séries, com d
 O MiraFlix foi meu primeiro projeto fullstack pessoal, desenvolvido com o objetivo de consolidar e expandir meus conhecimentos em tecnologias front-end e back-end. Cada funcionalidade adicionada foi uma oportunidade de aprendizado, aplicando conceitos em tempo real e evoluindo tanto no desenvolvimento e lógica, quanto na organização do código.
 
 # Principais funcionalidades:
-🎬 Consumo da API TMDB para exibição dinâmica de filmes e séries.
-🔍 Filtros de pesquisa dinâmicos, permitindo que os usuários encontrem conteúdos com facilidade.
-🔄 Rotas dinâmicas que simulam navegação típica de plataformas de streaming.
-🔒 Autenticação e autorização utilizando JWT, garantindo controle de acesso.
-🧪 Mocks utilizados em contextos específicos para melhorar o visual da aplicação.
+- Consumo da API TMDB para exibição dinâmica de filmes e séries.
+- Filtros de pesquisa dinâmicos, permitindo que os usuários encontrem conteúdos com facilidade.
+- Rotas dinâmicas que simulam navegação típica de plataformas de streaming.
+- Autenticação e autorização utilizando JWT, garantindo controle de acesso.
+- Mocks utilizados em contextos específicos para melhorar o visual da aplicação.
 
 Foi uma experiência marcante que me introduziu ao back-end e consolidou ainda mais meus conhecimentos no front-end, com atenção especial a boas práticas, organização de código e reutilização de componentes.
 
