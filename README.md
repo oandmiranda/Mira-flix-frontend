@@ -1,27 +1,51 @@
-# MiraFlix
-
+# 🎥 MiraFlix
 Uma aplicação que simula uma interface de streaming de filmes e séries, com dados fornecidos pela API TMDB.
 
-## Sobre
+# 📖 Sobre o projeto
+O MiraFlix foi meu primeiro projeto fullstack pessoal, desenvolvido com o objetivo de consolidar e expandir meus conhecimentos em tecnologias front-end e back-end. Cada funcionalidade adicionada foi uma oportunidade de aprendizado, aplicando conceitos em tempo real e evoluindo tanto no desenvolvimento e lógica, quanto na organização do código.
 
-Este é o meu primeiro projeto pessoal fullstack! A ideia por trás do MiraFlix foi colocar em prática os conhecimentos que fui adquirindo ao longo do desenvolvimento. A cada nova tecnologia ou conceito aprendido, eu os apliquei no app, o que me proporcionou uma evolução constante no projeto e a internalização do conhecimento.
+# Principais funcionalidades:
+🎬 Consumo da API TMDB para exibição dinâmica de filmes e séries.
+🔍 Filtros de pesquisa dinâmicos, permitindo que os usuários encontrem conteúdos com facilidade.
+🔄 Rotas dinâmicas que simulam navegação típica de plataformas de streaming.
+🔒 Autenticação e autorização utilizando JWT, garantindo controle de acesso.
+🧪 Mocks utilizados em contextos específicos para melhorar o visual da aplicação.
 
-O projeto consome a API TMDB para exibir dados sobre filmes e séries, que é a base do projeto. Além disso, as principais características consistem em:
+Foi uma experiência marcante que me introduziu ao back-end e consolidou ainda mais meus conhecimentos no front-end, com atenção especial a boas práticas, organização de código e reutilização de componentes.
 
-- Filtros de pesquisa dinâmicos
-- Autenticação e autorização utilizando token JWT
-- Rotas dinâmicas
-- Mocks em contexto para trechos específicos (como nos Headers)
+#🌟 Aprendizados e destaques
+No front-end:
+- Construção de uma interface dinâmica e responsiva utilizando React, Next.js, TypeScript e Styled-Components.
+- Aplicação assertiva de hooks como useState, useEffect e useContext.
+- Reutilização de código com componentes modulares.
+- Estruturação do projeto com foco em clean code e boas práticas, como linting e organização de pastas.
+- Feedbacks para o usuário na UI.
+  
+No back-end:
+- Desenvolvimento de APIs utilizando Node.js e Express.js, incluindo validações.
+- Implementação de autenticação JWT, reforçando segurança e controle de acesso.
+- Conexão com banco de dados PostgreSQL, com ênfase no uso de queries otimizadas e práticas de segurança como hashing de senhas.
 
-Foi uma experiência enriquecedora que me introduziu ao mundo do back-end e ajudou a consolidar meus conhecimentos no front-end. No front, pude trabalhar e evoluir em conceitos como reutilização de código, linting, estruturação do projeto, uso de contexto, styled-components, tipagem e conceitos do React (como hooks e props). 
+Habilidades gerais:
+- Controle de versão com Git e GitHub, seguindo boas práticas de commits, uso das branchs e PRs.
+- Consistência na aplicação de boas práticas de desenvolvimento, focando em escalabilidade e manutenibilidade do código.
 
-No back-end, aprendi a criar e testar APIs com Express, aplicar o fluxo de autenticação JWT e trabalhar com SQL (PostgreSQL), inclusive com práticas essenciais como no uso de Hash.
-
-## Tecnologias Usadas
-
-- **Front-end**: React, Next.js, TypeScript, Styled-Components, API REST.
-     - Hooks: useState, useEffect, useContext.
-
-- **Back-end**: Node.js, Express.js, SQL (PostgreSQL), JWT.
-
-- **Desenvolvimento**: npm, Git, GitHub.
+🛠️ Tecnologias utilizadas:
+Front-end:
+- React
+- Next.js
+- TypeScript
+- Styled-Components
+- API REST
+  
+Back-end:
+- Node.js
+- Express.js
+- PostgreSQL
+- JWT (JSON Web Tokens)
+  
+Ferramentas de desenvolvimento:
+- npm
+- Git & GitHub
+- EsLint
+  
