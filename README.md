@@ -13,12 +13,13 @@ O MiraFlix foi meu primeiro projeto fullstack pessoal, desenvolvido com o objeti
 
 Foi uma experiência surpreendente que me introduziu ao back-end e consolidou ainda mais meus conhecimentos no front-end, com atenção especial a boas práticas, organização de código e reutilização de componentes.
 
-#🌟 Aprendizados e destaques
+# 🌟 Destaques
 No front-end:
 - Construção de uma interface dinâmica e responsiva utilizando React, Next.js, TypeScript e Styled-Components.
 - Aplicação assertiva de hooks como useState, useEffect e useContext.
 - Reutilização de código com componentes modulares.
 - Estruturação do projeto com foco em clean code e boas práticas, como linting e organização de pastas.
+- Design Tokens.
 - Feedbacks para o usuário na UI.
   
 No back-end:
