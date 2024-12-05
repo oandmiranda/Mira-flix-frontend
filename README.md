@@ -10,6 +10,7 @@ O projeto consome a API TMDB para exibir dados sobre filmes e séries, que é a 
 
 - Filtros de pesquisa dinâmicos
 - Autenticação e autorização utilizando token JWT
+- Rotas dinâmicas
 - Mocks em contexto para trechos específicos (como nos Headers)
 
 Foi uma experiência enriquecedora que me introduziu ao mundo do back-end e ajudou a consolidar meus conhecimentos no front-end. No front, pude trabalhar e evoluir em conceitos como reutilização de código, linting, estruturação do projeto, uso de contexto, styled-components, tipagem e conceitos do React (como hooks e props). 
