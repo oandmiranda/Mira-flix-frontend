@@ -31,6 +31,7 @@ No back-end:
 Habilidades gerais:
 - Controle de versão com Git e GitHub, seguindo boas práticas de commits, uso das branchs e PRs.
 - Consistência na aplicação de boas práticas de desenvolvimento, focando em escalabilidade e manutenibilidade do código.
+- Utilização de backlog inspirado em Scrum para organizar e priorizar tarefas, adquirindo reais noções de metodologias ágeis.
 
 🛠️ Tecnologias utilizadas:
 Front-end:
