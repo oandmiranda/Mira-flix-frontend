@@ -74,10 +74,11 @@ export default function LoginForm() {
           {errors.password && <Text styleSheet={errorStyle}>{errors.password.message}</Text>}
 
           <Button
-            type="submit"
+            type="button"
             width="270px"
             background={theme.colors.background.button}
             disabled={loading}
+            onClick={handleSubmit(onSubmit)}
             backgroundHover
           >
             {loading ? 'Verificando...' : 'Login'}
