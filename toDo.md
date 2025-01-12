@@ -44,7 +44,7 @@
 
 (X) corrigir bug no link "action" no menu-burger
 (X) criar botão para cada carousel do header com o link para seu respectivo filme
-(X) show loading to user on login and signup page
+(X) show loading animation to user on login and signup page
 (X) fix name "filmeId" to "movieId"
 (X) adicionar botão "voltar ao Login" na página de signup
 
@@ -55,15 +55,9 @@
 (X) ao scrollar para baixo, definir um (scroll to top) para voltar ao todo da página
 (X) refatorar página ID
 (X) o alert de pesquisa não encontrada deve aparecer debaixo do campo de input e desaparecer após x tempo
-(X) retirar logs no console
 
 () adicionar estrelas em cada movie com base na nota
 () criar botão com as categorias no navbar
 () criar um menu para o usuário
     - alteração/redefinição de senha
     - dados cadastrais
-
-() debugar
--
--
-() feito!
