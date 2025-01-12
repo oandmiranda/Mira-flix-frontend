@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Box from '@src/shared/Box/box';
 import { useCategoriesContext } from '@src/context/categoryContext';
 import { CategoryProps } from '@src/types/interfaces';
@@ -22,9 +21,7 @@ export default function MenuCategory({ title, paddingTop }: CategoryProps) {
       <StyledWrapper>
         {filterCategories.map((item) => (
           <Box tag="div" key={item.id} styleSheet={{ display: 'flex', padding: '15px' }}>
-            <Link href={`/category/${item.title}`}>
-              <Button>{item.name}</Button>
-            </Link>
+            <Button href={`/category/${item.title}`}>{item.name}</Button>
           </Box>
         ))}
       </StyledWrapper>

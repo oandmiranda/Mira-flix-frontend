@@ -126,10 +126,11 @@ export default function SignupForm() {
           {errors.confirmPassword && <Text styleSheet={errorStyle}>{errors.confirmPassword.message}</Text>}
 
           <Button
-            type="submit"
+            type="button"
             width="270px"
             background={theme.colors.background.button}
             disabled={loading}
+            onClick={handleSubmit(onSubmit)}
             backgroundHover
           >
             {loading ? 'Cadastrando' : 'Cadastrar'}

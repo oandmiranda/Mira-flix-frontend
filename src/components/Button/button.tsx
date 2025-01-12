@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { ButtonProps } from '@src/types/interfaces';
 import { S_Button } from './styles';
 
@@ -12,7 +13,8 @@ export default function Button({
   styleSheet,
 }: ButtonProps) {
   return (
-    <a href={href} onClick={onClick}>
+    // '#' para garantir que o componente não quebre. Isso é útil para evitar erros de navegação.
+    <Link href={href || '#'} onClick={onClick}>
       <S_Button
         width={width}
         background={background}
@@ -22,6 +24,6 @@ export default function Button({
       >
         {children}
       </S_Button>
-    </a>
+    </Link>
   );
 }
