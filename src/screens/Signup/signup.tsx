@@ -45,9 +45,7 @@ export default function SignupPage() {
 
         <FormArea>
           <SignupForm />
-          <a href="/login">
-            <Button>Voltar ao Login</Button>
-          </a>
+          <Button href={'/login'}>Voltar ao Login</Button>
         </FormArea>
       </Container>
     </>

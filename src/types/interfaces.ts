@@ -1,3 +1,4 @@
+import { Url } from 'next/dist/shared/lib/router/router';
 import { StaticImageData } from 'next/image';
 import { AutoplayOptions, NavigationOptions, PaginationOptions, SwiperModule } from 'swiper/types';
 import { CSSProperties } from 'styled-components';
@@ -110,7 +111,7 @@ export interface HeaderMovieDetailsProps {
 
 export interface ButtonProps {
   onClick?: () => void;
-  href?: string;
+  href?: Url;
   children: React.ReactNode;
   width?: string;
   background?: string;
