@@ -21,6 +21,7 @@ export default function Button({
         backgroundHover={backgroundHover}
         disabled={disabled}
         style={styleSheet}
+        aria-label="button"
       >
         {children}
       </S_Button>
