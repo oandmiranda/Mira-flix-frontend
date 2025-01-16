@@ -1,8 +1,10 @@
+import styled from 'styled-components';
 import theme, { device } from '@src/styles/themes';
 import { ButtonProps } from '@src/types/interfaces';
-import styled from 'styled-components';
 
-export const S_Button = styled.button<ButtonProps>`
+export const S_Button = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== 'backgroundhover', // impede que a backgroundhover seja enviado ao DOM para evitar erros
+})<ButtonProps>`
   width: ${(props) => (props.width ? props.width : '160px')};
   border-left: 1px solid ${theme.colors.background.button};
   border-top: 2px solid ${theme.colors.background.button};
@@ -23,7 +25,7 @@ export const S_Button = styled.button<ButtonProps>`
 
   &:hover {
     background-color: ${(props) =>
-      props.backgroundHover ? theme.colors.background.blue : theme.colors.background.button};
+      props.backgroundhover ? theme.colors.background.blue : theme.colors.background.button};
     color: ${theme.colors.text.hover};
     font-weight: 500;
   }

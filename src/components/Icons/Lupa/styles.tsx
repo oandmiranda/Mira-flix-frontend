@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 // Defina o SVG como um componente estilizado
-export const StyledSvg = styled.svg<{ isPositionAbsolute?: boolean }>`
+export const StyledSvg = styled.svg.withConfig({ shouldForwardProp: (prop) => prop !== 'isPositionAbsolute' })<{
+  isPositionAbsolute?: boolean;
+}>`
   height: 27px;
   width: 27px;
   position: absolute;

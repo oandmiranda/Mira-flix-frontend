@@ -23,7 +23,9 @@ const slideOut = keyframes`
   }
 `;
 
-export const Container = styled.section<{ isOpen: boolean }>`
+export const Container = styled.section.withConfig({ shouldForwardProp: (prop) => prop !== 'isOpen' })<{
+  isOpen: boolean;
+}>`
   position: fixed;
   width: 100%;
   height: 100%;

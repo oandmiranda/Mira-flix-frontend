@@ -8,7 +8,7 @@ export default function Button({
   children,
   width,
   background,
-  backgroundHover,
+  backgroundhover,
   disabled,
   styleSheet,
 }: ButtonProps) {
@@ -18,10 +18,11 @@ export default function Button({
       <S_Button
         width={width}
         background={background}
-        backgroundHover={backgroundHover}
+        backgroundhover={backgroundhover}
         disabled={disabled}
         style={styleSheet}
         aria-label="button"
+        data-testid="button"
       >
         {children}
       </S_Button>

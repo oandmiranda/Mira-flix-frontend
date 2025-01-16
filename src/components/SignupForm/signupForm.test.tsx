@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import LoginForm from './login';
 import { useRouter } from 'next/router';
+import SignupForm from './signupForm';
 
 jest.mock('next/router', () => ({
   useRouter: jest.fn(),
@@ -12,7 +12,7 @@ const mockRouter = () => {
   });
 };
 
-describe('LoginForm component', () => {
+describe('SignupForm component', () => {
   beforeEach(() => {
     mockRouter();
   });
@@ -21,24 +21,20 @@ describe('LoginForm component', () => {
     jest.clearAllMocks();
   });
 
-  it('should render correctly the login elements', () => {
-    render(<LoginForm />);
+  it('should render correctly the signup elements', () => {
+    render(<SignupForm />);
 
-    // check if the inputs are in the document
+    // Verifica se os inputs estão no documento
+    expect(screen.getByPlaceholderText('Nome')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Email')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Senha')).toBeInTheDocument();
-
-    // check if there are no error or success messages initially.
-
-    expect(screen.queryByText(/😥/)).not.toBeInTheDocument(); // Mensagem de erro
-    expect(screen.queryByText(/🤩/)).not.toBeInTheDocument(); // Mensagem de sucesso
+    expect(screen.getByPlaceholderText('Confirmar senha')).toBeInTheDocument();
 
     // check if the button is in the document
     const button = screen.getByTestId('button');
     expect(button).toBeInTheDocument();
 
-    // check if the Spinner is not visible.
-
+    // Verifica se o Spinner não está visível
     expect(screen.queryByTestId('spinner')).not.toBeInTheDocument();
   });
 });

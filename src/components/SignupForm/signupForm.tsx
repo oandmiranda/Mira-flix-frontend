@@ -131,7 +131,7 @@ export default function SignupForm() {
             background={theme.colors.background.button}
             disabled={loading}
             onClick={handleSubmit(onSubmit)}
-            backgroundHover
+            backgroundhover={true}
           >
             {loading ? 'Cadastrando' : 'Cadastrar'}
           </Button>
