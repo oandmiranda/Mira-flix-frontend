@@ -5,7 +5,7 @@ import Box from '@src/shared/Box/box';
 import { useEffect, useState } from 'react';
 import { useBurgerMenuContext } from '@src/context/burgerMenuContext';
 import BurgerMenu from '../BurgerMenu/burgerMenu';
-import Input from './Input/Input';
+import Input from '../Input/Input';
 
 export default function NavBar() {
   const { menuIsOpen, openMenu } = useBurgerMenuContext();

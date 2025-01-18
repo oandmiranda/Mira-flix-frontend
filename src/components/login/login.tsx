@@ -10,7 +10,7 @@ import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { LoginFormData } from '@src/types/interfaces';
-import { Container, Spinner } from '@src/components/login/style'; // Adicionado Spinner
+import { Container, Spinner } from '@src/components/Login/style'; // Adicionado Spinner
 
 export default function LoginForm() {
   const {

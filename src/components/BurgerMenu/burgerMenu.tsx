@@ -9,8 +9,8 @@ import { TbPoint } from 'react-icons/tb';
 import { Container } from './styles';
 import { useBurgerMenuContext } from '@src/context/burgerMenuContext';
 import Box from '@src/shared/Box/box';
-import Input from '../Navbar/Input/Input';
 import Logo from '../Logo/Logo';
+import Input from '../Input/Input';
 
 export default function BurgerMenu({ isOpen }: { isOpen: boolean }) {
   const { closeMenu } = useBurgerMenuContext();

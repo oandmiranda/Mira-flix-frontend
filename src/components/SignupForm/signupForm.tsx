@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
-import { Container, Spinner } from '@src/components/login/style';
+import { Container, Spinner } from '@src/components/Login/style';
 import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
