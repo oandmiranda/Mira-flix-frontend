@@ -79,7 +79,7 @@ export default function LoginForm() {
             background={theme.colors.background.button}
             disabled={loading}
             onClick={handleSubmit(onSubmit)}
-            backgroundHover
+            backgroundhover={true}
           >
             {loading ? 'Verificando...' : 'Login'}
           </Button>

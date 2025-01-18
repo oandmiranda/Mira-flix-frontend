@@ -8,7 +8,3 @@ export default function Text({ tag, children, styleSheet }: TextProps) {
     </Box>
   );
 }
-
-// Text.defaultProps = {
-//   tag: 'p',
-// };

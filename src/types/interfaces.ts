@@ -115,7 +115,7 @@ export interface ButtonProps {
   children: React.ReactNode;
   width?: string;
   background?: string;
-  backgroundHover?: boolean;
+  backgroundhover?: boolean;
   styleSheet?: CSSProperties;
   type?: string;
   disabled?: any;
