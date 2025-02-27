@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-export interface Movie {
+export interface MovieType {
   id: number;
   title: string;
   sinopse: string;
@@ -14,10 +14,10 @@ export interface Movie {
 }
 
 // declara o contexto
-const MoviesContext = createContext<Movie[]>([]);
+const MoviesContext = createContext<MovieType[]>([]);
 
 // função embaralha os objetos do array
-const ShuffleArray = (array: Movie[]) => {
+const ShuffleArray = (array: MovieType[]) => {
   // sort pode conter uma função de comparação para retornar o array com base nela
   // Math.random() gera um número aleatório entre 0 e 1
 
@@ -28,10 +28,10 @@ const ShuffleArray = (array: Movie[]) => {
 
 // declara o que será provido pelo contexto
 export const MoviesProvider = ({ children }: { children: React.ReactNode }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<MovieType[]>([]);
 
   useEffect(() => {
-    const mockMovies: Movie[] = [
+    const mockMovies: MovieType[] = [
       {
         id: 1,
         title: 'The Dark Knight',

@@ -61,3 +61,10 @@
 () criar um menu para o usuário
     - alteração/redefinição de senha
     - dados cadastrais
+
+
+() refactorHeader
+- Em alta (não clicável)
+- Linha com dados do filme
+- Ver mais (link)
+- Carroussel

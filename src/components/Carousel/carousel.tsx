@@ -13,7 +13,7 @@ import { SwiperMain, SwiperSlide } from './style';
 
 register();
 
-export default function HeaderCarousel({
+export default function Carousel({
   children,
   loop,
   autoplay,
@@ -30,9 +30,6 @@ export default function HeaderCarousel({
       modules={[Scrollbar, Autoplay, Mousewheel, Keyboard, Pagination, Grid]}
       loop={loop}
       autoplay={autoplay}
-      // cssMode={true}
-      // mousewheel={true}
-      // keyboard={true}
       effect={effect}
       coverflowEffect={coverflowEffect}
       pagination={pagination}

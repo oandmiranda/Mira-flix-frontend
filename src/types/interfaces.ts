@@ -148,7 +148,7 @@ export interface HeaderProps<T> {
 //   category?: string;
 // }
 
-export interface CategoryContext {
+export interface CategoryType {
   id?: number;
   title?: string;
   name?: string;
