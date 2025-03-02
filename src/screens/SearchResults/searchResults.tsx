@@ -12,6 +12,7 @@ import Head from 'next/head';
 import { API_KEY } from 'pages/api/tmdb';
 import { useEffect, useState } from 'react';
 import { Items } from '@src/types/apiTypes';
+import { useMoviesContext } from '@src/context/moviesContext';
 
 function SearchResults() {
   const router = useRouter();
@@ -19,6 +20,7 @@ function SearchResults() {
   const [results, setResults] = useState<Items>({ results: [] });
   const [error, setError] = useState('');
   const [errorIsVisible, setErrorIsVisible] = useState(false); // Controle de visibilidade
+  const mockMovies = useMoviesContext();
 
   useEffect(() => {
     if (query) {
@@ -77,7 +79,7 @@ function SearchResults() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <Header height="80vh" />
+      <Header data={mockMovies} height="80vh" />
       <Container hasDegrade>
         <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
           <MovieCarousel items={results} />

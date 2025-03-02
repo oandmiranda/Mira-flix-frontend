@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import { IList } from '@src/types/apiTypes';
 import { getEmAltaMovies } from '../../../pages/api/tmdb';
 import Movies from '@src/components/Movies/Movies';
-import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import withAuth from '@src/hook/withAuth';
 import Footer from '@src/components/Footer/footer';
+import Header from '@src/components/Header/header';
 
 function OriginaisNetflixPage() {
   // returns data for a single movie
@@ -36,8 +36,8 @@ function OriginaisNetflixPage() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-      <HeaderCategory slug={'top_rated'} />
 
+      <Header slugCategory={'top_rated'} />
       <Container hasDegrade>
         <MenuCategory />
         {movies && (

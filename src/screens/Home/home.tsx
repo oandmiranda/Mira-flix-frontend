@@ -43,7 +43,7 @@ function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <Header data={mockMovies} hasCarousel />
+      <Header data={mockMovies} />
       <Container hasDegrade>
         <MenuCategory title="O que você quer ver hoje?" />
 

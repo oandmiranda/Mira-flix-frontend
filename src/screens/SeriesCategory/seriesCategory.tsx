@@ -3,11 +3,11 @@ import { IList } from '@src/types/apiTypes';
 import Head from 'next/head';
 import { getSeries } from '../../../pages/api/tmdb';
 import Movies from '@src/components/Movies/Movies';
-import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import withAuth from '@src/hook/withAuth';
 import Footer from '@src/components/Footer/footer';
+import Header from '@src/components/Header/header';
 
 function SeriesPage() {
   // returns data for a single movie
@@ -36,7 +36,7 @@ function SeriesPage() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-      <HeaderCategory slug={'series'} />
+      <Header slugCategory={'series'} />
 
       <Container hasDegrade>
         <MenuCategory />

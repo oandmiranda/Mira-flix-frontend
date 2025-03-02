@@ -8,6 +8,7 @@ import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import withAuth from '@src/hook/withAuth';
 import Footer from '@src/components/Footer/footer';
+import Header from '@src/components/Header/header';
 
 function TrendingPage() {
   // returns data for a single movie
@@ -36,8 +37,8 @@ function TrendingPage() {
         ></link>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
-      <HeaderCategory slug={'trending'} />
 
+      <Header slugCategory={'trending'} />
       <Container hasDegrade>
         <MenuCategory />
         {trendingMovies && (

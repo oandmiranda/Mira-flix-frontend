@@ -1,17 +1,5 @@
+import { MovieType } from '@src/types/interfaces';
 import { createContext, useContext, useEffect, useState } from 'react';
-
-export interface MovieType {
-  id: number;
-  title: string;
-  sinopse: string;
-  srcImage: string;
-  coverImage: string;
-  available: string;
-  releaseData: number;
-  duration: string;
-  category: string;
-  movieId: string;
-}
 
 // declara o contexto
 const MoviesContext = createContext<MovieType[]>([]);
