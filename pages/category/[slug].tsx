@@ -1,18 +1,28 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import withAuth from '@src/hook/withAuth';
 import api_tmdb from '../../pages/api/tmdb';
-import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import { IList } from '@src/types/apiTypes';
 import Movies from '@src/components/Movies/Movies';
 import Container from '@src/components/Container/container';
 import { useRouter } from 'next/router';
 import Footer from '@src/components/Footer/footer';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
-import withAuth from '@src/hook/withAuth';
+import { useCategoriesContext } from '@src/context/categoryContext';
+import Header from '@src/components/Header/header';
 
 function FilterCategory() {
-  const router = useRouter();
   const [movies, setMovies] = useState<IList[]>([]);
+  const router = useRouter();
+
+  // procura pela categoria
+  const categories = useCategoriesContext();
+  const movie = categories.find((category) => category.title === router.query.slug);
+  const categoryData = movie ? [movie] : [];
+
+  if (!categoryData) {
+    return null;
+  }
 
   useEffect(() => {
     const showResults = async () => {
@@ -39,7 +49,7 @@ function FilterCategory() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <HeaderCategory slug={router.query.slug} />
+      <Header data={categoryData} />
       <Container hasDegrade>
         <MenuCategory />
         {movies

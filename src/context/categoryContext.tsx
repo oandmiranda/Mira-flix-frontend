@@ -1,4 +1,4 @@
-import { CategoryContext } from '@src/types/interfaces';
+import { CategoryType } from '@src/types/interfaces';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
@@ -6,14 +6,14 @@ const API_BASE = 'https://api.themoviedb.org/3';
 const language_ptBR = 'language=pt-BR';
 
 // declara o contexto
-const CategoriesContext = createContext<CategoryContext[]>([]);
+const CategoriesContext = createContext<CategoryType[]>([]);
 
 // declara o que será provido pelo contexto
 export const CategoriesProvider = ({ children }: { children: React.ReactNode }) => {
-  const [category, setCategory] = useState<CategoryContext[]>([]);
+  const [category, setCategory] = useState<CategoryType[]>([]);
 
   useEffect(() => {
-    const mockCategories: CategoryContext[] = [
+    const mockCategories: CategoryType[] = [
       {
         id: 1,
         title: 'originais_netflix',

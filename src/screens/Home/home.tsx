@@ -10,9 +10,11 @@ import Footer from '@src/components/Footer/footer';
 import CategoryName from '@src/components/CategoryName/categoryName';
 import Box from '@src/shared/Box/box';
 import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
+import { useMoviesContext } from '@src/context/moviesContext';
 
 function Home() {
   const [apiDatas, setApiDatas] = useState<IList[]>([]);
+  const mockMovies = useMoviesContext();
 
   useEffect(() => {
     const showResults = async () => {
@@ -41,7 +43,7 @@ function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap" rel="stylesheet"></link>
       </Head>
 
-      <Header />
+      <Header data={mockMovies} />
       <Container hasDegrade>
         <MenuCategory title="O que você quer ver hoje?" />
 

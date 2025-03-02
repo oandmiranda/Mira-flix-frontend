@@ -134,21 +134,20 @@ export interface HeaderProps<T> {
   showCarousel?: boolean;
 }
 
-// export interface BaseContext {
-//   id?: number | undefined;
-//   srcImage?: string;
-//   title?: string;
-//   page?: string;
-//   endpoint?: string;
-//   sinopse?: string;
-//   coverImage?: string;
-//   available?: string;
-//   releaseData?: number;
-//   duration?: string;
-//   category?: string;
-// }
+export interface MovieType {
+  id: number;
+  title: string;
+  sinopse: string;
+  srcImage: string;
+  coverImage: string;
+  available: string;
+  releaseData: number;
+  duration: string;
+  category: string;
+  movieId: string;
+}
 
-export interface CategoryContext {
+export interface CategoryType {
   id?: number;
   title?: string;
   name?: string;
