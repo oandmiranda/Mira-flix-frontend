@@ -3,7 +3,6 @@ import { IList } from '@src/types/apiTypes';
 import Head from 'next/head';
 import { getTrendingMovies } from '../../../pages/api/tmdb';
 import Movies from '@src/components/Movies/Movies';
-import HeaderCategory from '@src/components/HeaderCategory/headerCategory';
 import Container from '@src/components/Container/container';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import withAuth from '@src/hook/withAuth';
