@@ -66,6 +66,7 @@ export const StyledDatas = styled.div`
   padding: 10px;
   word-spacing: 10px;
   font-weight: 600;
+  white-space: nowrap;
 
   @media ${device.mobileS} {
     font-size: ${theme.sizes.paragraph.mobileS};

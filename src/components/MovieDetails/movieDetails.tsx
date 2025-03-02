@@ -19,6 +19,18 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
     return voteAverage?.toFixed(1);
   };
 
+  const formatDate = (date: number | undefined): string => {
+    if (!date) return 'Data indisponível'; // Caso a data não seja fornecida
+
+    const dateString = date.toString();
+
+    const year = dateString.slice(0, 4);
+    const month = dateString.slice(5, 7);
+    const day = dateString.slice(8, 10);
+
+    return `${day}/${month}/${year}`;
+  };
+
   // retorna o filme pelo seu id específico (que vem do router)
   const movie = items.results.find((movie) => movie.id === Number(id)) ?? null;
 
@@ -94,7 +106,7 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                         fontSize: theme.sizes.paragraph.mobileS,
                         color: theme.colors.background.button,
                       }}
-                    >{`Lançamento: ${movie.release_date}`}</Text>
+                    >{`Lançamento: ${formatDate(movie.release_date)}`}</Text>
                     <Text
                       tag="li"
                       styleSheet={{
