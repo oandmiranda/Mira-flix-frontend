@@ -9,7 +9,7 @@ import MenuCategory from '@src/components/MenuCategory/menuCategory';
 import Footer from '@src/components/Footer/footer';
 import CategoryName from '@src/components/CategoryName/categoryName';
 import Box from '@src/shared/Box/box';
-import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
+import CardCarousel from '@src/components/CardCarousel/cardCarousel';
 import { useMoviesContext } from '@src/context/moviesContext';
 
 function Home() {
@@ -61,7 +61,7 @@ function Home() {
                   justifyContent: 'center',
                 }}
               >
-                <MovieCarousel items={item.items} />
+                <CardCarousel items={item.items} />
               </Box>
             </React.Fragment>
           );

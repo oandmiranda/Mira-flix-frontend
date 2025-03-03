@@ -3,7 +3,7 @@ import Container from '@src/components/Container/container';
 import Footer from '@src/components/Footer/footer';
 import Header from '@src/components/Header/header';
 import MenuCategory from '@src/components/MenuCategory/menuCategory';
-import MovieCarousel from '@src/components/MovieCarousel/movieCarousel';
+import CardCarousel from '@src/components/CardCarousel/cardCarousel';
 import Text from '@src/components/Text/text';
 import withAuth from '@src/hook/withAuth';
 import Box from '@src/shared/Box/box';
@@ -82,7 +82,7 @@ function SearchResults() {
       <Header data={mockMovies} height="80vh" />
       <Container hasDegrade>
         <Box tag="div" styleSheet={{ display: 'flex', justifyContent: 'center' }}>
-          <MovieCarousel items={results} />
+          <CardCarousel items={results} />
         </Box>
         {error && (
           <Text

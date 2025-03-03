@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 
 register();
 
-export default function MovieCarousel({ items }: { items: IList['items'] }) {
+export default function CardCarousel({ items }: { items: IList['items'] }) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
   const formatVoteAverage = (voteAverage: number | undefined) => {
