@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { SwiperSlide } from 'swiper/react';
-import { CategoryType, MovieType } from '@src/types/interfaces';
+import { CategoryType, HeaderProps, MovieType } from '@src/types/interfaces';
 import { useCategoriesContext } from '@src/context/categoryContext';
 import theme from '@src/styles/themes';
 import Box from '@src/shared/Box/box';
@@ -9,12 +9,6 @@ import Carousel from '@src/components/Carousel/carousel';
 import TextArea from '../TextArea/textArea';
 import MovieIcon from '../Icons/Movie/movie_icon';
 import { Container, Image, Sinopse, Title, Button, StyledDatas } from './style';
-
-interface HeaderProps {
-  data?: (MovieType | CategoryType)[];
-  height?: string;
-  slugCategory?: string | undefined;
-}
 
 export default function Header({ data, height, slugCategory }: HeaderProps) {
   const categories = useCategoriesContext();

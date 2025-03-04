@@ -1,8 +1,8 @@
 import theme from './themes';
-import { successStyleType } from '@src/types/interfaces';
+import { SuccessStyleType } from '@src/types/interfaces';
 
 // styles for validation success in login and signup
-export const successStyle: successStyleType = {
+export const successStyle: SuccessStyleType = {
   color: theme.colors.successStyle,
   fontSize: '18px',
   fontWeight: '700',

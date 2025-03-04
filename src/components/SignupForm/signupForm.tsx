@@ -10,13 +10,7 @@ import Box from '@src/shared/Box/box';
 import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
-
-interface SignupFormData {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+import { SignupFormData } from '@src/types/interfaces';
 
 export default function SignupForm() {
   const {

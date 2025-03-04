@@ -53,8 +53,8 @@ function SearchResults() {
   // Gerencia o fade-out e a remoção do erro
   useEffect(() => {
     if (error) {
-      const fadeTimer = setTimeout(() => setErrorIsVisible(false), 4000); // Inicia o fade-out após 4s
-      const removeTimer = setTimeout(() => setError(''), 5000); // Remove o erro após 5s
+      const fadeTimer = setTimeout(() => setErrorIsVisible(false), 4000);
+      const removeTimer = setTimeout(() => setError(''), 5000);
 
       return () => {
         clearTimeout(fadeTimer);
@@ -88,12 +88,12 @@ function SearchResults() {
           <Text
             tag="h4"
             styleSheet={{
-              position: 'absolute',
+              position: 'fixed',
               fontSize: theme.sizes.paragraph.mobileS,
-              top: '55px',
+              top: '62px',
               right: '14px',
-              zIndex: '1',
-              padding: '7px',
+              zIndex: '10',
+              padding: '10px',
               margin: '0 12px',
               color: '#ffffffe4',
               background: theme.colors.background.error,

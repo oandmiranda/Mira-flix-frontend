@@ -8,6 +8,11 @@
 # testing
 /coverage
 
+# toDo
+/toDo.md
+
+/.vscode/
+
 # next.js
 /.next/
 /out/

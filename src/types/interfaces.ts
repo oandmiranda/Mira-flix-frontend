@@ -58,6 +58,22 @@ export interface MediaImageProps {
   styleSheet?: CSSProperties;
 }
 
+export interface HeaderProps {
+  data?: (MovieType | CategoryType)[];
+  height?: string;
+  slugCategory?: string | undefined;
+}
+
+export interface HeaderMovieDetailsProps {
+  items: { results: Results[]; id: number };
+  id: string;
+}
+
+export interface HeaderContainerProps {
+  backgroundImage?: string;
+  backgroundMediaQuerie?: string;
+}
+
 export interface NavProps {
   scroll?: boolean;
 }
@@ -104,11 +120,6 @@ export interface CarouselProps {
   };
 }
 
-export interface HeaderMovieDetailsProps {
-  items: { results: Results[]; id: number };
-  id: string;
-}
-
 export interface ButtonProps {
   onClick?: () => void;
   href?: Url;
@@ -129,9 +140,13 @@ export interface ContainerProps {
   backgroundImage?: string | boolean;
 }
 
-export interface HeaderProps<T> {
-  context: T[];
-  showCarousel?: boolean;
+export interface CategoryType {
+  id?: number;
+  title?: string;
+  name?: string;
+  endpoint?: string;
+  srcImage?: string;
+  description?: string;
 }
 
 export interface MovieType {
@@ -147,15 +162,6 @@ export interface MovieType {
   movieId: string;
 }
 
-export interface CategoryType {
-  id?: number;
-  title?: string;
-  name?: string;
-  endpoint?: string;
-  srcImage?: string;
-  description?: string;
-}
-
 export interface MovieContext {
   id?: number;
   title?: string;
@@ -166,6 +172,10 @@ export interface MovieContext {
   releaseData?: number;
   duration?: string;
   category?: string;
+}
+
+export interface MovieContainer {
+  hasCarousel?: boolean;
 }
 
 export interface BurgerMenuProps {
@@ -181,10 +191,6 @@ export interface CategoryProps {
   href?: string;
 }
 
-export interface MovieContainer {
-  hasCarousel?: boolean;
-}
-
 export interface TextAreaProps {
   children?: React.ReactNode;
 }
@@ -195,24 +201,19 @@ export interface APIResponse {
   status_message: string;
 }
 
-export interface HeaderContainerProps {
-  backgroundImage?: string;
-  backgroundMediaQuerie?: string;
-}
-
 export interface AuthContextType {
   token: string | null;
   login: (newToken: string) => void;
   logout: () => void;
 }
 
-export interface errorStyleType {
+export interface ErrorStyleType {
   color: string;
   padding: string;
   fontSize: string;
 }
 
-export interface successStyleType {
+export interface SuccessStyleType {
   color: string;
   fontSize: string;
   fontWeight: string;
@@ -235,4 +236,11 @@ export interface LogoProps {
 export interface LoginFormData {
   email: string;
   password: string;
+}
+
+export interface SignupFormData {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }
