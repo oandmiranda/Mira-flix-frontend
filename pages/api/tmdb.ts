@@ -3,17 +3,6 @@ import { IList } from '@src/types/apiTypes';
 /* const API_VALIDATION =
 'https://api.themoviedb.org/3/discover/movie?api_key=a2d8b9dc14ca301b8afa9fc573b9ed99&language=pt-BR';
 */
-/*
-ENDPOINST:
-- originais netflix
-- recomendados (trending)
-- em alta (top rated)
-- ação
-- comédia
-- terror
-- romance
-- series
-*/
 
 export const API_KEY = 'a2d8b9dc14ca301b8afa9fc573b9ed99';
 export const API_BASE = 'https://api.themoviedb.org/3';

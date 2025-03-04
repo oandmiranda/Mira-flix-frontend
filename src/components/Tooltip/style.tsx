@@ -6,11 +6,12 @@ export const TooltipBox = styled.div`
   bottom: 5px;
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 7px;
   opacity: 0;
-  transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
   pointer-events: none;
+  width: 100%;
 `;
 
 // container que envolve o TooltipBox

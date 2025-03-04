@@ -9,27 +9,13 @@ import { APIResponse, HeaderMovieDetailsProps } from '@src/types/interfaces';
 import { Title } from './styles';
 import NavBar from '../Navbar/NavBar';
 import { GiPopcorn } from 'react-icons/gi';
+import { getStarRating } from '@src/utils/ratingUtils';
+import { formatDate } from '@src/utils/formatDate';
+import StarRating from '../Icons/Star/star_reting';
 
 export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProps) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
-
-  // função limita "nota de avaliação do filme" (voteAverage) em até 1 caractere
-  const formatVoteAverage = (voteAverage: number | undefined) => {
-    return voteAverage?.toFixed(1);
-  };
-
-  const formatDate = (date: number | undefined): string => {
-    if (!date) return 'Data indisponível'; // Caso a data não seja fornecida
-
-    const dateString = date.toString();
-
-    const year = dateString.slice(0, 4);
-    const month = dateString.slice(5, 7);
-    const day = dateString.slice(8, 10);
-
-    return `${day}/${month}/${year}`;
-  };
 
   // retorna o filme pelo seu id específico (que vem do router)
   const movie = items.results.find((movie) => movie.id === Number(id)) ?? null;
@@ -114,13 +100,7 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                         color: theme.colors.background.button,
                       }}
                     >{`Duração: ${movie.runtime} minutos`}</Text>
-                    <Text
-                      tag="li"
-                      styleSheet={{
-                        fontSize: theme.sizes.paragraph.mobileS,
-                        color: theme.colors.background.button,
-                      }}
-                    >{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</Text>
+                    <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
                   </Box>
 
                   <Button

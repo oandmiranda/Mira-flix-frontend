@@ -15,15 +15,13 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import StarRating from '../Icons/Star/star_reting';
+import { getStarRating } from '@src/utils/ratingUtils';
 
 register();
 
 export default function CardCarousel({ items }: { items: IList['items'] }) {
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
-
-  const formatVoteAverage = (voteAverage: number | undefined) => {
-    return voteAverage?.toFixed(1);
-  };
 
   return (
     <Swiper
@@ -82,7 +80,7 @@ export default function CardCarousel({ items }: { items: IList['items'] }) {
                   content={
                     <TooltipContent>
                       <h4>{movie.name || movie.title}</h4>
-                      <p>{`Avaliação: ${formatVoteAverage(movie.vote_average)}`}</p>
+                      <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
                     </TooltipContent>
                   }
                 >

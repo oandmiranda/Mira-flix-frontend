@@ -5,16 +5,19 @@ import styled from 'styled-components';
 import { css } from 'styled-components';
 
 export const StyledMediaImage = styled(Image)<MediaImageProps>`
-  transition: transform 0.3s ease-in-out;
+  transition:
+    transform 0.4s ease-in-out,
+    opacity 0.4s ease-in-out;
   margin-bottom: 10px;
-  opacity: 0.8;
+  opacity: 1;
 
   ${({ zoomEffect }) =>
     zoomEffect &&
     css`
       &:hover {
         transform: scale(1.22);
-        opacity: 1;
+        opacity: 0.6;
+        transition-delay: 0.2;
       }
     `}
   @media ${device.mobileS} {
