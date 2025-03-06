@@ -6,8 +6,8 @@ import { css } from 'styled-components';
 
 export const StyledMediaImage = styled(Image)<MediaImageProps>`
   transition:
-    transform 0.4s ease-in-out,
-    opacity 0.4s ease-in-out;
+    transform 0.45s ease-in-out,
+    opacity 0.45s ease-in-out;
   margin-bottom: 10px;
   opacity: 1;
 
@@ -15,18 +15,17 @@ export const StyledMediaImage = styled(Image)<MediaImageProps>`
     zoomEffect &&
     css`
       &:hover {
-        transform: scale(1.22);
-        opacity: 0.6;
+        transform: scale(1.1);
         transition-delay: 0.2;
       }
     `}
-  @media ${device.mobileS} {
-    width: 150px;
-    height: 220px;
-  }
-
   @media ${device.mobileL} {
     width: 200px;
     height: 250px;
+  }
+
+  @media ${device.mobileS} {
+    width: 165px;
+    height: 230px;
   }
 `;

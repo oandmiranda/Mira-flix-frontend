@@ -17,6 +17,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import StarRating from '../Icons/Star/star_reting';
 import { getStarRating } from '@src/utils/ratingUtils';
+import { roundNumber } from '@src/utils/roundNumber';
+import Text from '../Text/text';
+import { getYear } from '@src/utils/getYear';
 
 register();
 
@@ -79,8 +82,20 @@ export default function CardCarousel({ items }: { items: IList['items'] }) {
                 <Tooltip
                   content={
                     <TooltipContent>
-                      <h4>{movie.name || movie.title}</h4>
-                      <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
+                      <Text tag="h4">{movie.name || movie.title}</Text>
+                      <Text tag="p">{getYear(movie.release_date)}</Text>
+                      <Text
+                        tag="p"
+                        styleSheet={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          lineHeight: 'center',
+                          gap: '5px',
+                        }}
+                      >
+                        {roundNumber(movie.vote_average)}
+                        <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
+                      </Text>
                     </TooltipContent>
                   }
                 >

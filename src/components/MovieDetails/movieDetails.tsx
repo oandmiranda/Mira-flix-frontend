@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
-import MediaImage from '../Image/MediaImage';
-import Box from '@src/shared/Box/box';
-import Text from '../Text/text';
-import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Tagline } from './styles';
-import theme from '@src/styles/themes';
-import Button from '../Button/button';
-import { APIResponse, HeaderMovieDetailsProps } from '@src/types/interfaces';
-import { Title } from './styles';
-import NavBar from '../Navbar/NavBar';
-import { GiPopcorn } from 'react-icons/gi';
+import { APIResponse, MovieDetailsProps } from '@src/types/interfaces';
 import { getStarRating } from '@src/utils/ratingUtils';
 import { formatDate } from '@src/utils/formatDate';
+import { roundNumber } from '@src/utils/roundNumber';
+import { formatMovieDuration } from '@src/utils/formatMovieDuration';
+import theme from '@src/styles/themes';
+import Box from '@src/shared/Box/box';
+import MediaImage from '../Image/MediaImage';
+import Text from '../Text/text';
+import Button from '../Button/button';
+import NavBar from '../Navbar/NavBar';
+import { FaPlay } from 'react-icons/fa';
 import StarRating from '../Icons/Star/star_reting';
+import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Title } from './styles';
 
-export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProps) {
+export default function MovieDetails({ items, id }: MovieDetailsProps) {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const baseUrlPathImage = 'https://image.tmdb.org/t/p/w300';
 
@@ -73,8 +74,6 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
 
                 <TextArea>
                   <Title>{movie.name || movie.title}</Title>
-                  <Tagline>{movie.tagline}</Tagline>
-                  <Overview>{movie.overview}</Overview>
 
                   <Box
                     tag="ul"
@@ -89,25 +88,38 @@ export default function HeaderMovieDetails({ items, id }: HeaderMovieDetailsProp
                     <Text
                       tag="li"
                       styleSheet={{
-                        fontSize: theme.sizes.paragraph.mobileS,
+                        fontSize: theme.sizes.paragraph.mobileL,
+                        color: theme.colors.background.button,
+                      }}
+                    >{`Duração: ${formatMovieDuration(movie.runtime)}`}</Text>
+                    <Text
+                      tag="li"
+                      styleSheet={{
+                        fontSize: theme.sizes.paragraph.mobileL,
                         color: theme.colors.background.button,
                       }}
                     >{`Lançamento: ${formatDate(movie.release_date)}`}</Text>
                     <Text
-                      tag="li"
+                      tag="p"
                       styleSheet={{
-                        fontSize: theme.sizes.paragraph.mobileS,
+                        display: 'flex',
+                        alignItems: 'center',
+                        lineHeight: 'center',
+                        gap: '5px',
                         color: theme.colors.background.button,
                       }}
-                    >{`Duração: ${movie.runtime} minutos`}</Text>
-                    <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
+                    >
+                      {roundNumber(movie.vote_average)}
+                      <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
+                    </Text>
+                    <Overview>{movie.overview}</Overview>
                   </Box>
 
                   <Button
                     href={'/error'}
-                    styleSheet={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '2px' }}
+                    styleSheet={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
                   >
-                    Assistir <GiPopcorn size={23} />
+                    Assistir <FaPlay size={15} />
                   </Button>
                 </TextArea>
               </ContentArea>

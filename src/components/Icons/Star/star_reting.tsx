@@ -1,14 +1,16 @@
+import { Star, StarContainer } from './style';
+
 const StarRating = ({ rating }: { rating: number }) => {
   const totalStars = 5;
 
   return (
-    <div style={{ display: 'flex', gap: '2px' }}>
+    <StarContainer>
       {Array.from({ length: totalStars }).map((_, index) => (
-        <span key={index} style={{ color: index < rating ? 'gold' : 'lightgray', fontSize: '17px' }}>
+        <Star key={index} isActive={index < rating}>
           ★
-        </span>
+        </Star>
       ))}
-    </div>
+    </StarContainer>
   );
 };
 

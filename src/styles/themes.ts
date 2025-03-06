@@ -50,6 +50,7 @@ const theme: DefaultTheme = {
       desktop: '1.9rem',
     },
     paragraph: {
+      xs: '0.7rem',
       mobileS: '0.8rem',
       mobileL: '0.9rem',
       default: '1rem',
