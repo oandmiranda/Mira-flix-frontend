@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react';
 import api_tmdb from '../../pages/api/tmdb'; // Ajuste o caminho conforme necessário
 import Head from 'next/head';
 import { Results } from '@src/types/apiTypes';
-import HeaderMovieDetails from '@src/components/MovieDetails/movieDetails';
 import Container from '@src/components/Container/container';
 import withAuth from '@src/hook/withAuth';
+import MovieDetails from '@src/components/MovieDetails/movieDetails';
 
-function MovieDetails() {
+function MovieDetailsScreen() {
   const router = useRouter();
   const [movie, setMovie] = useState<Results | null>(null);
 
@@ -41,11 +41,11 @@ function MovieDetails() {
 
       {movie && (
         <Container hasDegrade>
-          <HeaderMovieDetails items={{ results: [movie], id: movie.id ?? 0 }} id={router.query.id as string} />
+          <MovieDetails items={{ results: [movie], id: movie.id ?? 0 }} id={router.query.id as string} />
         </Container>
       )}
     </>
   );
 }
 
-export default withAuth(MovieDetails);
+export default withAuth(MovieDetailsScreen);

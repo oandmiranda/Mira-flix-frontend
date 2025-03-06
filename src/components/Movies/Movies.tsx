@@ -6,6 +6,9 @@ import Tooltip from '../Tooltip/tooltip';
 import { TooltipContent } from '../Tooltip/style';
 import { getStarRating } from '@src/utils/ratingUtils';
 import StarRating from '../Icons/Star/star_reting';
+import Text from '../Text/text';
+import { roundNumber } from '@src/utils/roundNumber';
+import { getYear } from '@src/utils/getYear';
 
 // This component loops the "results" array and accesses its values
 export default function Movies({ items, hasCarousel }: { items: IList['items']; hasCarousel?: boolean }) {
@@ -19,16 +22,28 @@ export default function Movies({ items, hasCarousel }: { items: IList['items']; 
             <Tooltip
               content={
                 <TooltipContent>
-                  <h4>{movie.name || movie.title}</h4>
-                  <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
+                  <Text tag="h4">{movie.name || movie.title}</Text>
+                  <Text tag="p">{getYear(movie.release_date)}</Text>
+                  <Text
+                    tag="p"
+                    styleSheet={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      lineHeight: 'center',
+                      gap: '5px',
+                    }}
+                  >
+                    {roundNumber(movie.vote_average)}
+                    <StarRating rating={getStarRating(movie.vote_average)}></StarRating>
+                  </Text>
                 </TooltipContent>
               }
             >
               <MediaImage
                 src={`${baseUrlPathImage}${movie.poster_path}`}
                 alt={movie.name}
-                width={180}
-                height={250}
+                width={210}
+                height={290}
                 zoomEffect
                 styleSheet={{ padding: '10px', borderRadius: '20px' }}
               />

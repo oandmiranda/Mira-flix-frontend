@@ -1,40 +1,54 @@
+import theme, { device } from '@src/styles/themes';
 import styled from 'styled-components';
 
-// dados que são exibidos quando hover
-export const TooltipBox = styled.div`
-  position: absolute;
-  bottom: 5px;
-  background-color: rgba(0, 0, 0, 0.9);
-  color: white;
-  padding: 15px;
-  border-radius: 7px;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  pointer-events: none;
-  width: 100%;
-`;
-
-// container que envolve o TooltipBox
 export const TooltipContainer = styled.div`
   position: relative;
+  overflow: visible;
+`;
+
+export const TooltipBox = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:hover ${TooltipBox} {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.83) 25%, rgba(0, 0, 0, 0)),
+    linear-gradient(to right, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 60%);
+  color: white;
+  padding: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease-in-out;
+
+  ${TooltipContainer}:hover & {
     opacity: 1;
   }
 `;
 
-// componente que estiliza o titulo e avaliação do filme
 export const TooltipContent = styled.div`
+  display: flex;
+  position: absolute;
+  top: 170px;
+  flex-direction: column;
+  gap: 3px;
+
   h4 {
-    margin-bottom: 4px;
+    margin-bottom: 3px;
+    font-size: ${theme.sizes.subtitle.mobileS};
+
+    @media ${device.mobileS} {
+      font-size: ${theme.sizes.paragraph.mobileS};
+    }
+  }
+  p {
+    font-size: 0.9rem;
+
+    @media ${device.mobileS} {
+      font-size: ${theme.sizes.paragraph.xs};
+    }
   }
 
-  p {
-    margin: 0;
-    font-size: 0.9rem;
+  @media ${device.mobileS}, ${device.mobileL} {
+    top: 110px;
   }
 `;

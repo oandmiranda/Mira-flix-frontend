@@ -51,6 +51,7 @@ declare module 'styled-components' {
         desktop: string;
       };
       paragraph: {
+        xs: string;
         mobileS: string;
         mobileL: string;
         default: string;

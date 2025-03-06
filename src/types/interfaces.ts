@@ -64,7 +64,7 @@ export interface HeaderProps {
   slugCategory?: string | undefined;
 }
 
-export interface HeaderMovieDetailsProps {
+export interface MovieDetailsProps {
   items: { results: Results[]; id: number };
   id: string;
 }

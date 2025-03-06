@@ -22,10 +22,10 @@ export const Image = styled.img`
   height: 370px;
   border-radius: 15px;
   box-shadow: 2px 3px 10px #02b7e3;
-  transition: transform 0.4s ease-in-out;
+  transition: transform 0.52s ease-in-out;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
   }
 
   @media ${device.tablet} {
@@ -45,8 +45,8 @@ export const GradientArea = styled.div`
   align-items: center;
   justify-content: center;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.3) 100%),
-    linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.5) 65%),
-    linear-gradient(to right, #000 1%, rgba(0, 0, 0, 0.6) 100%);
+    linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5) 60%),
+    linear-gradient(to right, #000 1%, rgba(0, 0, 0, 0.6) 95%);
 
   @media ${device.mobileS}, ${device.mobileL} {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.2) 100%),
@@ -56,18 +56,19 @@ export const GradientArea = styled.div`
 `;
 
 export const Title = styled.h1`
+  font-size: ${theme.sizes.title.mobileL};
   color: ${theme.colors.text.hover};
   margin-top: 20px;
 
   @media ${device.mobileS} {
-    font-size: ${theme.sizes.title.xs};
+    font-size: ${theme.sizes.title.mobileS};
   }
   @media ${device.mobileL} {
-    font-size: ${theme.sizes.title.xs};
+    font-size: ${theme.sizes.title.mobileS};
   }
 
   @media ${device.tablet} {
-    font-size: ${theme.sizes.title.xs};
+    font-size: ${theme.sizes.title.mobileL};
   }
 `;
 
@@ -92,8 +93,6 @@ export const ContentArea = styled.div`
   height: 90%;
   margin-top: 30px;
 `;
-
-export const Tagline = styled.h4``;
 
 export const Overview = styled.h4`
   font-weight: normal;
