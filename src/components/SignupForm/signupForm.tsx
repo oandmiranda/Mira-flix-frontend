@@ -11,7 +11,7 @@ import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { SignupFormData } from '@src/types/interfaces';
 import { IoMdPersonAdd } from 'react-icons/io';
-import { Container, Spinner } from '@src/components/Login/style';
+import { AuthContainer, Spinner } from '../AuthStyles/AuthStyles';
 
 export default function SignupForm() {
   const {
@@ -62,7 +62,7 @@ export default function SignupForm() {
   return (
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Container>
+        <AuthContainer>
           <Logo noLink />
           <Text tag="h3" styleSheet={{ marginBottom: '10px', marginTop: '25px' }}>
             Cadastrar
@@ -150,7 +150,7 @@ export default function SignupForm() {
           {loading && <Spinner />}
           {error && <Text styleSheet={errorStyle}>{error}</Text>}
           {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
-        </Container>
+        </AuthContainer>
       </form>
     </Box>
   );

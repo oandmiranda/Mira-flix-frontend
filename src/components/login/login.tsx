@@ -11,7 +11,7 @@ import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { LoginFormData } from '@src/types/interfaces';
 import { IoLogIn } from 'react-icons/io5';
-import { Container, Spinner } from './style';
+import { AuthContainer, Spinner } from '../AuthStyles/AuthStyles';
 
 export default function LoginForm() {
   const {
@@ -44,7 +44,7 @@ export default function LoginForm() {
   return (
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Container>
+        <AuthContainer>
           <Logo noLink styleSheet={{ marginBottom: '20px' }} />
           <Text tag="h3" styleSheet={{ marginBottom: '6px' }}>
             Entrar
@@ -104,7 +104,7 @@ export default function LoginForm() {
           {loading && <Spinner />}
           {error && <Text styleSheet={errorStyle}>{error + '😥'}</Text>}
           {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
-        </Container>
+        </AuthContainer>
       </form>
     </Box>
   );
