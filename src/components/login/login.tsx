@@ -10,7 +10,8 @@ import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { LoginFormData } from '@src/types/interfaces';
-import { Container, Spinner } from './style';
+import { IoLogIn } from 'react-icons/io5';
+import { AuthContainer, Spinner } from '../AuthStyles/AuthStyles';
 
 export default function LoginForm() {
   const {
@@ -43,7 +44,7 @@ export default function LoginForm() {
   return (
     <Box tag="div">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Container>
+        <AuthContainer>
           <Logo noLink styleSheet={{ marginBottom: '20px' }} />
           <Text tag="h3" styleSheet={{ marginBottom: '6px' }}>
             Entrar
@@ -73,22 +74,37 @@ export default function LoginForm() {
           />
           {errors.password && <Text styleSheet={errorStyle}>{errors.password.message}</Text>}
 
-          <Button
-            type="button"
-            width="270px"
-            background={theme.colors.background.button}
-            disabled={loading}
-            onClick={handleSubmit(onSubmit)}
-            backgroundhover={true}
-          >
-            {loading ? 'Verificando...' : 'Login'}
-          </Button>
+          {!loading && (
+            <Button
+              type="button"
+              width="270px"
+              background={theme.colors.background.button}
+              disabled={loading}
+              onClick={handleSubmit(onSubmit)}
+              backgroundhover={true}
+            >
+              Login
+              <IoLogIn size={18} />
+            </Button>
+          )}
+
+          {loading && (
+            <Button
+              type="button"
+              width="270px"
+              background={theme.colors.background.button}
+              disabled={loading}
+              backgroundhover={true}
+            >
+              Verificando...
+            </Button>
+          )}
 
           {/* Spinner é exibido quando loading for true */}
           {loading && <Spinner />}
           {error && <Text styleSheet={errorStyle}>{error + '😥'}</Text>}
           {successMessage && <Text styleSheet={successStyle}>{successMessage}</Text>}
-        </Container>
+        </AuthContainer>
       </form>
     </Box>
   );

@@ -6,8 +6,8 @@ import Box from '@src/shared/Box/box';
 import Text from '@src/components/Text/text';
 import theme from '@src/styles/themes';
 import { FormArea, Subtitle, TextArea } from './style';
-import LoginForm from '@src/components/login/login';
-// import imageBackground from '../../../public/assets/images/aquaman.jpeg';
+import { FaUserPlus } from 'react-icons/fa6';
+import LoginForm from '@src/components/Login/login';
 
 export default function LoginPage() {
   return (
@@ -61,8 +61,9 @@ export default function LoginPage() {
             <Text tag="p" styleSheet={{ fontSize: theme.sizes.paragraph.mobileS }}>
               É novo por aqui? cadastre-se
             </Text>
-            <Button href="/signup" width="270px">
-              cadastre-se
+            <Button href="/signup" width="270px" styleSheet={{ gap: '8px' }}>
+              Cadastre-se
+              <FaUserPlus size={15} />
             </Button>
           </Box>
         </FormArea>

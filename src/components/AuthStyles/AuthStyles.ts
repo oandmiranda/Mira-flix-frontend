@@ -7,7 +7,7 @@ const spin = keyframes`
   100% { transform: rotate(360deg); }
 `;
 
-export const Container = styled.div<{ width?: string }>`
+export const AuthContainer = styled.div<{ width?: string }>`
   max-width: 400px;
   height: auto;
   display: flex;
