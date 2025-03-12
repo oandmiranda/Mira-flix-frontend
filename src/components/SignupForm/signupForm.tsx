@@ -11,7 +11,7 @@ import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { SignupFormData } from '@src/types/interfaces';
 import { IoMdPersonAdd } from 'react-icons/io';
-import { Container, Spinner } from '../Login/style';
+import { Container, Spinner } from '@src/components/Login/style';
 
 export default function SignupForm() {
   const {
