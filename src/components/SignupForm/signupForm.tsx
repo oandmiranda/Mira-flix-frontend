@@ -2,7 +2,6 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
-import { Container, Spinner } from '@src/components/login/style';
 import Text from '../Text/text';
 import Button from '../Button/button';
 import theme from '@src/styles/themes';
@@ -11,6 +10,8 @@ import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { SignupFormData } from '@src/types/interfaces';
+import { IoMdPersonAdd } from 'react-icons/io';
+import { Container, Spinner } from '../Login/style';
 
 export default function SignupForm() {
   const {
@@ -119,16 +120,32 @@ export default function SignupForm() {
           />
           {errors.confirmPassword && <Text styleSheet={errorStyle}>{errors.confirmPassword.message}</Text>}
 
-          <Button
-            type="button"
-            width="270px"
-            background={theme.colors.background.button}
-            disabled={loading}
-            onClick={handleSubmit(onSubmit)}
-            backgroundhover={true}
-          >
-            {loading ? 'Cadastrando' : 'Cadastrar'}
-          </Button>
+          {!loading && (
+            <Button
+              type="button"
+              width="270px"
+              background={theme.colors.background.button}
+              disabled={loading}
+              onClick={handleSubmit(onSubmit)}
+              backgroundhover={true}
+            >
+              Cadastrar
+              <IoMdPersonAdd />
+            </Button>
+          )}
+
+          {loading && (
+            <Button
+              type="button"
+              width="270px"
+              background={theme.colors.background.button}
+              disabled={loading}
+              onClick={handleSubmit(onSubmit)}
+              backgroundhover={true}
+            >
+              Cadastrando
+            </Button>
+          )}
 
           {loading && <Spinner />}
           {error && <Text styleSheet={errorStyle}>{error}</Text>}

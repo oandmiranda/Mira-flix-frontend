@@ -11,6 +11,10 @@ export const S_Button = styled.button.withConfig({
   border-right: none;
   border-bottom: none;
   border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
   background-color: ${(props) => (props.background ? props.background : 'transparent')};
   color: ${theme.colors.text.navbar};
   box-shadow: 2px 4px 8px rgba(14, 14, 20, 0.6);

@@ -4,6 +4,7 @@ import SignupForm from '@src/components/SignupForm/signupForm';
 import { Title } from '@src/components/Header/style';
 import { FormArea, Subtitle, TextArea } from '../Login/style';
 import Button from '@src/components/Button/button';
+import { TbArrowBackUp } from 'react-icons/tb';
 
 export default function SignupPage() {
   return (
@@ -45,7 +46,10 @@ export default function SignupPage() {
 
         <FormArea>
           <SignupForm />
-          <Button href={'/login'}>Voltar ao Login</Button>
+          <Button href="/login" width="270px">
+            Voltar ao login
+            <TbArrowBackUp size={18} />
+          </Button>
         </FormArea>
       </Container>
     </>

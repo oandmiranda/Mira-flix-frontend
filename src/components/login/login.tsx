@@ -10,6 +10,7 @@ import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { LoginFormData } from '@src/types/interfaces';
+import { IoLogIn } from 'react-icons/io5';
 import { Container, Spinner } from './style';
 
 export default function LoginForm() {
@@ -73,16 +74,31 @@ export default function LoginForm() {
           />
           {errors.password && <Text styleSheet={errorStyle}>{errors.password.message}</Text>}
 
-          <Button
-            type="button"
-            width="270px"
-            background={theme.colors.background.button}
-            disabled={loading}
-            onClick={handleSubmit(onSubmit)}
-            backgroundhover={true}
-          >
-            {loading ? 'Verificando...' : 'Login'}
-          </Button>
+          {!loading && (
+            <Button
+              type="button"
+              width="270px"
+              background={theme.colors.background.button}
+              disabled={loading}
+              onClick={handleSubmit(onSubmit)}
+              backgroundhover={true}
+            >
+              Login
+              <IoLogIn size={18} />
+            </Button>
+          )}
+
+          {loading && (
+            <Button
+              type="button"
+              width="270px"
+              background={theme.colors.background.button}
+              disabled={loading}
+              backgroundhover={true}
+            >
+              Verificando...
+            </Button>
+          )}
 
           {/* Spinner é exibido quando loading for true */}
           {loading && <Spinner />}
