@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import LoginForm from './login';
+import LoginForm from '.';
 import { useRouter } from 'next/router';
 
 jest.mock('next/router', () => ({
