@@ -2,16 +2,16 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { register as registerUser } from '@src/services/signup';
 import { useState } from 'react';
-import Text from '../Text/text';
-import Button from '../Button/button';
 import theme from '@src/styles/themes';
 import Box from '@src/shared/Box/box';
-import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { SignupFormData } from '@src/types/interfaces';
 import { IoMdPersonAdd } from 'react-icons/io';
-import { AuthContainer, Spinner } from '../AuthStyles/AuthStyles';
+import { AuthContainer, Spinner } from '@src/components/AuthStyles/AuthStyles';
+import Logo from '@src/components/Logo/Logo';
+import Text from '@src/components/Text/text';
+import Button from '@src/components/Button/button';
 
 export default function SignupForm() {
   const {

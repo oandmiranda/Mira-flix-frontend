@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Container from '@src/components/Container/container';
-import SignupForm from '@src/components/SignupForm/signupForm';
 import { Title } from '@src/components/Header/style';
 import { FormArea, Subtitle, TextArea } from '../Login/style';
 import Button from '@src/components/Button/button';
 import { TbArrowBackUp } from 'react-icons/tb';
+import SignupForm from './components/SignupForm/signupForm';
 
 export default function SignupPage() {
   return (

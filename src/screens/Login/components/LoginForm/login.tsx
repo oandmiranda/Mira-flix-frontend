@@ -3,15 +3,15 @@ import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { login } from '@src/services/auth';
 import Box from '@src/shared/Box/box';
-import Button from '../Button/button';
-import Text from '../Text/text';
 import theme from '@src/styles/themes';
-import Logo from '../Logo/Logo';
 import { errorStyle } from '@src/styles/errorStyle';
 import { successStyle } from '@src/styles/successStyle';
 import { LoginFormData } from '@src/types/interfaces';
 import { IoLogIn } from 'react-icons/io5';
-import { AuthContainer, Spinner } from '../AuthStyles/AuthStyles';
+import { AuthContainer, Spinner } from '@src/components/AuthStyles/AuthStyles';
+import Logo from '@src/components/Logo/Logo';
+import Text from '@src/components/Text/text';
+import Button from '@src/components/Button/button';
 
 export default function LoginForm() {
   const {
