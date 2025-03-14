@@ -6,8 +6,9 @@ import Box from '@src/shared/Box/box';
 import Text from '@src/components/Text/text';
 import theme from '@src/styles/themes';
 import { FormArea, Subtitle, TextArea } from './style';
-import { FaUserPlus } from 'react-icons/fa6';
-import LoginForm from '../../components/Login';
+import LoginForm from '@src/components/login/login';
+import { FaUserPlus } from 'react-icons/fa';
+// import imageBackground from '../../../public/assets/images/aquaman.jpeg';
 
 export default function LoginPage() {
   return (
