@@ -9,7 +9,7 @@ import withAuth from '@src/hook/withAuth';
 import Box from '@src/shared/Box/box';
 import theme from '@src/styles/themes';
 import Head from 'next/head';
-import { API_KEY } from 'pages/api/tmdb';
+import { API_KEY } from '../../../pages/api/tmdb';
 import { useEffect, useState } from 'react';
 import { Items } from '@src/types/apiTypes';
 import { useMoviesContext } from '@src/context/moviesContext';
