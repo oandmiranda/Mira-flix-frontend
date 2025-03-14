@@ -7,7 +7,7 @@ import Text from '@src/components/Text/text';
 import theme from '@src/styles/themes';
 import { FormArea, Subtitle, TextArea } from './style';
 import { FaUserPlus } from 'react-icons/fa6';
-import LoginForm from '@src/components/Login';
+import LoginForm from '../../components/Login';
 
 export default function LoginPage() {
   return (
