@@ -15,6 +15,7 @@ export const StyledMediaImage = styled(Image)<MediaImageProps>`
     zoomEffect &&
     css`
       &:hover {
+        opacity: 0.8;
         transform: scale(1.1);
         transition-delay: 0.2;
       }

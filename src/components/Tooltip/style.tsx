@@ -12,7 +12,7 @@ export const TooltipBox = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.83) 25%, rgba(0, 0, 0, 0)),
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.83) 22%, rgba(0, 0, 0, 0)),
     linear-gradient(to right, rgba(0, 0, 0, 0.1) 30%, rgba(0, 0, 0, 0) 60%);
   color: white;
   padding: 13px;
@@ -28,7 +28,7 @@ export const TooltipBox = styled.div`
 export const TooltipContent = styled.div`
   display: flex;
   position: absolute;
-  top: 170px;
+  top: 130px;
   flex-direction: column;
   gap: 3px;
 
