@@ -31,7 +31,8 @@ Destaques gerais:
 - Design System: Uso de Design Tokens e reutilizacão de código em quase toda a aplicacão.
 - Controle de versão com Git e GitHub, seguindo boas práticas de commits, uso das branchs e PRs.
 - Consistência na aplicação de boas práticas de desenvolvimento, focando em escalabilidade e manutenibilidade do código.
-- Utilização de backlog inspirado em Scrum para organizar e priorizar tarefas, adquirindo reais noções práticas de metodologias ágeis (está no arquivo toDo.md).
+- Utilização de backlog inspirado em Scrum para organizar e priorizar tarefas, adquirindo reais noções práticas de metodologias ágeis.
+- Integração contínua.
 
 🛠️ Tecnologias utilizadas:
 Para o Front-end:
@@ -51,6 +52,7 @@ Para o Back-end:
 Ferramentas de desenvolvimento:
 - npm
 - Git & GitHub
+- CI/CD
 - EsLint
 - Prettier
   
