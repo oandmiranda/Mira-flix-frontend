@@ -37,7 +37,7 @@ export const Subtitle = styled.p`
 export const FormArea = styled.div`
   background: ${theme.colors.background.gradient};
   width: 360px;
-  height: 565px;
+  height: 620px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
