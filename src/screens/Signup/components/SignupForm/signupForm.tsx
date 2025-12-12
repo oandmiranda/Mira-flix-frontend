@@ -68,7 +68,8 @@ export default function SignupForm() {
             Cadastrar
           </Text>
           <Text tag="p" styleSheet={{ marginBottom: '13px', fontSize: theme.sizes.paragraph.mobileS }}>
-            Digite dados válidos
+            {`Crie uma senha com pelo menos 8 caracteres, contendo no mínimo uma letra maiúscula, um número e um
+            caractere especial. (ex: *)`}
           </Text>
           <input
             type="text"

@@ -8,9 +8,7 @@ import theme from '@src/styles/themes';
 import Box from '@src/shared/Box/box';
 import MediaImage from '../Image/MediaImage';
 import Text from '../Text/text';
-import Button from '../Button/button';
 import NavBar from '../Navbar/NavBar';
-import { FaPlay } from 'react-icons/fa';
 import StarRating from '../Icons/Star/star_reting';
 import { ContentArea, GradientArea, HeaderContainer, TextArea, Image, Overview, Title } from './styles';
 
@@ -114,13 +112,6 @@ export default function MovieDetails({ items, id }: MovieDetailsProps) {
                     </Text>
                     <Overview>{movie.overview}</Overview>
                   </Box>
-
-                  <Button
-                    href={'/error'}
-                    styleSheet={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
-                  >
-                    Assistir <FaPlay size={15} />
-                  </Button>
                 </TextArea>
               </ContentArea>
             </GradientArea>
