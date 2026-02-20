@@ -1,10 +1,29 @@
-# 🎥 MiraFlix
-Uma aplicação que simula uma interface de streaming de filmes e séries, com dados fornecidos pela API TMDB.
+## 🎥 MiraFlix
+A streaming app that simulates a movie and TV show platform interface, with data provided by the TMDB API.
 
-# 📖 Sobre o projeto
+### 🛠️ Technologies used:
+Front-end:
+- React
+- Next.js
+- TypeScript
+- Styled-Components
+- API REST
+  
+Back-end:
+- Node.js
+- Express.js
+- PostgreSQL
+- JWT
+  
+Development tools:
+- Git & GitHub
+- EsLint
+- Prettier
+
+### 📖 About
 O MiraFlix foi meu primeiro projeto fullstack pessoal, desenvolvido com o objetivo de consolidar e expandir meus conhecimentos em tecnologias front-end e back-end. Cada funcionalidade adicionada foi uma oportunidade para internalizar novos conhecimentos e aplicá-los ao projeto, o que me fez evoluir tanto na lógica e no fluxo de desenvolvimento, quanto na organização do código e debug.
 
-# Principais funcionalidades:
+### Principais funcionalidades:
 - Consumo da API TMDB para exibição de filmes e séries.
 - Filtros de pesquisa dinâmicos, permitindo que os usuários encontrem conteúdos com facilidade.
 - Rotas dinâmicas que simulam navegação típica de plataformas de streaming.
@@ -12,7 +31,7 @@ O MiraFlix foi meu primeiro projeto fullstack pessoal, desenvolvido com o objeti
 
 Foi uma experiência satisfatória que me introduziu ao back-end e consolidou ainda mais meus conhecimentos no front-end, com atenção especial a boas práticas, organização de código e reutilização de componentes.
 
-# 🌟 Destaques
+### 🌟 Destaques
 No front-end:
 - Construção de uma interface dinâmica e responsiva utilizando React, Next.js e Styled-Components.
 - Tipagem robusta com TypeScript.
@@ -34,25 +53,5 @@ Destaques gerais:
 - Utilização de backlog inspirado em Scrum para organizar e priorizar tarefas, adquirindo reais noções práticas de metodologias ágeis.
 - Integração contínua.
 
-🛠️ Tecnologias utilizadas:
-Para o Front-end:
-- React
-- Next.js
-- TypeScript
-- Styled-Components
-- API REST
-  
-Para o Back-end:
-- Node.js
-- Express.js
-- PostgreSQL
-- JWT (JSON Web Tokens)
-- Postman
-  
-Ferramentas de desenvolvimento:
-- npm
-- Git & GitHub
-- CI/CD
-- EsLint
-- Prettier
+
   
